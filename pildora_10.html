@@ -3,511 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pildora #10 | Tu asistente para reuniones</title>
+<title>Píldora #10 — Tu asistente para reuniones | PLOCAN</title>
 <style>
-:root {
-    --plocan-blue: #004B87;
-    --plocan-light: #0077B6;
-    --plocan-accent: #00B4D8;
-    --plocan-soft: #E8F4F8;
-    --plocan-dark: #003459;
-    --white: #FFFFFF;
-    --gray-100: #F7F9FA;
-    --gray-200: #E9ECEF;
-    --gray-600: #6C757D;
-    --gray-800: #343A40;
-    --success: #2D9F5C;
-    --warning: #E8A817;
-    --danger: #DC3545;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--gray-100);
-    color: var(--gray-800);
-    line-height: 1.6;
-}
-
-.header {
-    background: linear-gradient(135deg, var(--plocan-dark) 0%, var(--plocan-blue) 50%, var(--plocan-light) 100%);
-    color: var(--white);
-    padding: 2rem 1.5rem;
-    text-align: center;
-}
-
-.header-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 20px;
-    padding: 0.3rem 1rem;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
-.header h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.header p {
-    font-size: 1rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.meta-badges {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-}
-
-.meta-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: rgba(255,255,255,0.2);
-    border-radius: 12px;
-    padding: 0.3rem 0.8rem;
-    font-size: 0.85rem;
-}
-
-.container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 1.5rem;
-}
-
-.intro-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-left: 4px solid var(--plocan-accent);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-
-.intro-card h2 {
-    color: var(--plocan-blue);
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.intro-card p {
-    color: var(--gray-600);
-    font-size: 0.95rem;
-}
-
-.step-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    position: relative;
-    overflow: hidden;
-}
-
-.step-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: var(--plocan-blue);
-    color: var(--white);
-    border-radius: 50%;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
-}
-
-.step-card h3 {
-    color: var(--plocan-dark);
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-}
-
-.step-card .explanation {
-    color: var(--gray-600);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.prompt-box {
-    background: var(--gray-100);
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    padding: 1rem;
-    padding-right: 4.5rem;
-    font-family: 'Consolas', 'Courier New', monospace;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    color: var(--gray-800);
-    position: relative;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-.copy-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: var(--plocan-blue);
-    color: var(--white);
-    border: none;
-    border-radius: 6px;
-    padding: 0.35rem 0.8rem;
-    font-size: 0.78rem;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.copy-btn:hover { background: var(--plocan-dark); }
-.copy-btn.copied { background: var(--success); }
-
-.result-preview {
-    margin-top: 1rem;
-    padding: 0.8rem 1rem;
-    background: #F0FFF4;
-    border: 1px solid #C6F6D5;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    color: #276749;
-}
-
-.result-preview strong {
-    display: block;
-    margin-bottom: 0.3rem;
-}
-
-.tip-box {
-    background: #FFFBEB;
-    border: 1px solid #FDE68A;
-    border-radius: 8px;
-    padding: 0.8rem 1rem;
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: #92400E;
-}
-
-.warning-box {
-    background: #FEF2F2;
-    border: 1px solid #FECACA;
-    border-radius: 8px;
-    padding: 0.8rem 1rem;
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: #991B1B;
-}
-
-.pattern-card {
-    background: linear-gradient(135deg, var(--plocan-soft) 0%, var(--white) 100%);
-    border: 2px solid var(--plocan-accent);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-}
-
-.pattern-card h2 {
-    color: var(--plocan-blue);
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-}
-
-.pattern-list {
-    list-style: none;
-    padding: 0;
-}
-
-.pattern-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(0,75,135,0.1);
-    font-size: 0.95rem;
-}
-
-.pattern-list li:last-child { border-bottom: none; }
-
-.examples-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
-    margin-top: 0.8rem;
-}
-
-.example-item {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    padding: 0.8rem;
-    font-size: 0.85rem;
-}
-
-.example-item .label {
-    display: inline-block;
-    background: var(--plocan-soft);
-    color: var(--plocan-blue);
-    border-radius: 4px;
-    padding: 0.15rem 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-}
-
-.semaforo { display: flex; flex-direction: column; gap: 0.6rem; margin: 1rem 0; }
-.semaforo-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.9rem; }
-.semaforo-verde { background: #F0FFF4; border: 1px solid #C6F6D5; }
-.semaforo-amarillo { background: #FFFBEB; border: 1px solid #FDE68A; }
-.semaforo-rojo { background: #FEF2F2; border: 1px solid #FECACA; }
-.semaforo-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; }
-.dot-verde { background: #2D9F5C; }
-.dot-amarillo { background: #E8A817; }
-.dot-rojo { background: #DC3545; }
-
-.feedback-section {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-top: 3px solid var(--plocan-accent);
-}
-
-.feedback-section h3 {
-    color: var(--plocan-blue);
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
-
-.feedback-section p {
-    color: var(--gray-600);
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-}
-
-.feedback-btn {
-    display: inline-block;
-    background: var(--plocan-blue);
-    color: var(--white);
-    text-decoration: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: background 0.2s;
-}
-
-.feedback-btn:hover { background: var(--plocan-dark); }
-
-.nav-pills {
-    display: flex;
-    justify-content: space-between;
-    margin: 1.5rem 0;
-    gap: 1rem;
-}
-
-.nav-pill {
-    flex: 1;
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    padding: 0.8rem;
-    text-decoration: none;
-    color: var(--plocan-blue);
-    font-size: 0.85rem;
-    text-align: center;
-    transition: border-color 0.2s;
-}
-
-.nav-pill:hover { border-color: var(--plocan-accent); }
-.nav-pill .nav-label { display: block; font-size: 0.75rem; color: var(--gray-600); }
-
-.footer {
-    text-align: center;
-    padding: 1.5rem;
-    color: var(--gray-600);
-    font-size: 0.8rem;
-    border-top: 1px solid var(--gray-200);
-    margin-top: 1rem;
-}
-
-.footer a { color: var(--plocan-blue); text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
-
-@media (max-width: 600px) {
-    .header h1 { font-size: 1.4rem; }
-    .examples-grid { grid-template-columns: 1fr; }
-    .nav-pills { flex-direction: column; }
-    .prompt-box { padding-right: 1rem; padding-top: 2.5rem; }
-}
+:root{--plocan-blue:#004B87;--plocan-light:#0077B6;--plocan-accent:#00B4D8;--plocan-soft:#E8F4F8;--plocan-dark:#003459;--shadow:0 2px 12px rgba(0,0,0,0.08);--radius:12px}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f4f7fa;color:#1a1a2e;line-height:1.7;-webkit-font-smoothing:antialiased}.header{background:linear-gradient(135deg,var(--plocan-dark) 0%,var(--plocan-blue) 50%,var(--plocan-light) 100%);color:#fff;padding:2.5rem 1.5rem 2rem;text-align:center}.header-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:0.3rem 1rem;font-size:0.8rem;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:1rem}.header h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;margin-bottom:0.5rem;text-shadow:0 2px 8px rgba(0,0,0,0.2)}.header .subtitle{font-size:1rem;opacity:0.9;margin-bottom:0.8rem}.time-badge{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.12);border-radius:16px;padding:0.25rem 0.9rem;font-size:0.82rem}.time-badge::before{content:"\23F1";font-size:1rem}.container{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.8rem 2rem;margin-bottom:1.5rem}.card h2{color:var(--plocan-blue);font-size:1.4rem;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--plocan-soft)}.card h3{color:var(--plocan-dark);font-size:1.1rem;margin:1rem 0 0.5rem}.intro-card{border-left:5px solid var(--plocan-accent);background:var(--plocan-soft)}.intro-card .label{font-weight:700;color:var(--plocan-dark);margin-bottom:0.3rem;font-size:0.95rem;text-transform:uppercase;letter-spacing:0.5px}.highlight{background:#fffbe6;border-left:4px solid #f5c518;border-radius:8px;padding:1.2rem 1.4rem;margin:1.2rem 0;font-size:0.95rem}.highlight strong{color:#7a6200}.prompt-box{position:relative;background:#1a1a2e;color:#e0e0e0;border-radius:10px;padding:1.2rem 1.4rem;padding-top:2.6rem;margin-bottom:1rem;font-family:'Consolas','Monaco','Courier New',monospace;font-size:0.88rem;line-height:1.7;white-space:pre-wrap;word-break:break-word}.prompt-box .prompt-label{position:absolute;top:0;left:0;right:0;background:rgba(255,255,255,0.08);padding:0.3rem 1rem;font-family:'Segoe UI',sans-serif;font-size:0.75rem;color:var(--plocan-accent);text-transform:uppercase;letter-spacing:1px;border-radius:10px 10px 0 0}.copy-btn{position:absolute;top:0.25rem;right:0.5rem;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#ccc;border-radius:6px;padding:0.25rem 0.7rem;font-size:0.75rem;cursor:pointer;transition:all 0.2s;font-family:'Segoe UI',sans-serif}.copy-btn:hover{background:rgba(255,255,255,0.22);color:#fff}.copy-btn.copied{background:#228B22;color:#fff;border-color:#228B22}.footer{background:var(--plocan-dark);color:rgba(255,255,255,0.75);text-align:center;padding:1.5rem 1rem;font-size:0.85rem;line-height:1.8}.footer strong{color:#fff}@media(max-width:600px){.card{padding:1.2rem 1rem}.header h1{font-size:1.3rem}}
 </style>
 </head>
 <body>
-<div style="text-align:center;padding:10px 0;background:#003459;"><a href="pildora_00_landing.html" style="color:#ffffff;text-decoration:none;font-size:0.95rem;font-family:Segoe UI,sans-serif;display:inline-flex;align-items:center;gap:6px;"><span style="font-size:1.3rem;">🏠</span> Indice de Pildoras</a></div>
-<div style="text-align:center;padding:10px 0;background:#003459;"><a href="pildora_00_landing.html" style="color:#ffffff;text-decoration:none;font-size:0.95rem;font-family:Segoe UI,sans-serif;display:inline-flex;align-items:center;gap:6px;"><span style="font-size:1.3rem;">🏠</span> Indice de Pildoras</a></div>
+<div style="text-align:center;padding:10px 0;background:#003459;"><a href="pildora_00_landing.html" style="color:#ffffff;text-decoration:none;font-size:0.95rem;font-family:Segoe UI,sans-serif;display:inline-flex;align-items:center;gap:6px;"><span style="font-size:1.3rem;">&#127968;</span> Índice de Píldoras</a></div>
 
-<div class="header">
-  <div class="header-badge">PLOCAN &mdash; Pildoras de Conocimiento</div>
-  <h1>Tu asistente para reuniones</h1>
-  <p>Prepara agendas, resume actas y genera follow-ups sin esfuerzo extra.</p>
-  <div class="meta-badges">
-    <div class="meta-badge"><span>&#9201;</span> 5 minutos</div>
-    <div class="meta-badge"><span>&#127919;</span> BÃ¡sico</div>
-    <div class="meta-badge"><span>&#128218;</span> Pildora 10 de 10</div>
-  </div>
-</div>
+<header class="header">
+    <div class="header-badge">PLOCAN — Píldoras de Conocimiento | Nivel Básico</div>
+    <h1>Tu asistente para reuniones</h1>
+    <p class="subtitle">Prepara agendas, resume actas y genera follow-ups sin esfuerzo extra</p>
+    <span class="time-badge">5 min de lectura</span>
+</header>
 
-<div class="container">
+<main class="container">
+    <div style="text-align:center;margin:1.5rem 0"><img src="assets/pildora_10_new.jpg" alt="Tu asistente para reuniones" style="max-width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1)"></div>
 
-  <div class="intro-card">
-    <h2>El problema</h2>
-    <p>Las reuniones consumen tiempo antes (preparar), durante (tomar notas) y despuÃ©s (actas, follow-ups). Antigravity te ayuda en las tres fases. <strong>Llegas preparado, te vas con acta hecha y los follow-ups asignados.</strong></p>
-  </div>
+    <div class="card intro-card">
+        <div class="label">La idea clave</div>
+        <p>Las reuniones consumen tiempo antes (preparar), durante (tomar notas) y después (actas, follow-ups). Antigravity te ayuda en las tres fases. <strong>Llegas preparado, te vas con acta hecha y los follow-ups asignados.</strong></p>
+    </div>
 
-<div style="text-align:center;margin-bottom:1.5rem"><img src="assets/pildora_10_new.jpg" loading="lazy" width="1264" height="848" alt="Tu asistente para reuniones" style="max-width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1)"></div>
-
-
-  <div class="step-card">
-    <div class="step-number">1</div>
-    <h3>Prepara la reunion en 2 minutos</h3>
-    <p class="explanation">Dale el contexto de la reunion y te genera una agenda estructurada.</p>
-    <div class="prompt-box">
-      <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Manana tengo una reunion con el consorcio del proyecto EMSO-EVOLVE. Asistentes: 8 socios europeos. Duracion: 1 hora. Temas:
+    <div class="card">
+        <h2>Paso 1: Prepara la reunión en 2 minutos</h2>
+        <p>Dale el contexto de la reunión y te genera una agenda estructurada.</p>
+        <div class="prompt-box">
+            <div class="prompt-label">Prompt</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Mañana tengo una reunión con el consorcio del proyecto EMSO-EVOLVE. Asistentes: 8 socios europeos. Duración: 1 hora. Temas:
 - Estado de deliverables atrasados
 - Presupuesto del segundo periodo
-- Planificacion del prÃ³ximo milestone
+- Planificación del próximo milestone
 
-Generame:
+Genérame:
 1. Una agenda con tiempos asignados
 2. 3 preguntas clave que debo hacer
-3. Los puntos crÃ­ticos que no puedo olvidar mencionar</div>
-    <div class="result-preview">
-      <strong>Que ocurre:</strong>
-      Recibes una agenda profesional con tiempos, preguntas preparadas y checklist de temas crÃ­ticos. Llegas a la reunion con los deberes hechos.
+3. Los puntos críticos que no puedo olvidar mencionar</div>
+        <div class="highlight"><strong>Resultado:</strong> Recibes una agenda profesional con tiempos, preguntas preparadas y checklist de temas críticos. Llegas a la reunión con los deberes hechos.</div>
     </div>
-  </div>
 
-  <div class="step-card">
-    <div class="step-number">2</div>
-    <h3>Convierte notas sueltas en acta formal</h3>
-    <p class="explanation">Durante la reunion tomas notas rapidas. Despues, Antigravity las convierte en acta.</p>
-    <div class="prompt-box">
-      <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Estas son mis notas de la reunion de hoy (copiadas tal cual, sin ordenar):
+    <div class="card">
+        <h2>Paso 2: Convierte notas sueltas en acta formal</h2>
+        <p>Durante la reunión tomas notas rápidas. Después, Antigravity las convierte en acta.</p>
+        <div class="prompt-box">
+            <div class="prompt-label">Prompt</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Estas son mis notas de la reunión de hoy (copiadas tal cual, sin ordenar):
 
-[pega tus notas aqui]
+[pega tus notas aquí]
 
-Conviertelas en un acta formal con:
-- Fecha, asistentes y duracion
+Conviértelas en un acta formal con:
+- Fecha, asistentes y duración
 - Temas tratados (ordenados)
 - Decisiones tomadas
-- Acciones pendientes (quien, que, cuando)
-- Proxima reunion</div>
-    <div class="result-preview">
-      <strong>Que ocurre:</strong>
-      Tus notas desordenadas se convierten en un acta profesional lista para enviar a los asistentes.
+- Acciones pendientes (quién, qué, cuándo)
+- Próxima reunión</div>
+        <div class="highlight"><strong>Resultado:</strong> Tus notas desordenadas se convierten en un acta profesional lista para enviar a los asistentes.</div>
     </div>
-  </div>
 
-  <div class="step-card">
-    <div class="step-number">3</div>
-    <h3>Genera emails de follow-up</h3>
-    <p class="explanation">Despues del acta, necesitas enviar recordatorios a cada responsable de accion.</p>
-    <div class="prompt-box">
-      <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Del acta que acabas de generar, creame un email de follow-up para enviar a todos los asistentes con:
-- Resumen de 3 lÃ­neas de la reunion
+    <div class="card">
+        <h2>Paso 3: Genera emails de follow-up</h2>
+        <p>Después del acta, necesitas enviar recordatorios a cada responsable de acción.</p>
+        <div class="prompt-box">
+            <div class="prompt-label">Prompt</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Del acta que acabas de generar, créame un email de follow-up para enviar a todos los asistentes con:
+- Resumen de 3 líneas de la reunión
 - Lista de acciones con responsable y fecha
-- Fecha de prÃ³xima reunion
+- Fecha de próxima reunión
 
-Tono: profesional y breve. En ingles (los socios son europeos).</div>
-    <div class="result-preview">
-      <strong>Que ocurre:</strong>
-      Email de follow-up listo para enviar. Cada participante sabe que tiene que hacer y para cuando.
+Tono: profesional y breve. En inglés (los socios son europeos).</div>
+        <div class="highlight"><strong>Resultado:</strong> Email de follow-up listo para enviar. Cada participante sabe qué tiene que hacer y para cuándo.</div>
     </div>
-  </div>
 
-
-
-  <div class="pattern-card">
-    <h2>Ciclo de reuniones con Antigravity</h2>
-    <ol class="pattern-list">
-      <li><strong>ANTES</strong> &mdash; Agenda + preguntas clave + checklist de temas crÃ­ticos</li>
-      <li><strong>DURANTE</strong> &mdash; Toma notas rapidas (las minimas, Antigravity hace el resto)</li>
-      <li><strong>DESPUES</strong> &mdash; Acta formal + email follow-up + acciones asignadas</li>
-    </ol>
-    <div class="tip-box">
-      <strong>Consejo:</strong> Si usas transcripcion automÃ¡tica (Fireflies, Teams, etc.), puedes pasar la transcripcion completa a Antigravity para que genere el acta. Es aun mÃ¡s preciso que tus notas manuales.
+    <div class="card">
+        <h2>Ciclo de reuniones con Antigravity</h2>
+        <p><strong>1. ANTES</strong> — Agenda + preguntas clave + checklist de temas críticos</p>
+        <p><strong>2. DURANTE</strong> — Toma notas rápidas (las mínimas, Antigravity hace el resto)</p>
+        <p><strong>3. DESPUÉS</strong> — Acta formal + email follow-up + acciones asignadas</p>
+        <div class="highlight"><strong>Consejo:</strong> Si usas transcripción automática (Fireflies, Teams, etc.), puedes pasar la transcripción completa a Antigravity para que genere el acta. Es aún más preciso que tus notas manuales.</div>
     </div>
-  </div>
 
-
-  <div style="margin-bottom: 1.5rem;">
-    <h2 style="color: var(--plocan-blue); font-size: 1.1rem; margin-bottom: 0.8rem;">Mas ejemplos para PLOCAN</h2>
-    <div class="examples-grid">
-      <div class="example-item">
-        <span class="label">Briefing pre-reunion</span>
-        "Manana me reuno con el programa EMSO. Dame un briefing de 5 puntos sobre el estado actual del proyecto."
-      </div>
-      <div class="example-item">
-        <span class="label">Minuta rapida</span>
-        "Hemos decidido X, Y y Z en la reunion. Redactame una minuta de 1 pÃ¡rrafo para el registro interno."
-      </div>
-      <div class="example-item">
-        <span class="label">Preparar presentaciÃ³n</span>
-        "Tengo que presentar el avance del WP3 en 5 minutos. Hazme 3 slides con los puntos clave."
-      </div>
-      <div class="example-item">
-        <span class="label">Responder pregunta dificil</span>
-        "El coordinador pregunto por que el D4.1 esta retrasado. Preparame una respuesta diplomÃ¡tica con plan de recuperacion."
-      </div>
+    <div class="card">
+        <h2>Más ejemplos para PLOCAN</h2>
+        <h3>Briefing pre-reunión</h3>
+        <p>"Mañana me reúno con el programa EMSO. Dame un briefing de 5 puntos sobre el estado actual del proyecto."</p>
+        <h3>Minuta rápida</h3>
+        <p>"Hemos decidido X, Y y Z en la reunión. Redáctame una minuta de 1 párrafo para el registro interno."</p>
+        <h3>Preparar presentación</h3>
+        <p>"Tengo que presentar el avance del WP3 en 5 minutos. Hazme 3 slides con los puntos clave."</p>
+        <h3>Responder pregunta difícil</h3>
+        <p>"El coordinador preguntó por qué el D4.1 está retrasado. Prepárame una respuesta diplomática con plan de recuperación."</p>
     </div>
-  </div>
 
-  <div class="intro-card" style="border-left-color: var(--success);">
-    <h2 style="color: var(--success);">Recuerda</h2>
-    <p>Las actas generadas por IA deben revisarse antes de enviarse. Antigravity puede malinterpretar notas ambiguas o inventar detalles que no dijiste. Lee el acta antes de enviarla â tu reputacion esta en juego.</p>
-  </div>
+    <div class="card" style="border-left:4px solid #cc3333;background:#fff8f8;">
+        <h2 style="color:#cc3333;">Advertencia</h2>
+        <p>Las actas generadas por IA deben revisarse antes de enviarse. Antigravity puede malinterpretar notas ambiguas o inventar detalles que no dijiste. Lee el acta antes de enviarla — tu reputación está en juego.</p>
+    </div>
+</main>
 
-  <div class="feedback-section">
-    <h3>Te sirvio esta pildora?</h3>
-    <p>Tu feedback nos ayuda a crear mejores pildoras. 30 segundos, anonimo.</p>
-    <a href="https://forms.office.com/e/PLACEHOLDER" target="_blank" class="feedback-btn">Dar feedback (30 seg)</a>
-  </div>
-
-<div class="nav-pills"><a class="nav-pill" href="pildora_09.html"><span class="nav-label">Anterior</span>#9: Analizar datos sin programar</a></div>
-
-</div>
-
-<div class="footer">
-  PLOCAN &mdash; Pildoras de Conocimiento IA | Marzo 2026<br>
-  Canal: <a href="https://teams.microsoft.com/l/channel/19%3Adf58835faac94dbeabe4982758eb93c5%40thread.tacv2/PLOCAN-Pildoras%20de%20conocimiento?groupId=fad9ea45-688f-4515-960f-5428a84e1ada" target="_blank">PLOCAN-Pildoras de conocimiento</a><br>
-  Dudas: Canal <a href="https://teams.microsoft.com/l/channel/19%3A8e54e0e8e8a04e4d9f2c0b1a2d3e4f5g%40thread.tacv2/IA%20y%20Datos" target="_blank">IA y Datos</a> en Teams
-</div>
+<footer class="footer">
+    <strong>PLOCAN</strong> — Plataforma Oceánica de Canarias<br>
+    Píldoras de Conocimiento IA — 2026
+</footer>
 
 <script>
 function copyPrompt(btn) {
-    const box = btn.parentElement;
-    const text = box.textContent.replace('Copiar', '').replace('Copiado', '').trim();
+    const box = btn.closest('.prompt-box');
+    const text = box.textContent.replace('Copiar', '').replace(/^Prompt\s*/, '').trim();
     navigator.clipboard.writeText(text).then(() => {
-        btn.textContent = 'Copiado';
+        btn.textContent = '✓ Copiado';
         btn.classList.add('copied');
-        setTimeout(() => {
-            btn.textContent = 'Copiar';
-            btn.classList.remove('copied');
-        }, 2000);
+        setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
     });
 }
 </script>
-
-<div style="text-align:center;padding:16px 0;border-top:2px solid #004B87;margin-top:1rem;"><a href="pildora_00_landing.html" style="color:#004B87;text-decoration:none;font-size:1rem;font-weight:600;font-family:Segoe UI,sans-serif;display:inline-flex;align-items:center;gap:6px;"><span style="font-size:1.3rem;">🏠</span> Volver al Indice de Pildoras</a></div>
-<div style="text-align:center;padding:16px 0;border-top:2px solid #004B87;margin-top:1rem;"><a href="pildora_00_landing.html" style="color:#004B87;text-decoration:none;font-size:1rem;font-weight:600;font-family:Segoe UI,sans-serif;display:inline-flex;align-items:center;gap:6px;"><span style="font-size:1.3rem;">🏠</span> Volver al Indice de Pildoras</a></div>
 </body>
 </html>
