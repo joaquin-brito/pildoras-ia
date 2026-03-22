@@ -15,6 +15,77 @@
 .nav-pill .arrow{font-size:1.3rem}
 .nav-pill .nav-text{display:flex;flex-direction:column}
 .nav-pill .nav-label{font-size:0.72rem;text-transform:uppercase;color:#999;font-weight:400;letter-spacing:0.5px}
+
+/* ---------- VOTING ---------- */
+.vote-card {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fbfe 0%, #E8F4F8 100%);
+    border: 1px solid rgba(0,75,135,0.1);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+}
+.vote-card .vote-question {
+    font-size: 1.1rem;
+    color: #003459;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+.vote-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+.vote-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.8rem;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    background: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: inherit;
+    color: #555;
+}
+.vote-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.vote-btn.vote-up:hover, .vote-btn.vote-up.voted {
+    border-color: #2d9a2d;
+    background: #f0faf0;
+    color: #1e7a1e;
+}
+.vote-btn.vote-down:hover, .vote-btn.vote-down.voted {
+    border-color: #cc6633;
+    background: #fff8f0;
+    color: #994400;
+}
+.vote-btn.voted {
+    transform: scale(1.05);
+    font-weight: 600;
+}
+.vote-btn .vote-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+.vote-thanks {
+    display: none;
+    font-size: 0.95rem;
+    color: #004B87;
+    margin-top: 0.5rem;
+}
+.vote-thanks.visible {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
 </style>
 </head>
 <body>
@@ -92,6 +163,21 @@ Firma: mi nombre es [tu nombre], PLOCAN.</div>
         <h2 style="color:#cc3333;">Advertencia</h2>
         <p>NUNCA envíes un email generado por IA sin leerlo. Revisa especialmente: nombres, fechas, cifras y compromisos. La IA puede inventar detalles que suenen correctos pero no lo sean.</p>
     </div>
+
+    <!-- ============ VOTING ============ -->
+    <div class="card vote-card" id="vote-card" style="max-width:900px;margin:0 auto 1.5rem;">
+        <p class="vote-question">Te ha resultado util esta pildora?</p>
+        <div class="vote-buttons">
+            <button class="vote-btn vote-up" onclick="submitVote(4, 'up')" id="btn-up">
+                <span class="vote-icon">&#128077;</span> Me gusta
+            </button>
+            <button class="vote-btn vote-down" onclick="submitVote(4, 'down')" id="btn-down">
+                <span class="vote-icon">&#128078;</span> Mejorable
+            </button>
+        </div>
+        <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
+    </div>
+
 </main>
 
 <nav class="nav-pills"><a class="nav-pill prev" href="pildora_03.html"><span class="arrow">&lsaquo;</span><span class="nav-text"><span class="nav-label">Anterior</span>Píldora #3</span></a><a class="nav-pill next" href="pildora_05.html"><span class="nav-text"><span class="nav-label">Siguiente</span>Píldora #5</span><span class="arrow">&rsaquo;</span></a></nav>
@@ -112,6 +198,50 @@ function copyPrompt(btn) {
         setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
     });
 }
+
+
+/* --- Voting --- */
+var VOTE_ENDPOINT = '';
+var PILL_NUMBER = 4;
+
+(function initVote() {
+    var key = 'plocan_vote_' + PILL_NUMBER;
+    var prev = localStorage.getItem(key);
+    if (prev) {
+        document.getElementById('btn-' + prev).classList.add('voted');
+        var btns = document.querySelectorAll('.vote-btn');
+        for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
+        document.getElementById('vote-thanks').classList.add('visible');
+    }
+})();
+
+function submitVote(pill, vote) {
+    var key = 'plocan_vote_' + pill;
+    if (localStorage.getItem(key)) return;
+
+    localStorage.setItem(key, vote);
+
+    document.getElementById('btn-' + vote).classList.add('voted');
+    var btns = document.querySelectorAll('.vote-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
+    document.getElementById('vote-thanks').classList.add('visible');
+
+    if (VOTE_ENDPOINT) {
+        try {
+            fetch(VOTE_ENDPOINT, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    pill: pill,
+                    vote: vote,
+                    ts: new Date().toISOString()
+                })
+            });
+        } catch(e) {}
+    }
+}
+
 </script>
 </body>
 </html>
