@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Píldora #02 — Tu primer chat: 5 minutos para empezar | PLOCAN</title>
+<title>Pildora #2 &mdash; Tu primer chat: 5 minutos para empezar | PLOCAN</title>
 <style>
 :root {
     --plocan-blue: #004B87;
@@ -22,6 +22,8 @@ body {
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
+
+/* ---------- HEADER ---------- */
 .header {
     background: linear-gradient(135deg, var(--plocan-dark) 0%, var(--plocan-blue) 50%, var(--plocan-light) 100%);
     color: #fff;
@@ -64,11 +66,23 @@ body {
     content: "\23F1";
     font-size: 1rem;
 }
+
+/* ---------- HERO ---------- */
+.hero {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- CONTAINER ---------- */
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 1.5rem 1rem 3rem;
 }
+
+/* ---------- CARDS ---------- */
 .card {
     background: #fff;
     border-radius: var(--radius);
@@ -88,6 +102,8 @@ body {
     font-size: 1.1rem;
     margin: 1rem 0 0.5rem;
 }
+
+/* ---------- INTRO ---------- */
 .intro-card {
     border-left: 5px solid var(--plocan-accent);
     background: var(--plocan-soft);
@@ -100,6 +116,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
+/* ---------- HIGHLIGHT / EXAMPLE ---------- */
 .highlight {
     background: #fffbe6;
     border-left: 4px solid #f5c518;
@@ -111,6 +129,80 @@ body {
 .highlight strong {
     color: #7a6200;
 }
+
+/* ---------- ACTION CARD ---------- */
+.action-card {
+    border: 2px solid #2d9a2d;
+    background: #f0faf0;
+}
+.action-card h2 {
+    color: #1e7a1e;
+    border-bottom-color: #c5e8c5;
+}
+
+/* ---------- PATTERN CARDS ---------- */
+.pattern {
+    background: var(--plocan-soft);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+.pattern::before {
+    content: attr(data-num);
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(0,75,135,0.07);
+    line-height: 1;
+}
+.pattern h3 {
+    color: var(--plocan-blue);
+    margin-top: 0;
+}
+.pattern .example {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+}
+.pattern .bad, .pattern .good {
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+.pattern .bad {
+    background: #fff0f0;
+    border: 1px solid #ffcccc;
+}
+.pattern .bad::before {
+    content: "MAL";
+    display: block;
+    font-weight: 700;
+    color: #cc3333;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+.pattern .good {
+    background: #f0fff0;
+    border: 1px solid #ccffcc;
+}
+.pattern .good::before {
+    content: "BIEN";
+    display: block;
+    font-weight: 700;
+    color: #228B22;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+/* ---------- PROMPT BOXES ---------- */
 .prompt-box {
     position: relative;
     background: #1a1a2e;
@@ -162,46 +254,122 @@ body {
     color: #fff;
     border-color: #228B22;
 }
-.footer {
-    background: var(--plocan-dark);
-    color: rgba(255,255,255,0.75);
+
+/* ---------- GALLERY ---------- */
+.gallery {
+    margin: 1.4rem 0;
+    position: relative;
+}
+.gallery-viewport {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f0f0;
+}
+.gallery-item {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+.gallery-item.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+.gallery-caption {
     text-align: center;
-    padding: 1.5rem 1rem;
-    font-size: 0.85rem;
-    line-height: 1.8;
+    font-size: 0.88rem;
+    color: #555;
+    padding: 0.7rem 0.5rem 0.2rem;
+    font-style: italic;
+    line-height: 1.5;
 }
-.footer strong {
+.gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.6rem;
+}
+.gallery-btn {
+    background: var(--plocan-blue);
     color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    line-height: 1;
 }
-@media (max-width: 600px) {
-    .card { padding: 1.2rem 1rem; }
-    .header h1 { font-size: 1.3rem; }
+.gallery-btn:hover {
+    background: var(--plocan-light);
+}
+.gallery-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+.gallery-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.gallery-dot.active {
+    background: var(--plocan-accent);
+}
+.gallery-counter {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #999;
+    margin-top: 0.3rem;
 }
 
-.nav-pills{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem;margin-bottom:1rem}
-.nav-pill{flex:1;display:flex;align-items:center;gap:0.5rem;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem 1.2rem;text-decoration:none;color:var(--plocan-blue);font-weight:600;font-size:0.9rem;transition:box-shadow 0.2s,transform 0.2s;border:1px solid transparent}
-.nav-pill:hover{box-shadow:0 4px 18px rgba(0,75,135,0.15);transform:translateY(-2px);border-color:var(--plocan-accent)}
-.nav-pill.prev{justify-content:flex-start}
-.nav-pill.next{justify-content:flex-end;text-align:right}
-.nav-pill .arrow{font-size:1.3rem}
-.nav-pill .nav-text{display:flex;flex-direction:column}
-.nav-pill .nav-label{font-size:0.72rem;text-transform:uppercase;color:#999;font-weight:400;letter-spacing:0.5px}
-.nav-pills{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem;margin-bottom:1rem}.nav-pill{flex:1;display:flex;align-items:center;gap:0.5rem;background:#fff;border-radius:var(--radius,12px);box-shadow:0 2px 12px rgba(0,0,0,0.08);padding:1rem 1.2rem;text-decoration:none;color:#004B87;font-weight:600;font-size:0.9rem;transition:box-shadow 0.2s,transform 0.2s;border:1px solid transparent}.nav-pill:hover{box-shadow:0 4px 18px rgba(0,75,135,0.15);transform:translateY(-2px);border-color:#00B4D8}.nav-pill.prev{justify-content:flex-start}.nav-pill.next{justify-content:flex-end;text-align:right}.nav-pill .arrow{font-size:1.3rem}.nav-pill .nav-text{display:flex;flex-direction:column}.nav-pill .nav-label{font-size:0.72rem;text-transform:uppercase;color:#999;font-weight:400;letter-spacing:0.5px}
+/* ---------- RULE CARD ---------- */
+.rule-card {
+    background: linear-gradient(135deg, var(--plocan-soft) 0%, #fff 100%);
+    border: 2px solid var(--plocan-accent);
+    text-align: center;
+    padding: 2rem;
+}
+.rule-card .rule-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.rule-card blockquote {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--plocan-dark);
+    line-height: 1.6;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
 
 /* ---------- VOTING ---------- */
 .vote-card {
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(135deg, #f8fbfe 0%, #E8F4F8 100%);
+    background: linear-gradient(135deg, #f8fbfe 0%, var(--plocan-soft) 100%);
     border: 1px solid rgba(0,75,135,0.1);
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    margin-bottom: 1.5rem;
 }
 .vote-card .vote-question {
     font-size: 1.1rem;
-    color: #003459;
+    color: var(--plocan-dark);
     margin-bottom: 1.2rem;
     font-weight: 600;
 }
@@ -250,88 +418,180 @@ body {
 .vote-thanks {
     display: none;
     font-size: 0.95rem;
-    color: #004B87;
+    color: var(--plocan-blue);
     margin-top: 0.5rem;
+    animation: fadeIn 0.4s ease;
 }
 .vote-thanks.visible {
     display: block;
-    animation: fadeIn 0.4s ease;
 }
 
+/* ---------- NAV ---------- */
+.pill-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    flex-wrap: wrap;
+}
+.nav-link {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: var(--plocan-blue);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+.nav-link:hover {
+    background: var(--plocan-light);
+}
+.nav-home {
+    background: var(--plocan-dark);
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+    background: var(--plocan-dark);
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+.footer strong {
+    color: #fff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+    .card {
+        padding: 1.2rem 1rem;
+    }
+    .pattern .example {
+        grid-template-columns: 1fr;
+    }
+    .header h1 {
+        font-size: 1.3rem;
+    }
+    .gallery-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+    }
+    .pill-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 </style>
 </head>
 <body>
-<div style="text-align:center;padding:10px 0;background:#003459;"><a href="pildora_00_landing.html" style="color:#ffffff;text-decoration:none;font-size:0.95rem;font-family:Segoe UI,sans-serif;display:inline-flex;align-items:center;gap:6px;"><span style="font-size:1.3rem;">&#127968;</span> Índice de Píldoras</a></div>
 
+<!-- ============ HEADER ============ -->
 <header class="header">
-    <div class="header-badge">PLOCAN — Píldoras de Conocimiento | Nivel Básico</div>
+    <div class="header-badge">PLOCAN &mdash; Pildoras de Conocimiento | Nivel Basico</div>
     <h1>Tu primer chat: 5 minutos para empezar</h1>
     <p class="subtitle">Abre Antigravity, escribe tu primer prompt y obtén un resultado útil en menos de 5 minutos</p>
     <span class="time-badge">5 min de lectura</span>
 </header>
 
-<main class="container">
-    <div style="text-align:center;margin:1.5rem 0"><img src="assets/pildora_02_new.jpg" alt="Tu primer chat: 5 minutos para empezar" style="max-width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1)"></div>
 
+
+<main class="container">
+
+    <!-- ============ INTRO ============ -->
     <div class="card intro-card">
-        <div class="label">La idea clave</div>
+        <p class="label">La idea clave</p>
         <p>Antigravity es una herramienta de inteligencia artificial instalada en tu ordenador. Puedes hablarle en lenguaje natural — como hablas con un colega — y te ayuda con tareas de oficina: redactar, resumir, buscar, organizar, analizar datos. <strong>No necesitas saber programar. Solo necesitas saber pedir.</strong></p>
     </div>
 
-    <div class="card">
+    
+    <!-- ============ SECTION 1 ============ -->
+    <section class="card">
         <h2>Paso 1: Abre Antigravity y escribe algo sencillo</h2>
         <p>No te compliques con el primer prompt. Empieza con algo que necesites de verdad hoy.</p>
-        <div class="prompt-box">
-            <div class="prompt-label">Prompt</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Tengo que enviar un email a un colega para pedirle los datos del último informe trimestral. Redáctame un borrador breve y profesional.</div>
-        <div class="highlight"><strong>Resultado:</strong> Antigravity genera un email listo para copiar y pegar. Puedes modificarlo antes de enviarlo. Has producido algo útil en 30 segundos.</div>
-    </div>
+        
+        
+        <div class="highlight">
+            <strong>Resultado:</strong> Antigravity genera un email listo para copiar y pegar. Puedes modificarlo antes de enviarlo. Has producido algo útil en 30 segundos.
+        </div>
+        
+    </section>
 
-    <div class="card">
+    <!-- ============ SECTION 2 ============ -->
+    <section class="card">
         <h2>Paso 2: Pídele que lo ajuste</h2>
         <p>El primer resultado rara vez es perfecto. La magia está en iterar: pide cambios concretos.</p>
-        <div class="prompt-box">
-            <div class="prompt-label">Prompt</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Bien, pero hazlo más informal. Somos compañeros de trabajo. Y añade que necesito los datos antes del viernes.</div>
-        <div class="highlight"><strong>Resultado:</strong> Antigravity ajusta el tono y añade el plazo. Así aprendes que cuanto más específico seas, mejor resultado obtienes.</div>
-    </div>
+        
+        
+        <div class="highlight">
+            <strong>Resultado:</strong> Antigravity ajusta el tono y añade el plazo. Así aprendes que cuanto más específico seas, mejor resultado obtienes.
+        </div>
+        
+    </section>
 
-    <div class="card">
+    <!-- ============ SECTION 3 ============ -->
+    <section class="card">
         <h2>Paso 3: Prueba con otra tarea distinta</h2>
         <p>Antigravity no es solo para emails. Prueba algo diferente para ver su versatilidad.</p>
-        <div class="prompt-box">
-            <div class="prompt-label">Prompt</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copiar</button>Dame un resumen en 5 puntos de qué es la Plataforma Oceánica de Canarias y a qué se dedica. Escribe como para alguien que no sabe nada de oceanografía.</div>
-        <div class="highlight"><strong>Resultado:</strong> Recibes un resumen claro y estructurado. Esto funciona para cualquier tema: un proyecto, un concepto técnico, una normativa...</div>
-    </div>
+        
+        
+        <div class="highlight">
+            <strong>Resultado:</strong> Recibes un resumen claro y estructurado. Esto funciona para cualquier tema: un proyecto, un concepto técnico, una normativa...
+        </div>
+        
+    </section>
 
-    <div class="card">
+    <!-- ============ SECTION 4 ============ -->
+    <section class="card">
         <h2>Tus primeros 3 reflejos con Antigravity</h2>
         <p><strong>1. Pide algo real</strong> — No "pruebas". Usa una tarea que tengas pendiente de verdad.</p>
-        <p><strong>2. Itera sin miedo</strong> — Si el resultado no es exacto, pide cambios. "Hazlo más corto", "cambia el tono", "añade X".</p>
-        <p><strong>3. Verifica antes de usar</strong> — Si hay datos, cifras o nombres, compruébalos. La IA puede inventar.</p>
-        <div class="highlight"><strong>Consejo:</strong> El error más común al empezar: prompts demasiado vagos. "Hazme algo bonito" no funciona. "Hazme un email profesional para pedir datos del informe Q3 antes del viernes" sí funciona.</div>
-    </div>
+        
+        
+        <div class="highlight">
+            <strong>Consejo:</strong> El error más común al empezar: prompts demasiado vagos. "Hazme algo bonito" no funciona. "Hazme un email profesional para pedir datos del informe Q3 antes del viernes" sí funciona.
+        </div>
+        
+    </section>
 
-    <div class="card">
+    <!-- ============ SECTION 5 ============ -->
+    <section class="card">
         <h2>Más ejemplos para PLOCAN</h2>
-        <h3>Traducir</h3>
         <p>"Tradúceme este párrafo al inglés con tono formal para un informe EU."</p>
-        <h3>Organizar ideas</h3>
-        <p>"Tengo estas notas sueltas de una reunión. Organízamelas por temas y sácame las acciones pendientes."</p>
-        <h3>Explicar algo</h3>
-        <p>"Explícame qué es un deliverable en un proyecto europeo, como si fuera mi primer día en PLOCAN."</p>
-        <h3>Calcular</h3>
-        <p>"Si tenemos un presupuesto de 150.000 euros para 3 años y 5 partners, ¿cuánto toca por partner y año?"</p>
-    </div>
+        
+        
+        
+    </section>
 
-    <div class="card" style="border-left:4px solid #228B22;background:#f0fff4;">
-        <h2 style="color:#228B22;">Recuerda</h2>
-        <p>Antigravity funciona mejor cuanto más contexto le des. No le digas "hazme un informe". Dile "hazme un informe de seguimiento del proyecto EMSO-EVOLVE para el coordinador, con 3 secciones: avances, riesgos y próximos pasos".</p>
-    </div>
 
-    <!-- ============ VOTING ============ -->
-    <div class="card vote-card" id="vote-card" style="max-width:900px;margin:0 auto 1.5rem;">
+    
+
+    
+
+    
+    <section class="card">
+        <h2>Plantillas de Prompt</h2>
+        <p style="margin-bottom:1rem;">Copia y adapta estos prompts a tu caso concreto.</p>
+        
+        <div class="prompt-box" id="prompt1">
+            <span class="prompt-label">Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt('prompt1')">Copiar</button>Tengo que enviar un email a un colega para pedirle los datos del último informe trimestral. Redáctame un borrador breve y profesional.</div>
+
+        <div class="prompt-box" id="prompt2">
+            <span class="prompt-label">Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt('prompt2')">Copiar</button>Bien, pero hazlo más informal. Somos compañeros de trabajo. Y añade que necesito los datos antes del viernes.</div>
+
+        <div class="prompt-box" id="prompt3">
+            <span class="prompt-label">Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt('prompt3')">Copiar</button>Dame un resumen en 5 puntos de qué es la Plataforma Oceánica de Canarias y a qué se dedica. Escribe como para alguien que no sabe nada de oceanografía.</div>
+
+    </section>
+
+
+    
+    <div class="card vote-card" id="vote-card">
         <p class="vote-question">Te ha resultado util esta pildora?</p>
         <div class="vote-buttons">
             <button class="vote-btn vote-up" onclick="submitVote(2, 'up')" id="btn-up">
@@ -344,70 +604,110 @@ body {
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
 
+
 </main>
 
-<nav class="nav-pills"><a class="nav-pill prev" href="pildora_01.html"><span class="arrow">&lsaquo;</span><span class="nav-text"><span class="nav-label">Anterior</span>Píldora #1</span></a><a class="nav-pill next" href="pildora_03.html"><span class="nav-text"><span class="nav-label">Siguiente</span>Píldora #3</span><span class="arrow">&rsaquo;</span></a></nav>
-<div style="text-align:center;padding:10px 0;background:#003459;"><a href="pildora_00_landing.html" style="color:#ffffff;text-decoration:none;font-size:0.95rem;font-family:Segoe UI,sans-serif;display:inline-flex;align-items:center;gap:6px;"><span style="font-size:1.3rem;">&#127968;</span> Índice de Píldoras</a></div>
+
+    <nav class="pill-nav">
+        <a href="pildora_01.html" class="nav-link nav-prev">&laquo; Píldora #1</a>
+        <a href="pildora_00_landing.html" class="nav-link nav-home">Indice</a>
+        <a href="pildora_03.html" class="nav-link nav-next">Píldora #3 &raquo;</a>
+    </nav>
+
+
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
-    <strong>PLOCAN</strong> — Plataforma Oceánica de Canarias<br>
-    Píldoras de Conocimiento IA — 2026
+    <strong>PLOCAN &mdash; Plataforma Oceanica de Canarias</strong> | Pildoras de Conocimiento<br>
+    Dudas: Canal <strong>IA y Datos</strong> en Teams<br>
+    Generado: March 2026
 </footer>
 
-
+<!-- ============ JAVASCRIPT ============ -->
 <script>
-function copyPrompt(btn) {
-    const box = btn.closest('.prompt-box');
-    const text = box.textContent.replace('Copiar', '').replace(/^Prompt\s*/, '').trim();
-    navigator.clipboard.writeText(text).then(() => {
-        btn.textContent = '✓ Copiado';
-        btn.classList.add('copied');
-        setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
-    });
-}
+/* --- Gallery --- */
+document.querySelectorAll('.gallery').forEach(gallery => {
+    const items = gallery.querySelectorAll('.gallery-item');
+    const dots = gallery.querySelectorAll('.gallery-dot');
+    const counter = gallery.querySelector('.gallery-current');
+    const prevBtn = gallery.querySelector('.gallery-prev');
+    const nextBtn = gallery.querySelector('.gallery-next');
+    let current = 0;
 
+    function showSlide(idx) {
+        items.forEach(i => i.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        current = ((idx % items.length) + items.length) % items.length;
+        items[current].classList.add('active');
+        dots[current].classList.add('active');
+        counter.textContent = current + 1;
+    }
+
+    prevBtn.addEventListener('click', () => showSlide(current - 1));
+    nextBtn.addEventListener('click', () => showSlide(current + 1));
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index)));
+    });
+
+    /* Click on image to advance */
+    gallery.querySelector('.gallery-viewport').addEventListener('click', () => showSlide(current + 1));
+});
 
 /* --- Voting --- */
-var VOTE_ENDPOINT = '';
-var PILL_NUMBER = 2;
+const VOTE_ENDPOINT = '';
+const PILL_NUMBER = 2;
 
 (function initVote() {
-    var key = 'plocan_vote_' + PILL_NUMBER;
-    var prev = localStorage.getItem(key);
+    const key = 'plocan_vote_' + PILL_NUMBER;
+    const prev = localStorage.getItem(key);
     if (prev) {
         document.getElementById('btn-' + prev).classList.add('voted');
-        var btns = document.querySelectorAll('.vote-btn');
-        for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
+        document.querySelectorAll('.vote-btn').forEach(b => b.disabled = true);
         document.getElementById('vote-thanks').classList.add('visible');
     }
 })();
 
 function submitVote(pill, vote) {
-    var key = 'plocan_vote_' + pill;
+    const key = 'plocan_vote_' + pill;
     if (localStorage.getItem(key)) return;
 
     localStorage.setItem(key, vote);
 
     document.getElementById('btn-' + vote).classList.add('voted');
-    var btns = document.querySelectorAll('.vote-btn');
-    for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
+    document.querySelectorAll('.vote-btn').forEach(b => b.disabled = true);
     document.getElementById('vote-thanks').classList.add('visible');
 
     if (VOTE_ENDPOINT) {
-        try {
-            fetch(VOTE_ENDPOINT, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    pill: pill,
-                    vote: vote,
-                    ts: new Date().toISOString()
-                })
-            });
-        } catch(e) {}
+        fetch(VOTE_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                pill: pill,
+                vote: vote,
+                ts: new Date().toISOString(),
+                ua: navigator.userAgent.substring(0, 80)
+            })
+        }).catch(function() {});
     }
 }
 
+/* --- Copy to clipboard --- */
+function copyPrompt(id) {
+    const box = document.getElementById(id);
+    const label = box.querySelector('.prompt-label').textContent;
+    const btnText = box.querySelector('.copy-btn').textContent;
+    let cleanText = box.textContent.replace(label, '').replace(btnText, '').trim();
+
+    navigator.clipboard.writeText(cleanText).then(() => {
+        const btn = box.querySelector('.copy-btn');
+        btn.textContent = 'Copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = 'Copiar';
+            btn.classList.remove('copied');
+        }, 2000);
+    });
+}
 </script>
 </body>
 </html>
