@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>PLOCAN: Interfaz F&iacute;sico-Digital del Oc&eacute;ano</h1>
     <p class="subtitle">Sensores + IA = la capa que traduce el oc&eacute;ano en datos accionables &middot; Grupo IA + Datos</p>
-    <span class="time-badge">12 min de lectura</span>
+    <span class="time-badge">12 mín de lectura</span>
 </header>
 
 
@@ -1020,7 +1020,7 @@ body.template-technical .action-card {
 Contexto:
 - Sensor: [tipo de sensor, ej. CTD, ADCP, estaci&oacute;n meteorol&oacute;gica]
 - Variable: [qu&eacute; mide, ej. temperatura, corrientes, viento]
-- Frecuencia: [cada cu&aacute;nto mide, ej. 10 min, 1 hora]
+- Frecuencia: [cada cu&aacute;nto mide, ej. 10 mín, 1 hora]
 - Decisi&oacute;n objetivo: [qu&eacute; acci&oacute;n debe habilitar, ej. alerta operacional, input a modelo]
 
 Para cada capa de la interfaz (f&iacute;sica, digital, inteligente), describe:
@@ -1083,6 +1083,526 @@ Formato: tabla con cada test, par&aacute;metros y flag resultante.
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 35,
+  "pill_slug": "interfaz",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "El equipo de operaciones quiere decidir si aplaza una salida al banco de ensayos cuando el viento y el oleaje superen umbrales de seguridad. Ya existe una estaci&oacute;n meteorol&oacute;gica en la plataforma. &iquest;Qu&eacute; dise&ntilde;o aplica mejor la idea de PLOCAN como interfaz f&iacute;sico-digital?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Guardar las medidas en CSV y revisarlas manualmente al final del d&iacute;a antes de decidir"
+        },
+        {
+          "key": "b",
+          "text": "Mostrar los valores brutos en una pantalla local sin control de calidad ni alertas"
+        },
+        {
+          "key": "c",
+          "text": "Capturar datos cada pocos minutos, validarlos autom&aacute;ticamente, compararlos con umbrales operativos y avisar a operaciones cuando haya riesgo"
+        },
+        {
+          "key": "d",
+          "text": "Esperar a que una persona del turno llame por radio cuando perciba mal tiempo"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La interfaz no es solo medir: convierte una se&ntilde;al f&iacute;sica en una decisi&oacute;n operativa utilizable. La capa digital asegura calidad y la capa inteligente reduce la latencia entre medici&oacute;n y acci&oacute;n.",
+      "feedback_ko": "Las otras opciones dejan el dato demasiado crudo o demasiado tarde para actuar bien. PLOCAN aporta valor cuando la cadena completa traduce el fen&oacute;meno en una se&ntilde;al accionable, no cuando solo acumula lecturas."
+    },
+    {
+      "id": "p_q02",
+      "situation": "Una sonda CTD fija empieza a reportar una ca&iacute;da brusca de salinidad, de 36 a 12, en diez minutos y sin lluvia ni descarga cercana. &iquest;Qu&eacute; deber&iacute;a hacer primero la capa digital antes de escalar una alerta cient&iacute;fica?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Publicar el valor directamente como evento extremo para no perder rapidez"
+        },
+        {
+          "key": "b",
+          "text": "Aplicar tests de rango y gradiente, revisar consistencia con sensores cercanos o modelo, y marcar el dato con flag si parece improbable"
+        },
+        {
+          "key": "c",
+          "text": "Eliminar todo el d&iacute;a de datos para evitar confusi&oacute;n en los gr&aacute;ficos"
+        },
+        {
+          "key": "d",
+          "text": "Esperar a la pr&oacute;xima campa&ntilde;a de calibraci&oacute;n antes de hacer cualquier comprobaci&oacute;n"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Antes de interpretar, la interfaz debe comprobar si el dato es f&iacute;sicamente veros&iacute;mil y coherente con su contexto. Eso evita convertir un fallo de sensor en una falsa se&ntilde;al oceanogr&aacute;fica.",
+      "feedback_ko": "Alertar sin validar o borrar datos sin diagn&oacute;stico rompe la funci&oacute;n de traducci&oacute;n fiable. La primera acci&oacute;n correcta es control de calidad autom&aacute;tico con contexto, no una reacci&oacute;n ciega."
+    },
+    {
+      "id": "p_q03",
+      "situation": "PLOCAN quiere compartir datos de una boya con una red europea para que terceros los reutilicen sin pedir aclaraciones por correo. &iquest;Qu&eacute; acci&oacute;n es m&aacute;s importante en la capa digital?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Convertir las series a una imagen PNG para que se vean mejor"
+        },
+        {
+          "key": "b",
+          "text": "A&ntilde;adir metadatos completos, unidades, localizaci&oacute;n, flags de calidad y formato interoperable"
+        },
+        {
+          "key": "c",
+          "text": "Enviar un PDF mensual con una explicaci&oacute;n narrativa de los resultados"
+        },
+        {
+          "key": "d",
+          "text": "Guardar una copia en un disco local por si alguien la pide m&aacute;s adelante"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Sin metadatos y est&aacute;ndares, el dato existe pero no se puede reutilizar con confianza. La interfaz digital debe hacer que el dato sea interpretable por otras plataformas y equipos sin mediaci&oacute;n manual.",
+      "feedback_ko": "Una imagen o un PDF ayudan a comunicar, pero no resuelven interoperabilidad. Para que el oc&eacute;ano sea observable por otros sistemas, el dato tiene que viajar con significado, trazabilidad y calidad asociada."
+    },
+    {
+      "id": "p_q04",
+      "situation": "Un planeador recoge datos &uacute;tiles para detectar un bloom y hoy solo se descargan por USB al final de la misi&oacute;n, dos d&iacute;as despu&eacute;s. Si el objetivo es apoyar decisiones operativas, &iquest;qu&eacute; redise&ntilde;o es m&aacute;s adecuado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mantener la descarga final y pedir al equipo que revise m&aacute;s r&aacute;pido cuando vuelva el veh&iacute;culo"
+        },
+        {
+          "key": "b",
+          "text": "Transmitir res&uacute;menes o variables clave durante la misi&oacute;n, con control de calidad b&aacute;sico y alertas en casi tiempo real"
+        },
+        {
+          "key": "c",
+          "text": "Esperar al informe cient&iacute;fico mensual para confirmar si el bloom existí&oacute;"
+        },
+        {
+          "key": "d",
+          "text": "Publicar una infograf&iacute;a al terminar la campa&ntilde;a para mejorar la divulgaci&oacute;n"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Si la decisi&oacute;n depende del momento, la latencia es parte central del dise&ntilde;o de interfaz. No hace falta transmitir todo; basta con enviar lo necesario para actuar mientras el fen&oacute;meno sigue ocurriendo.",
+      "feedback_ko": "Las otras opciones aceptan una latencia incompatible con una respuesta operativa. Una interfaz &uacute;til no solo mide bien, tambi&eacute;n entrega la informaci&oacute;n a tiempo para decidir."
+    },
+    {
+      "id": "p_q05",
+      "situation": "En una reuní&oacute;n se propone comprar m&aacute;s sensores porque &laquo;cuantos m&aacute;s datos, mejor&raquo;. Sin embargo, los datos actuales ya tardan horas en limpiarse y casi no alimentan decisiones. &iquest;Qu&eacute; deber&iacute;a priorizarse primero?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aumentar el n&uacute;mero de sensores aunque el flujo siga igual"
+        },
+        {
+          "key": "b",
+          "text": "Mejorar la cadena de control de calidad, metadatos, integraci&oacute;n y alertas para que los datos existentes se vuelvan accionables"
+        },
+        {
+          "key": "c",
+          "text": "Pedir que cada equipo genere m&aacute;s informes manuales para aprovechar lo ya medido"
+        },
+        {
+          "key": "d",
+          "text": "Esperar a tener presupuesto para renovar toda la infraestructura a la vez"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La p&iacute;ldora insiste en que el problema no es solo medir, sino traducir. Si la interfaz falla, a&ntilde;adir sensores aumenta el volumen del problema, no el valor generado.",
+      "feedback_ko": "M&aacute;s sensores no compensan una cadena d&eacute;bil de procesamiento y uso. Antes de ampliar la captaci&oacute;n, conviene asegurar que la informaci&oacute;n existente ya puede convertirse en decisiones con baja latencia y calidad suficiente."
+    },
+    {
+      "id": "p_q06",
+      "situation": "Una cadena de datos funciona as&iacute;: el sensor registra valores, una persona exporta un Excel semanal, renombra el archivo con la fecha y lo guarda en una carpeta compartida. No hay flags ni metadatos est&aacute;ndar. Seg&uacute;n la escala de madurez propuesta en la p&iacute;ldora, &iquest;cu&aacute;l es el diagn&oacute;stico m&aacute;s correcto?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Nivel 1: dato casi crudo, dependiente de manipulaci&oacute;n manual y sin capa digital robusta"
+        },
+        {
+          "key": "b",
+          "text": "Nivel 3: ya existe almacenamiento estructurado y control de calidad autom&aacute;tico"
+        },
+        {
+          "key": "c",
+          "text": "Nivel 4: el flujo ya est&aacute; integrado en alertas predictivas"
+        },
+        {
+          "key": "d",
+          "text": "Nivel 5: alimenta un gemelo digital con retroalimentaci&oacute;n en tiempo real"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Aqu&iacute; todav&iacute;a domina la captura manual y falta la base de una interfaz digital fiable. Antes de pensar en IA avanzada, hay que estructurar, documentar y validar el flujo.",
+      "feedback_ko": "Los niveles altos exigen automatizaci&oacute;n, metadatos, control de calidad e integraci&oacute;n operativa. Un Excel semanal renombrado a mano no cumple esos requisitos, aunque el sensor mida correctamente."
+    },
+    {
+      "id": "p_q07",
+      "situation": "Un ADCP se quiere usar para apoyar maniobras y planificaci&oacute;n de ensayos marinos. El equipo duda entre subir una imagen diaria de corrientes o publicar una serie temporal estructurada. &iquest;Qu&eacute; opci&oacute;n sirve mejor a la idea de interfaz?",
+      "options": [
+        {
+          "key": "a",
+          "text": "La imagen diaria, porque resume y ocupa menos espacio"
+        },
+        {
+          "key": "b",
+          "text": "La serie estructurada con tiempo, profundidad, unidades y flags, para que otros sistemas puedan consultar y procesar el dato"
+        },
+        {
+          "key": "c",
+          "text": "Ninguna, porque los datos de corrientes solo valen al final de la campa&ntilde;a"
+        },
+        {
+          "key": "d",
+          "text": "Un correo semanal con capturas de pantalla comentadas por el equipo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Una imagen comunica, pero no habilita procesamiento autom&aacute;tico ni integraci&oacute;n con modelos o alertas. La interfaz digital necesita datos estructurados para que la capa inteligente pueda operar sobre ellos.",
+      "feedback_ko": "Las opciones basadas en imagen o correo convierten el dato en algo legible por personas, no por sistemas. Si el objetivo es apoyar decisiones recurrentes, hace falta una salida reutilizable y consultable autom&aacute;ticamente."
+    },
+    {
+      "id": "p_q08",
+      "situation": "Un sensor de ox&iacute;geno muestra una tendencia descendente durante varias horas. Antes de activar una alerta operativa, &iquest;qu&eacute; combinaci&oacute;n representa mejor una capa inteligente bien dise&ntilde;ada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Enviar siempre una alerta al primer valor bajo, sin m&aacute;s contexto"
+        },
+        {
+          "key": "b",
+          "text": "Cruzar la tendencia con hist&oacute;rico, revisar sensores cercanos o variables asociadas y acompa&ntilde;ar la alerta con nivel de confianza"
+        },
+        {
+          "key": "c",
+          "text": "Esperar a que una persona revise manualmente toda la serie antes de cualquier aviso"
+        },
+        {
+          "key": "d",
+          "text": "Subir el umbral de alerta para que casi nunca salte"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La capa inteligente no sustituye el criterio, pero lo prepara con contexto y probabilidad de acierto mayor. As&iacute; reduce falsas alarmas sin esconder eventos reales.",
+      "feedback_ko": "Alertar sin contexto genera ruido; esperar siempre a revisi&oacute;n manual introduce demasiada latencia. Subir umbrales para evitar avisos no es inteligencia, es perder sensibilidad sin entender el fen&oacute;meno."
+    },
+    {
+      "id": "p_q09",
+      "situation": "Se cae la telemetr&iacute;a de una boya durante 18 horas, pero el equipo sabe que la memoria interna sigue registrando datos. Cuando vuelva la conexi&oacute;n, &iquest;qu&eacute; comportamiento deber&iacute;a tener la capa digital?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Descartar el periodo perdido para no mezclar datos antiguos con nuevos"
+        },
+        {
+          "key": "b",
+          "text": "Subir solo el &uacute;ltimo dato disponible y omitir el resto para recuperar rapidez"
+        },
+        {
+          "key": "c",
+          "text": "Sincronizar el bloque pendiente con sus marcas temporales reales, aplicar control de calidad y dejar trazabilidad del hueco de comunicaci&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Reemplazar las mediciones faltantes por una media hist&oacute;rica sin indicarlo"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La funci&oacute;n de interfaz tambi&eacute;n incluye recuperar y contextualizar datos cuando hay fallos de comunicaci&oacute;n. Mantener la trazabilidad evita interpretaciones err&oacute;neas y conserva valor cient&iacute;fico y operativo.",
+      "feedback_ko": "Descartar, resumir en exceso o rellenar sin marcar destruye informaci&oacute;n clave. Una buena interfaz gestiona incidencias sin ocultar lo ocurrido y preserva el tiempo real del fen&oacute;meno medido."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Un socio pregunta por qu&eacute; PLOCAN no deber&iacute;a verse solo como una colecci&oacute;n de sensores en el mar. &iquest;Qu&eacute; respuesta aplica mejor lo explicado en la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Porque tener sensores en el mar ya es suficiente para liderar la observaci&oacute;n oce&aacute;nica"
+        },
+        {
+          "key": "b",
+          "text": "Porque su valor est&aacute; en traducir fen&oacute;menos f&iacute;sicos a informaci&oacute;n procesable mediante captura, estandarizaci&oacute;n, control de calidad e inteligencia"
+        },
+        {
+          "key": "c",
+          "text": "Porque el hardware marino siempre es m&aacute;s importante que el software asociado"
+        },
+        {
+          "key": "d",
+          "text": "Porque cuantos m&aacute;s sensores se despliegan, menos falta hace interpretar los datos"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La p&iacute;ldora define a PLOCAN como una interfaz, no como un inventario de dispositivos. El valor aparece cuando esa infraestructura consigue traducir el oc&eacute;ano en se&ntilde;ales &uacute;tiles para ciencia y operaci&oacute;n.",
+      "feedback_ko": "Las otras respuestas confunden volumen de hardware con capacidad real de observaci&oacute;n. Sin traducci&oacute;n digital e inteligente, los sensores por s&iacute; solos no convierten el oc&eacute;ano en un sistema accionable."
+    },
+    {
+      "id": "p_q11",
+      "situation": "Varias plataformas miden variables distintas alrededor de Canarias, pero cada una guarda sus datos en silos y nadie dispara acciones cruzadas. Si se quiere avanzar hacia un &laquo;sistema nervioso del oc&eacute;ano&raquo;, &iquest;qu&eacute; paso es m&aacute;s coherente?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mantener cada sistema aislado y coordinarse solo en reuniones trimestrales"
+        },
+        {
+          "key": "b",
+          "text": "Conectar flujos con est&aacute;ndares comunes, eventos compartidos y capacidad de activar modelos o alertas entre plataformas"
+        },
+        {
+          "key": "c",
+          "text": "Centrarse solo en dise&ntilde;ar mejores presentaciones para los resultados"
+        },
+        {
+          "key": "d",
+          "text": "Limitar el acceso a los datos para evitar que otros sistemas los reutilicen"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Un sistema nervioso no es una suma de terminales aislados, sino una red que siente, transmite y reacciona. La interoperabilidad entre plataformas convierte mediciones dispersas en capacidad colectiva de observaci&oacute;n.",
+      "feedback_ko": "Las reuniones y las presentaciones ayudan a coordinar personas, pero no crean una red observable en tiempo casi real. El salto est&aacute; en conectar sistemas para que compartan se&ntilde;ales y activen respuestas entre s&iacute;."
+    },
+    {
+      "id": "p_q12",
+      "situation": "La direcci&oacute;n pide un piloto de 6 meses para demostrar valor de la interfaz f&iacute;sico-digital en un caso operativo. &iquest;Qu&eacute; KPI principal elegir&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "N&uacute;mero de diapositivas generadas para explicar el proyecto"
+        },
+        {
+          "key": "b",
+          "text": "Tiempo medio desde la medici&oacute;n hasta la decisi&oacute;n operativa, junto con porcentaje de alertas v&aacute;lidas"
+        },
+        {
+          "key": "c",
+          "text": "Cantidad de carpetas creadas para guardar los datos"
+        },
+        {
+          "key": "d",
+          "text": "N&uacute;mero de reuniones del equipo t&eacute;cnico por mes"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Ese KPI mide justo lo que la interfaz pretende mejorar: transformar se&ntilde;ales del entorno en acciones fiables y r&aacute;pidas. Adem&aacute;s combina velocidad y calidad, que son las dos caras del problema.",
+      "feedback_ko": "Los otros indicadores hablan de actividad o documentaci&oacute;n, no de capacidad real de traducci&oacute;n. Si el piloto no reduce latencia ni mejora la validez de las alertas, no est&aacute; demostrando impacto operativo."
+    },
+    {
+      "id": "p_q13",
+      "situation": "El equipo de modelado pide datos de temperatura superficial para alimentar un modelo costero. Hoy los recibe por correo en tablas copiadas manualmente desde una hoja de c&aacute;lculo. &iquest;Qu&eacute; cambio aplica mejor la l&oacute;gica de interfaz?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Seguir enviando tablas por correo pero con mejor formato visual"
+        },
+        {
+          "key": "b",
+          "text": "Entregar un flujo autom&aacute;tico con formato est&aacute;ndar, timestamps consistentes, flags y acceso program&aacute;tico para el modelo"
+        },
+        {
+          "key": "c",
+          "text": "Pedir al equipo de modelado que copie los datos directamente desde la pantalla de monitorizaci&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Esperar al cierre mensual para enviar una versi&oacute;n ya revisada en PDF"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Un modelo no necesita correos bonitos, necesita datos fiables y consumibles por m&aacute;quina. La interfaz digital existe precisamente para que la informaci&oacute;n pase de la observaci&oacute;n al uso anal&iacute;tico sin fricci&oacute;n manual.",
+      "feedback_ko": "Correo, pantalla o PDF mantienen a una persona como traductora intermedia. Eso aumenta latencia y riesgo de error, justo lo contrario de una interfaz bien dise&ntilde;ada."
+    },
+    {
+      "id": "p_q14",
+      "situation": "Durante una campa&ntilde;a, un rol de coordinaci&oacute;n recibe demasiadas alertas y termina ignorando algunas. &iquest;Qu&eacute; mejora concreta aplicar&iacute;as en la capa inteligente para mantener utilidad sin saturaci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Desactivar todas las alertas y revisar al final del turno"
+        },
+        {
+          "key": "b",
+          "text": "A&ntilde;adir priorizaci&oacute;n por severidad, contexto operativo y agrupaci&oacute;n de eventos relacionados"
+        },
+        {
+          "key": "c",
+          "text": "Enviar la misma alerta por m&aacute;s canales para asegurar que siempre llegue"
+        },
+        {
+          "key": "d",
+          "text": "Bajar la frecuencia de muestreo del sensor aunque se pierda resoluci&oacute;n relevante"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. No basta con detectar: hay que entregar la se&ntilde;al con una carga cognitiva asumible para quien decide. Priorizar y agrupar convierte un flujo ruidoso en una ayuda real a la operaci&oacute;n.",
+      "feedback_ko": "Apagar alertas o multiplicarlas por m&aacute;s canales no resuelve el problema de fondo. La mejora correcta es elevar la calidad sem&aacute;ntica de cada aviso para que el equipo atienda lo importante primero."
+    },
+    {
+      "id": "p_q15",
+      "situation": "Se plantea un piloto para mantenimiento predictivo de un sensor de corrientes porque las derivas suelen detectarse tarde. &iquest;Qu&eacute; dise&ntilde;o encaja mejor con la visi&oacute;n de la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Esperar a la revisi&oacute;n anual y corregir si el error ya es evidente"
+        },
+        {
+          "key": "b",
+          "text": "Usar hist&oacute;rico, patrones de deriva, comparaci&oacute;n con referencias y generar una recomendaci&oacute;n de intervenci&oacute;n antes del fallo"
+        },
+        {
+          "key": "c",
+          "text": "Sustituir el sensor cada mes, aunque no haya indicios de problema"
+        },
+        {
+          "key": "d",
+          "text": "Pedir a cada turno que anote impresiones subjetivas sobre si el sensor parece fiable"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Aqu&iacute; la capa inteligente usa datos para anticipar una p&eacute;rdida de calidad antes de que afecte a la operaci&oacute;n. Es una aplicaci&oacute;n clara de traducir observaci&oacute;n en acci&oacute;n preventiva.",
+      "feedback_ko": "Reaccionar tarde, cambiar por calendario o depender de impresiones subjetivas desaprovecha el valor de la interfaz. La idea central es usar la se&ntilde;al digital para intervenir antes de que el fallo se convierta en problema operativo."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

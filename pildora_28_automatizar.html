@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Automatizar lo Invisible: Las Tareas que se Hacen Solas</h1>
     <p class="subtitle">Material para el grupo IA + Datos</p>
-    <span class="time-badge">12 min de lectura</span>
+    <span class="time-badge">12 mín de lectura</span>
 </header>
 
 
@@ -1012,7 +1012,7 @@ Cada [D&Iacute;A/SEMANA/MES], genera un digest con esta estructura:
 3. Convocatorias abiertas con plazo &gt; [N] d&iacute;as en [TEMAS CLAVE]
 4. Datos destacados de [SENSORES/INDICADORES/M&Eacute;TRICAS]
 
-Criterios de relevancia: Solo incluir informaci&oacute;n directamente relacionada con [TEMAS DE INTER&Eacute;S]. Si no hay novedades en una secci&oacute;n, indicar "Sin novedades" en lugar de rellenar con contenido gen&eacute;rico.
+Criterios de relevancia: Solo incluir informaci&oacute;n directamente relacionada con [TEMAS DE ÍNTER&Eacute;S]. Si no hay novedades en una secci&oacute;n, indicar "Sin novedades" en lugar de rellenar con contenido gen&eacute;rico.
 
 Formato: Breve, con vi&ntilde;etas, sin introducciones innecesarias. Incluir enlaces a las fuentes originales.
             </div>
@@ -1041,15 +1041,15 @@ Convocatoria a evaluar:
 [PEGAR TEXTO O ENLACE DE LA CONVOCATORIA]
             </div>
             <div class="prompt-box" id="prompt3">
-                <span class="prompt-label">Prompt 3 &mdash; Resumen autom&aacute;tico post-reuni&oacute;n</span>
-                <button class="copy-btn" onclick="copyPrompt('prompt3')">Copiar</button>A partir de la siguiente transcripci&oacute;n de reuni&oacute;n, genera un resumen estructurado:
+                <span class="prompt-label">Prompt 3 &mdash; Resumen autom&aacute;tico post-reuní&oacute;n</span>
+                <button class="copy-btn" onclick="copyPrompt('prompt3')">Copiar</button>A partir de la siguiente transcripci&oacute;n de reuní&oacute;n, genera un resumen estructurado:
 
 1. **Asistentes**: Lista de participantes mencionados
-2. **Contexto**: De qu&eacute; trata la reuni&oacute;n (1-2 l&iacute;neas)
+2. **Contexto**: De qu&eacute; trata la reuní&oacute;n (1-2 l&iacute;neas)
 3. **Decisiones tomadas**: Lista numerada. Solo decisiones expl&iacute;citas, no suposiciones.
 4. **Acciones asignadas**: Tabla con columnas [Acci&oacute;n | Responsable | Plazo]
 5. **Temas pendientes**: Asuntos que se mencionaron pero no se resolvieron
-6. **Pr&oacute;ximos pasos**: Qu&eacute; pasa despu&eacute;s de esta reuni&oacute;n
+6. **Pr&oacute;ximos pasos**: Qu&eacute; pasa despu&eacute;s de esta reuní&oacute;n
 
 Reglas:
 - NO a&ntilde;adir informaci&oacute;n que no est&eacute; en la transcripci&oacute;n
@@ -1074,6 +1074,526 @@ Transcripci&oacute;n:
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 28,
+  "pill_slug": "automatizar",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "Cada lunes, el equipo de vigilancia prepara a mano un digest sobre convocatorias de econom&iacute;a azul: revisa portales, RSS y correos, resume los hallazgos y los comparte por Teams. La estructura casi nunca cambia. &iquest;Qu&eacute; automatizaci&oacute;n encaja mejor con la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Crear un dashboard para que el equipo entre manualmente cada lunes y revise si hay novedades"
+        },
+        {
+          "key": "b",
+          "text": "Pedir a cada &aacute;rea que env&iacute;e su propio resumen por correo antes del lunes"
+        },
+        {
+          "key": "c",
+          "text": "Programar un digest peri&oacute;dico con fuentes definidas, criterios de relevancia y la regla de escribir &laquo;Sin novedades&raquo; cuando no aplique"
+        },
+        {
+          "key": "d",
+          "text": "Usar IA solo para reescribir m&aacute;s r&aacute;pido el texto final antes de enviarlo"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Es una tarea peri&oacute;dica, repetitiva y con estructura estable, as&iacute; que conviene automatizar el flujo completo y no solo la redacci&oacute;n final. Adem&aacute;s, fijar criterios de relevancia y permitir &laquo;Sin novedades&raquo; evita ruido y mantiene la utilidad del digest.",
+      "feedback_ko": "Las otras opciones mantienen trabajo manual en el centro del proceso o solo aceleran una parte peque&ntilde;a. La p&iacute;ldora propone dise&ntilde;ar automatizaciones invisibles que funcionen solas y solo llamen la atenci&oacute;n cuando realmente importa."
+    },
+    {
+      "id": "p_q02",
+      "situation": "Tras cada reuní&oacute;n de coordinaci&oacute;n operativa, el equipo pierde tiempo redactando un resumen con decisiones y tareas. Ahora ya existe una transcripci&oacute;n autom&aacute;tica al terminar la llamada. &iquest;Qu&eacute; disparador usar&iacute;as para automatizar el siguiente paso?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un disparador por evento: cuando se guarde la transcripci&oacute;n, generar un resumen estructurado con decisiones, acciones y temas pendientes"
+        },
+        {
+          "key": "b",
+          "text": "Un disparador peri&oacute;dico: cada viernes revisar todas las transcripciones de la semana"
+        },
+        {
+          "key": "c",
+          "text": "Un disparador manual: que quien coordina copie y pegue la transcripci&oacute;n cuando tenga tiempo"
+        },
+        {
+          "key": "d",
+          "text": "Ning&uacute;n disparador: es mejor esperar a que alguien pida el resumen"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Si la transcripci&oacute;n ya existe al cerrar la reuní&oacute;n, el mejor momento para actuar es ese mismo evento. As&iacute; el resumen nace cuando aparece la informaci&oacute;n y no se convierte en otra tarea invisible pendiente.",
+      "feedback_ko": "Revisar en lote al final de la semana o depender de una acci&oacute;n manual reintroduce latencia y olvido. La idea clave es elegir el disparador natural del proceso y conectar la automatizaci&oacute;n justo ah&iacute;."
+    },
+    {
+      "id": "p_q03",
+      "situation": "El &aacute;rea de observaci&oacute;n marina quiere vigilar una desviaci&oacute;n brusca en una serie de salinidad. Cuando el valor se salga de rango, alguien debe revisar el contexto antes de escalar la incidencia. &iquest;Qu&eacute; dise&ntilde;o aplicar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Esperar al informe mensual para revisar si hubo anomal&iacute;as"
+        },
+        {
+          "key": "b",
+          "text": "Enviar cada d&iacute;a un resumen completo de todos los datos, aunque no haya cambios"
+        },
+        {
+          "key": "c",
+          "text": "Publicar autom&aacute;ticamente un aviso externo cada vez que cambie cualquier lectura"
+        },
+        {
+          "key": "d",
+          "text": "Configurar una automatizaci&oacute;n por umbral que detecte la desviaci&oacute;n, a&ntilde;ada contexto hist&oacute;rico y avise solo al rol que debe validar"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Correcto. Aqu&iacute; el disparador no es una fecha ni un documento nuevo, sino una condici&oacute;n medible que supera un umbral. A&ntilde;adir contexto y dirigir la alerta al rol adecuado reduce revisiones innecesarias y mejora la respuesta.",
+      "feedback_ko": "Las otras opciones o bien llegan tarde, o bien generan demasiado ruido, o bien escalan sin validaci&oacute;n. La p&iacute;ldora insiste en que la automatizaci&oacute;n debe activarse cuando importa y con la informaci&oacute;n justa para decidir."
+    },
+    {
+      "id": "p_q04",
+      "situation": "PLOCAN quiere lanzar un piloto de automatizaci&oacute;n r&aacute;pido y con alto impacto. Sobre la mesa hay cuatro tareas distintas. &iquest;Cu&aacute;l escoger&iacute;as primero?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Negociar la estrategia de una alianza internacional singular con muchos matices pol&iacute;ticos"
+        },
+        {
+          "key": "b",
+          "text": "Preparar cada semana un resumen del buz&oacute;n compartido de proyectos con asuntos repetitivos y formato fijo"
+        },
+        {
+          "key": "c",
+          "text": "Redactar desde cero el enfoque de un nuevo programa de investigaci&oacute;n a tres a&ntilde;os"
+        },
+        {
+          "key": "d",
+          "text": "Responder una consulta jur&iacute;dica excepcional con varias interpretaciones posibles"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La mejor primera candidata es frecuente, estructurada y con baja ambig&uuml;edad, justo el tipo de trabajo invisible que drena tiempo cada semana. Eso permite aprender r&aacute;pido, medir impacto y reducir riesgo en el piloto.",
+      "feedback_ko": "Las dem&aacute;s opciones requieren m&aacute;s juicio experto, aparecen con menos frecuencia o tienen m&aacute;s riesgo si se automatizan mal. La p&iacute;ldora recomienda empezar por tareas repetitivas y bien delimitadas antes de ir a casos complejos."
+    },
+    {
+      "id": "p_q05",
+      "situation": "Un digest autom&aacute;tico de noticias marinas est&aacute; funcionando, pero cuando no hay novedades relevantes rellena el correo con contenido tangencial para &laquo;que no quede vac&iacute;o&raquo;. &iquest;Qu&eacute; ajuste har&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aumentar la longitud del resumen para que parezca m&aacute;s completo"
+        },
+        {
+          "key": "b",
+          "text": "Mezclar noticias de cualquier sector para mantener el volumen del correo"
+        },
+        {
+          "key": "c",
+          "text": "Reforzar en el prompt los criterios de relevancia y ordenar que escriba &laquo;Sin novedades&raquo; cuando no haya contenido &uacute;til"
+        },
+        {
+          "key": "d",
+          "text": "Pedir al equipo que a&ntilde;ada manualmente una noticia extra antes de enviar"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. Una automatizaci&oacute;n &uacute;til no rellena huecos con ruido: filtra y calla cuando no hay nada que aportar. Ese detalle del prompt mejora la confianza en el sistema y evita fatiga de lectura.",
+      "feedback_ko": "Las otras opciones maquillan el problema en lugar de resolverlo. La p&iacute;ldora deja claro que la automatizaci&oacute;n debe entregar valor real, no producir actividad aparente para justificar su existencia."
+    },
+    {
+      "id": "p_q06",
+      "situation": "El equipo va a usar IA para filtrar convocatorias y decidir si encajan con PLOCAN. &iquest;Qu&eacute; elemento no deber&iacute;a faltar en el prompt para que el filtrado sea aplicable de verdad?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir un resumen muy creativo de cada convocatoria"
+        },
+        {
+          "key": "b",
+          "text": "Definir el perfil de la organizaci&oacute;n, las capacidades, los tipos de socios, el rango presupuestario y los criterios que deben cumplirse"
+        },
+        {
+          "key": "c",
+          "text": "Solicitar que siempre marque al menos una convocatoria como relevante"
+        },
+        {
+          "key": "d",
+          "text": "Limitar la respuesta a una sola frase sin justificar la decisi&oacute;n"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Para aplicar el filtro, la IA necesita contexto operativo real sobre la organizaci&oacute;n y reglas claras de decisi&oacute;n. Sin ese marco, solo produce opiniones gen&eacute;ricas y poco accionables.",
+      "feedback_ko": "Ser breve o sonar convincente no sustituye a un criterio bien definido. La p&iacute;ldora muestra que una buena automatizaci&oacute;n depende tanto del disparador como de instrucciones precisas y vinculadas al trabajo real."
+    },
+    {
+      "id": "p_q07",
+      "situation": "Cuando se deposita una nueva publicaci&oacute;n en el repositorio interno, comunicaci&oacute;n necesita una nota breve para web y el equipo de proyectos quiere registrar el hito. Hoy todo eso se hace por correo. &iquest;Qu&eacute; automatizaci&oacute;n aplicar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usar un disparador por evento para que el alta en el repositorio genere un borrador de nota, extraiga metadatos y avise a los roles que deben revisar"
+        },
+        {
+          "key": "b",
+          "text": "Esperar al cierre de trimestre para revisar manualmente todas las publicaciones"
+        },
+        {
+          "key": "c",
+          "text": "Pedir a quien suba la publicaci&oacute;n que env&iacute;e dos correos distintos con la misma informaci&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Generar solo un PDF con la referencia bibliogr&aacute;fica y guardarlo en una carpeta"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. El alta en el repositorio es el evento natural que debe disparar el resto del flujo. As&iacute; una sola acci&oacute;n origina varias salidas &uacute;tiles sin depender de recordatorios posteriores.",
+      "feedback_ko": "Las otras opciones mantienen el modelo de empujar informaci&oacute;n manualmente o a&ntilde;aden pasos sin valor. La p&iacute;ldora defiende que la mejor automatizaci&oacute;n es la que conecta tareas invisibles y las hace desaparecer del radar diario."
+    },
+    {
+      "id": "p_q08",
+      "situation": "El &aacute;rea de compras descubre demasiado tarde varios contratos que vencen en menos de 30 d&iacute;as. El dato ya existe en una hoja de control, pero nadie lo mira a tiempo. &iquest;Qu&eacute; har&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Enviar todos los d&iacute;as la hoja completa a todo el equipo por correo"
+        },
+        {
+          "key": "b",
+          "text": "Revisar manualmente la hoja el primer lunes de cada mes"
+        },
+        {
+          "key": "c",
+          "text": "Esperar a que cada responsable recuerde su fecha y avise"
+        },
+        {
+          "key": "d",
+          "text": "Configurar una alerta por umbral de d&iacute;as restantes que avise al rol adecuado con contrato, fecha y siguiente acci&oacute;n sugerida"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Exacto. El problema no es la falta de datos, sino la falta de atenci&oacute;n en el momento cr&iacute;tico. Una alerta por umbral convierte una revisi&oacute;n rutinaria en una intervenci&oacute;n puntual, mucho m&aacute;s fiable y eficiente.",
+      "feedback_ko": "Repartir hojas o revisar por calendario sigue dejando la carga de vigilancia en las personas. La p&iacute;ldora propone que la automatizaci&oacute;n observe por ti y solo interrumpa cuando hay un motivo claro para actuar."
+    },
+    {
+      "id": "p_q09",
+      "situation": "En una transcripci&oacute;n de reuní&oacute;n aparece la frase: &laquo;Hay que revisar el presupuesto la semana que viene&raquo;, pero no se indica qui&eacute;n lo har&aacute; ni la fecha exacta. &iquest;Qu&eacute; deber&iacute;a hacer el resumen autom&aacute;tico?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Asignar la tarea al rol de coordinaci&oacute;n para no dejar huecos"
+        },
+        {
+          "key": "b",
+          "text": "Inventar un plazo razonable y cerrar la tabla de acciones"
+        },
+        {
+          "key": "c",
+          "text": "Marcar el punto como &laquo;[VERIFICAR]&raquo; en lugar de suponer responsable o plazo"
+        },
+        {
+          "key": "d",
+          "text": "Eliminar esa l&iacute;nea del resumen para evitar ambig&uuml;edad"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La automatizaci&oacute;n debe ser &uacute;til, pero no inventar datos que no est&aacute;n en la fuente. Marcar &laquo;[VERIFICAR]&raquo; conserva el valor del resumen y deja claro d&oacute;nde hace falta intervenci&oacute;n humana.",
+      "feedback_ko": "Asignar o inferir informaci&oacute;n no confirmada puede crear errores operativos y mala trazabilidad. La p&iacute;ldora subraya que un buen prompt tambi&eacute;n define l&iacute;mites: resumir lo expl&iacute;cito y se&ntilde;alar lo incierto."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Un compa&ntilde;ero propone este prompt para convocatorias: &laquo;Resume estas 20 convocatorias y dime cu&aacute;les interesan&raquo;. Luego se queja de que la salida es vaga y poco &uacute;til. &iquest;Qu&eacute; falla principal ves?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que el prompt deber&iacute;a pedir respuestas m&aacute;s largas"
+        },
+        {
+          "key": "b",
+          "text": "Que faltan el perfil de PLOCAN y criterios concretos de elegibilidad, plazo, capacidad y presupuesto"
+        },
+        {
+          "key": "c",
+          "text": "Que deber&iacute;a enviarse una convocatoria cada vez, nunca varias"
+        },
+        {
+          "key": "d",
+          "text": "Que conviene usar un tono m&aacute;s informal para que la IA sea m&aacute;s flexible"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La calidad del resultado depende de la calidad de las restricciones y del contexto operativo que se le da al sistema. Sin un marco claro, &laquo;interesa&raquo; es demasiado ambiguo para convertirlo en una decisi&oacute;n &uacute;til.",
+      "feedback_ko": "El problema no es la longitud ni el tono, sino la ausencia de criterio aplicable. La p&iacute;ldora ense&ntilde;a que automatizar bien requiere dise&ntilde;ar instrucciones con condiciones claras, no solo pedir un resumen bonito."
+    },
+    {
+      "id": "p_q11",
+      "situation": "Has automatizado el digest semanal de noticias y recuperado 45 minutos cada semana. &iquest;C&oacute;mo aplicar&iacute;as el efecto multiplicador descrito en la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usar parte de ese tiempo liberado para automatizar otra tarea invisible cercana, como el filtro de convocatorias con las mismas fuentes"
+        },
+        {
+          "key": "b",
+          "text": "Mantener el tiempo libre sin tocar ning&uacute;n otro proceso durante un a&ntilde;o"
+        },
+        {
+          "key": "c",
+          "text": "Invertir todo el esfuerzo en hacer el digest visualmente m&aacute;s llamativo"
+        },
+        {
+          "key": "d",
+          "text": "Volver a hacer el digest a mano para comparar estilos cada semana"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. El valor compuesto aparece cuando el tiempo ahorrado se reinvierte en automatizar la siguiente fricci&oacute;n repetitiva. As&iacute; una mejora inicial deja de ser aislada y empieza a transformar el sistema de trabajo.",
+      "feedback_ko": "Las otras opciones consumen o inmovilizan el beneficio sin ampliar su alcance. La p&iacute;ldora insiste en que automatizar lo invisible no es solo ahorrar minutos, sino crear capacidad para redise&ntilde;ar m&aacute;s procesos."
+    },
+    {
+      "id": "p_q12",
+      "situation": "Quieres demostrar que una automatizaci&oacute;n de vigilancia de convocatorias est&aacute; funcionando bien. &iquest;Qu&eacute; KPI escoger&iacute;as como m&aacute;s &uacute;til?",
+      "options": [
+        {
+          "key": "a",
+          "text": "El n&uacute;mero total de prompts ejecutados cada mes"
+        },
+        {
+          "key": "b",
+          "text": "La cantidad de texto generada en cada digest"
+        },
+        {
+          "key": "c",
+          "text": "El tiempo desde que aparece una convocatoria hasta que llega una alerta validada, junto con el porcentaje de alertas realmente relevantes"
+        },
+        {
+          "key": "d",
+          "text": "El n&uacute;mero de personas que abren el correo, aunque no hagan ninguna acci&oacute;n"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Ese KPI mide velocidad y calidad, que son justo los dos efectos que una automatizaci&oacute;n bien dise&ntilde;ada debe mejorar. No basta con producir salidas; importa llegar antes y con menos ruido a quien tiene que decidir.",
+      "feedback_ko": "Los otros indicadores reflejan actividad o volumen, pero no utilidad operativa. La p&iacute;ldora pide pensar en automatizaciones que resuelvan trabajo real, por lo que conviene medir relevancia y tiempo de respuesta."
+    },
+    {
+      "id": "p_q13",
+      "situation": "Se quiere automatizar el env&iacute;o de un resumen tras reuniones con una entidad externa. El resumen puede influir en decisiones posteriores y debe ser preciso. &iquest;Qu&eacute; enfoque aplicar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Enviar el resumen autom&aacute;ticamente al terminar la reuní&oacute;n, sin revisi&oacute;n, para ganar velocidad"
+        },
+        {
+          "key": "b",
+          "text": "Generar un borrador estructurado autom&aacute;ticamente y pedir validaci&oacute;n humana antes del env&iacute;o"
+        },
+        {
+          "key": "c",
+          "text": "Esperar al cierre mensual y mandar un &uacute;nico resumen acumulado"
+        },
+        {
+          "key": "d",
+          "text": "No usar IA en absoluto, aunque el borrador interno siga llevando mucho tiempo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La automatizaci&oacute;n puede eliminar trabajo mec&aacute;nico sin retirar el control humano donde hay riesgo reputacional u operativo. Ese equilibrio permite capturar eficiencia y, a la vez, mantener calidad y responsabilidad.",
+      "feedback_ko": "Enviar sin revisar puede introducir errores, mientras que renunciar por completo a automatizar conserva una carga innecesaria. La p&iacute;ldora no propone quitar criterio humano donde aporta valor, sino reservarlo para el punto correcto."
+    },
+    {
+      "id": "p_q14",
+      "situation": "El equipo debe preparar una respuesta a un borrador de acuerdo singular con varios cambios delicados. No es una tarea frecuente y el matiz jur&iacute;dico importa mucho. &iquest;C&oacute;mo aplicar&iacute;as la l&oacute;gica de la p&iacute;ldora sin forzar una automatizaci&oacute;n inadecuada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Automatizar la redacci&oacute;n y enviar directamente la versi&oacute;n final sin revisi&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Usar el mismo prompt gen&eacute;rico que para res&uacute;menes de reuniones"
+        },
+        {
+          "key": "c",
+          "text": "No usar ninguna ayuda, aunque haya partes repetitivas en el an&aacute;lisis"
+        },
+        {
+          "key": "d",
+          "text": "Automatizar solo tareas de apoyo, como comparar versiones y extraer cambios, y dejar la decisi&oacute;n y la redacci&oacute;n final al equipo"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Correcto. Aplicar la p&iacute;ldora no significa automatizarlo todo, sino identificar qu&eacute; parte es mec&aacute;nica y qu&eacute; parte requiere juicio experto. En un caso singular y sensible, la mejor automatizaci&oacute;n es la que prepara contexto y libera tiempo para pensar mejor.",
+      "feedback_ko": "Las otras opciones o introducen demasiado riesgo o desaprovechan apoyo valioso en tareas repetitivas. El criterio central es separar lo automatizable de lo que debe seguir bajo control humano por complejidad o impacto."
+    },
+    {
+      "id": "p_q15",
+      "situation": "El equipo de proyectos quiere mejorar la vigilancia de convocatorias sin saturarse: necesita un digest semanal para visi&oacute;n general, pero tambi&eacute;n un aviso inmediato si una convocatoria muy relevante vence en menos de 12 d&iacute;as. &iquest;Qu&eacute; dise&ntilde;o elegir&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un &uacute;nico correo semanal con todo, aunque las urgencias lleguen tarde"
+        },
+        {
+          "key": "b",
+          "text": "Solo alertas inmediatas, sin ning&uacute;n resumen peri&oacute;dico para contexto"
+        },
+        {
+          "key": "c",
+          "text": "Combinar un digest peri&oacute;dico para seguimiento general con una alerta por umbral para vencimientos cr&iacute;ticos y alta relevancia"
+        },
+        {
+          "key": "d",
+          "text": "Pedir a cada rol que revise manualmente un portal distinto y comparta capturas por chat"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. Aqu&iacute; conviven dos necesidades distintas, y por eso conviene combinar dos tipos de disparador en lugar de forzar uno solo. El digest da panorama; la alerta por umbral protege lo urgente y evita que una oportunidad se escape.",
+      "feedback_ko": "Las otras opciones dejan sin cubrir o bien el contexto o bien la urgencia, y vuelven a cargar vigilancia manual sobre el equipo. La p&iacute;ldora invita a dise&ntilde;ar automatizaciones seg&uacute;n el tipo de tarea y el momento en que debe activarse."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

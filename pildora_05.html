@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Word con estilo PLOCAN</h1>
     <p class="subtitle">Crea informes, memorias y documentos profesionales sin pelear con el formato</p>
-    <span class="time-badge">5 min de lectura</span>
+    <span class="time-badge">5 mín de lectura</span>
 </header>
 
 
@@ -1070,6 +1070,526 @@ No cambies el contenido, solo el formato.
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 5,
+  "pill_slug": "05",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "La responsable de proyectos necesita enviar ma&ntilde;Ana un informe t&eacute;cnico de seguimiento para una convocatoria europea. Tiene claro el contenido, pero a&uacute;n no existe el documento. &iquest;Qu&eacute; uso de Antigravity aprovecha mejor el tiempo y reduce retrabajo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Redactar todo en un Word en blanco y dejar el formato para el final"
+        },
+        {
+          "key": "b",
+          "text": "Pedir a Antigravity un Word completo con portada, &iacute;ndice autom&aacute;tico y secciones ya estructuradas"
+        },
+        {
+          "key": "c",
+          "text": "Preparar primero la tabla de riesgos en Excel y copiarla despu&eacute;s al documento"
+        },
+        {
+          "key": "d",
+          "text": "Escribir un correo con ideas sueltas y convertirlo luego manualmente en informe"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Cuando la necesidad es crear un documento profesional desde cero, lo m&aacute;s eficiente es pedir una estructura completa ya formateada. As&iacute; el equipo se centra en validar el contenido y no en reconstruir portada, estilos e &iacute;ndice a mano.",
+      "feedback_ko": "Las otras opciones mantienen el trabajo manual donde m&aacute;s tiempo se pierde: montar estructura y formato al final. Antigravity aporta valor precisamente cuando genera el esqueleto profesional desde el principio y evita rehacer el documento despu&eacute;s."
+    },
+    {
+      "id": "p_q02",
+      "situation": "Un director de l&iacute;nea comparte una memoria de actividad ya redactada, pero con t&iacute;tulos distintos, tablas desalineadas y sin numeraci&oacute;n. Quiere conservar el contenido tal como est&aacute;. &iquest;Qu&eacute; petici&oacute;n es la m&aacute;s adecuada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir a Antigravity que rehaga toda la memoria con otro tono y nueva estructura"
+        },
+        {
+          "key": "b",
+          "text": "Solicitar que corrija ortograf&iacute;a, uniformice estilos, a&ntilde;ada &iacute;ndice y paginaci&oacute;n sin cambiar el contenido"
+        },
+        {
+          "key": "c",
+          "text": "Copiar el texto a PowerPoint para revisar visualmente qu&eacute; apartados sobran"
+        },
+        {
+          "key": "d",
+          "text": "Exportar a PDF y corregir las desalineaciones una por una"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El problema aqu&iacute; no es el fondo, sino la presentaci&oacute;n inconsistente del documento. Pedir una mejora de formato sin tocar el contenido protege el trabajo ya hecho y resuelve lo que realmente bloquea la entrega.",
+      "feedback_ko": "Reescribir la memoria o moverla a otro formato introduce riesgo innecesario y no ataca el problema real. Si el contenido ya sirve, lo razonable es usar Antigravity para limpiar estilo, navegaci&oacute;n y legibilidad sin alterar el mensaje."
+    },
+    {
+      "id": "p_q03",
+      "situation": "Una t&eacute;cnica de PLOCAN tiene lista la estructura de un informe de infraestructura oceanogr&aacute;fica, pero la secci&oacute;n de riesgos est&aacute; vac&iacute;a y el plazo es hoy. &iquest;Cu&aacute;l es la mejor manera de usar Antigravity en esta situaci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir un borrador de tabla con riesgos t&iacute;picos, probabilidad, impacto y mitigaci&oacute;n para adaptarlo al proyecto real"
+        },
+        {
+          "key": "b",
+          "text": "Eliminar la secci&oacute;n de riesgos para no entregar contenido incompleto"
+        },
+        {
+          "key": "c",
+          "text": "Esperar a la siguiente reuní&oacute;n y dejar la secci&oacute;n pendiente para una versi&oacute;n futura"
+        },
+        {
+          "key": "d",
+          "text": "Copiar la tabla de riesgos del &uacute;ltimo contrato sin revisarla"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Cuando falta una secci&oacute;n concreta, Antigravity puede generar un borrador &uacute;til que acelera el arranque sin sustituir la revisi&oacute;n t&eacute;cnica. El valor est&aacute; en vencer la p&aacute;gina en blanco y dejar al equipo la adaptaci&oacute;n final.",
+      "feedback_ko": "Quitar la secci&oacute;n o reutilizar contenido sin revisar genera m&aacute;s riesgo que valor. La mejor aplicaci&oacute;n es pedir un primer borrador estructurado y despu&eacute;s ajustarlo con conocimiento del proyecto espec&iacute;fico."
+    },
+    {
+      "id": "p_q04",
+      "situation": "El responsable de un &aacute;rea quiere crear una nueva memoria usando la plantilla oficial de PLOCAN para que el estilo coincida con otros documentos corporativos. &iquest;Qu&eacute; acci&oacute;n aprovecha mejor Antigravity?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Adjuntar la plantilla oficial como referencia y pedir que el nuevo documento siga ese formato"
+        },
+        {
+          "key": "b",
+          "text": "Describir el estilo de memoria de forma general y confiar en que salga parecido"
+        },
+        {
+          "key": "c",
+          "text": "Crear primero un borrador sin formato y aplicar la plantilla manualmente al final"
+        },
+        {
+          "key": "d",
+          "text": "Pedir un dise&ntilde;o completamente nuevo para diferenciar este documento del resto"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Si existe una plantilla oficial, usarla como referencia reduce variaciones y asegura coherencia visual con la documentaci&oacute;n de PLOCAN. As&iacute; Antigravity no improvisa estilo, sino que replica uno ya validado por el equipo.",
+      "feedback_ko": "Describir el estilo de forma gen&eacute;rica o formatear al final deja demasiadas decisiones abiertas y aumenta la inconsistencia. Cuando hay una plantilla corporativa, lo m&aacute;s s&oacute;lido es reutilizarla desde el inicio como patr&oacute;n expl&iacute;cito."
+    },
+    {
+      "id": "p_q05",
+      "situation": "La directora de programa recibe un Word con mucho contenido v&aacute;lido, pero el equipo se queja de que encontrar las secciones lleva tiempo. El documento no tiene &iacute;ndice autom&aacute;tico. &iquest;Qu&eacute; mejora aporta m&aacute;s valor inmediato?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Cambiar la fuente principal para que el documento parezca m&aacute;s moderno"
+        },
+        {
+          "key": "b",
+          "text": "A&ntilde;adir un &iacute;ndice autom&aacute;tico al principio y aplicar estilos uniformes a los t&iacute;tulos"
+        },
+        {
+          "key": "c",
+          "text": "Convertir todos los subt&iacute;tulos en texto en negrita sin jerarqu&iacute;a"
+        },
+        {
+          "key": "d",
+          "text": "Dividir el Word en varios archivos peque&ntilde;os para que pese menos"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Si el problema es localizar contenido, la navegaci&oacute;n del documento debe mejorar antes que su apariencia. Un &iacute;ndice autom&aacute;tico solo funciona bien si la jerarqu&iacute;a de t&iacute;tulos est&aacute; bien aplicada, por eso ambas acciones van juntas.",
+      "feedback_ko": "Cambiar fuente o partir el archivo no resuelve la dificultad principal: orientarse dentro del contenido. La mejora clave es estructural, no cosm&eacute;tica, y pasa por ordenar los encabezados y generar el &iacute;ndice a partir de ellos."
+    },
+    {
+      "id": "p_q06",
+      "situation": "Un t&eacute;cnico prepara un informe trimestral con avances por WP y necesita presentar el estado de varias tareas de forma clara. Tiene poco tiempo y el documento debe quedar profesional. &iquest;Qu&eacute; enfoque encaja mejor con lo aprendido en la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Describir a Antigravity la tabla necesaria con columnas de WP, tarea, estado y rol responsable dentro del Word"
+        },
+        {
+          "key": "b",
+          "text": "Escribir cada avance en p&aacute;rrafos sueltos para evitar problemas de formato"
+        },
+        {
+          "key": "c",
+          "text": "Crear la tabla en una hoja aparte y dejar su integraci&oacute;n para la versi&oacute;n final"
+        },
+        {
+          "key": "d",
+          "text": "Sustituir la tabla por una captura de pantalla del Excel de seguimiento"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Pedir la tabla dentro de la estructura del documento permite que salga ya integrada, legible y coherente con el resto del formato. Eso reduce pasos intermedios y evita apa&ntilde;os visuales de &uacute;ltima hora.",
+      "feedback_ko": "Los p&aacute;rrafos sueltos o las capturas pueden sacar del paso, pero dificultan lectura, actualizaci&oacute;n y consistencia. Si el objetivo es un Word profesional, lo mejor es pedir la tabla bien definida desde el principio."
+    },
+    {
+      "id": "p_q07",
+      "situation": "La responsable de coordinaci&oacute;n tiene un Word a medio hacer y duda entre pedir a Antigravity que lo complete entero o solo que arregle el formato. El contenido t&eacute;cnico ya fue revisado por el equipo y no debe cambiar. &iquest;Qu&eacute; decisi&oacute;n es la m&aacute;s adecuada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que complete entero el documento para ganar m&aacute;s tiempo, aunque cambie secciones"
+        },
+        {
+          "key": "b",
+          "text": "Pedir solo la mejora de formato y estructura visual, preservando el contenido existente"
+        },
+        {
+          "key": "c",
+          "text": "Volver a redactarlo manualmente en otro archivo para evitar errores"
+        },
+        {
+          "key": "d",
+          "text": "Exportarlo a PDF y darlo por cerrado si se entiende"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Si el fondo ya est&aacute; validado, conviene limitar la intervenci&oacute;n al problema real: la presentaci&oacute;n. As&iacute; se reduce el riesgo de introducir cambios no deseados en un contenido que ya cuenta con revisi&oacute;n t&eacute;cnica.",
+      "feedback_ko": "Pedir una regeneraci&oacute;n completa cuando el contenido ya fue aprobado mezcla dos necesidades distintas y puede crear inconsistencias. La decisi&oacute;n m&aacute;s segura es actuar solo sobre formato, navegaci&oacute;n y uniformidad visual."
+    },
+    {
+      "id": "p_q08",
+      "situation": "El director de l&iacute;nea revisa un borrador generado por Antigravity y ve que la estructura es buena, pero faltan datos reales de PLOCAN en varias secciones. &iquest;Cu&aacute;l deber&iacute;a ser la siguiente acci&oacute;n m&aacute;s sensata?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Enviar el documento tal cual porque la forma ya es profesional"
+        },
+        {
+          "key": "b",
+          "text": "Usar el borrador como base y sustituir los textos gen&eacute;ricos por datos y validaciones reales del proyecto"
+        },
+        {
+          "key": "c",
+          "text": "Pedir otra versi&oacute;n completamente distinta hasta que aparezcan solos los datos correctos"
+        },
+        {
+          "key": "d",
+          "text": "Eliminar las secciones incompletas para que el documento parezca m&aacute;s cerrado"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La p&iacute;ldora plantea la IA como aceleradora del formato y del primer borrador, no como sustituta de la validaci&oacute;n final. El documento gana valor cuando el equipo completa y contrasta la informaci&oacute;n espec&iacute;fica de PLOCAN.",
+      "feedback_ko": "Enviar textos gen&eacute;ricos o borrar apartados vac&iacute;os debilita la calidad del entregable. Si Antigravity ya resolví&oacute; la estructura, lo correcto es aprovechar esa base y dedicar el tiempo restante a completar y revisar el contenido real."
+    },
+    {
+      "id": "p_q09",
+      "situation": "Una t&eacute;cnica debe preparar un documento para direcci&oacute;n y duda entre pedir &laquo;hazme un Word bonito&raquo; o definir secciones, tipo de tabla e indicaciones de estilo. &iquest;Qu&eacute; opci&oacute;n producir&aacute; previsiblemente un mejor resultado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "La instrucci&oacute;n gen&eacute;rica, porque deja m&aacute;s libertad creativa a la herramienta"
+        },
+        {
+          "key": "b",
+          "text": "La petici&oacute;n concreta con estructura, componentes y estilo deseado"
+        },
+        {
+          "key": "c",
+          "text": "Ninguna, porque Antigravity solo sirve para corregir Word ya existentes"
+        },
+        {
+          "key": "d",
+          "text": "Primero crear el documento a mano y luego pedir solo que cambie colores"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Cuanto m&aacute;s clara sea la especificaci&oacute;n de estructura y estilo, m&aacute;s alineado sale el documento con la necesidad real. En este caso, definir secciones y elementos concretos reduce ambig&uuml;edad y minimiza iteraciones.",
+      "feedback_ko": "Una orden gen&eacute;rica suele producir resultados menos ajustados al contexto del trabajo. La p&iacute;ldora ense&ntilde;a precisamente que Antigravity responde mejor cuando se le da una estructura clara y un objetivo documental concreto."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Un responsable de proyecto est&aacute; preparando una memoria y detecta que los t&iacute;tulos del documento usan tres estilos distintos, lo que luego rompe la coherencia visual y la navegaci&oacute;n. &iquest;Qu&eacute; deber&iacute;a priorizar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Corregir primero el color de los encabezados para que todos se vean similares"
+        },
+        {
+          "key": "b",
+          "text": "Uniformizar los estilos de t&iacute;tulo para que la estructura del Word sea consistente"
+        },
+        {
+          "key": "c",
+          "text": "Aumentar el tama&ntilde;o de letra de los apartados principales y dejar lo dem&aacute;s igual"
+        },
+        {
+          "key": "d",
+          "text": "Pasar los t&iacute;tulos a may&uacute;sculas para que destaquen m&aacute;s"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El problema no es solo est&eacute;tico: los estilos de t&iacute;tulo organizan el documento y permiten que el &iacute;ndice funcione correctamente. Uniformizarlos mejora tanto la apariencia como la estructura interna del archivo.",
+      "feedback_ko": "Cambiar color, tama&ntilde;o o may&uacute;sculas puede dar una falsa sensaci&oacute;n de orden, pero no corrige la base del problema. Si los estilos siguen siendo distintos, el documento continuar&aacute; siendo dif&iacute;cil de mantener y navegar."
+    },
+    {
+      "id": "p_q11",
+      "situation": "La directora de un &aacute;rea quiere entregar una versi&oacute;n ejecutiva de una memoria extensa y necesita que el Word se lea r&aacute;pido sin perder profesionalidad. &iquest;Qu&eacute; uso de Antigravity es m&aacute;s coherente con esta necesidad?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir un documento estructurado con secciones claras y formato uniforme para lectura r&aacute;pida"
+        },
+        {
+          "key": "b",
+          "text": "Mantener el documento largo y solo cambiar la portada"
+        },
+        {
+          "key": "c",
+          "text": "Incluir m&aacute;s texto explicativo para que nadie eche nada en falta"
+        },
+        {
+          "key": "d",
+          "text": "Enviar una hoja de c&aacute;lculo con todos los datos y explicar el contexto por correo"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Si la meta es una lectura ejecutiva, la claridad estructural y la consistencia visual pesan mucho m&aacute;s que acumular detalle. Antigravity ayuda precisamente a presentar el contenido con un formato profesional y f&aacute;cil de recorrer.",
+      "feedback_ko": "Cambiar solo la portada o a&ntilde;adir m&aacute;s texto no mejora la usabilidad del documento. Cuando el reto es condensar y ordenar, conviene apoyarse en una estructura bien definida y un formato limpio que gu&iacute;e la lectura."
+    },
+    {
+      "id": "p_q12",
+      "situation": "Un t&eacute;cnico adjunta a Antigravity un Word desordenado y escribe: &laquo;No cambies el contenido, solo el formato&raquo;. Aun as&iacute;, tambi&eacute;n quiere que la secci&oacute;n de conclusiones vac&iacute;a aparezca completa al devolver el archivo. &iquest;Qu&eacute; an&aacute;lisis es m&aacute;s correcto?",
+      "options": [
+        {
+          "key": "a",
+          "text": "La instrucci&oacute;n es coherente, porque generar conclusiones no implica cambiar contenido"
+        },
+        {
+          "key": "b",
+          "text": "Hay una contradicci&oacute;n: una petici&oacute;n conserva contenido y la otra a&ntilde;ade contenido nuevo"
+        },
+        {
+          "key": "c",
+          "text": "La mejor opci&oacute;n es quitar la secci&oacute;n de conclusiones para evitar conflicto"
+        },
+        {
+          "key": "d",
+          "text": "Da igual, porque Antigravity siempre decide qu&eacute; parte obedecer"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Pedir que no cambie el contenido y, al mismo tiempo, que rellene una secci&oacute;n vac&iacute;a mezcla dos objetivos distintos. Lo m&aacute;s eficaz es separar ambas tareas: primero ordenar el documento o, si se desea, solicitar aparte el borrador de la secci&oacute;n faltante.",
+      "feedback_ko": "La clave est&aacute; en detectar la contradicci&oacute;n de la instrucci&oacute;n, no en esperar que la herramienta la resuelva sola. Si el encargo no distingue entre formatear y redactar, es m&aacute;s probable obtener un resultado ambiguo o parcialmente incorrecto."
+    },
+    {
+      "id": "p_q13",
+      "situation": "La responsable de proyectos compara dos formas de trabajar en Word: una, redactar y dar formato manual durante horas; otra, pedir a Antigravity una base profesional y luego revisar los datos reales. &iquest;Qu&eacute; ventaja pr&aacute;ctica tiene m&aacute;s peso en el segundo enfoque?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Permite dedicar m&aacute;s tiempo a validar contenido y menos a pelear con detalles de formato"
+        },
+        {
+          "key": "b",
+          "text": "Evita por completo que el equipo tenga que revisar el documento antes de enviarlo"
+        },
+        {
+          "key": "c",
+          "text": "Hace innecesarias las plantillas corporativas de PLOCAN"
+        },
+        {
+          "key": "d",
+          "text": "Sustituye la necesidad de comprobar tablas, fechas y responsables"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. El beneficio principal es redistribuir el esfuerzo: menos tiempo en tareas mec&aacute;nicas y m&aacute;s en comprobaciones de fondo. La IA acelera la presentaci&oacute;n, pero la responsabilidad de validar la informaci&oacute;n sigue en el equipo.",
+      "feedback_ko": "El segundo enfoque no elimina la revisi&oacute;n ni la necesidad de contrastar datos. Su valor real est&aacute; en quitar fricci&oacute;n al formato para que las personas puedan concentrarse en exactitud, criterio t&eacute;cnico y adecuaci&oacute;n del mensaje."
+    },
+    {
+      "id": "p_q14",
+      "situation": "Un director de l&iacute;nea tiene que preparar en poco tiempo una memoria t&eacute;cnica y una versi&oacute;n resumida para una reuní&oacute;n interna. Quiere evitar rehacer el formato dos veces. &iquest;Qu&eacute; estrategia es m&aacute;s razonable seg&uacute;n la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir primero una estructura profesional reutilizable y adaptar sobre esa base cada versi&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Maquetar por completo la memoria larga y empezar la versi&oacute;n resumida desde cero"
+        },
+        {
+          "key": "c",
+          "text": "Redactar ambos documentos sin estructura y ordenarlos el &uacute;ltimo d&iacute;a"
+        },
+        {
+          "key": "d",
+          "text": "Hacer solo la versi&oacute;n resumida y, si sobra tiempo, ampliar despu&eacute;s"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Si se necesitan dos entregables emparentados, la mejor palanca es contar con una base formal y consistente desde el principio. Eso permite reutilizar esquema, estilos y componentes sin reconstruir el formato en cada versi&oacute;n.",
+      "feedback_ko": "Las otras alternativas vuelven a cargar el trabajo sobre el formato manual y aumentan el retrabajo. La p&iacute;ldora propone precisamente lo contrario: crear una base bien armada y luego dedicar el tiempo a ajustar alcance y contenido."
+    },
+    {
+      "id": "p_q15",
+      "situation": "Una t&eacute;cnica recibe de vuelta un Word generado por Antigravity con portada, &iacute;ndice, tabla y secciones bien ordenadas. Antes de compartirlo fuera de PLOCAN, &iquest;qu&eacute; comprobaci&oacute;n final es la m&aacute;s prudente?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Revisar que el contenido real, los datos y la terminolog&iacute;a del proyecto est&eacute;n correctos antes del env&iacute;o"
+        },
+        {
+          "key": "b",
+          "text": "Cambiar la combinaci&oacute;n de colores para que el documento destaque m&aacute;s"
+        },
+        {
+          "key": "c",
+          "text": "Eliminar el &iacute;ndice porque ya se entiende la estructura"
+        },
+        {
+          "key": "d",
+          "text": "Enviar directamente el archivo, ya que si el formato es bueno el documento est&aacute; listo"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Un buen formato no sustituye la verificaci&oacute;n del contenido, especialmente en documentos que salen de la organizaci&oacute;n. La revisi&oacute;n final debe centrarse en exactitud, consistencia y adecuaci&oacute;n del mensaje al contexto real.",
+      "feedback_ko": "El riesgo principal no suele estar en la apariencia cuando el documento ya sale bien estructurado, sino en dar por validado un contenido que no se revis&oacute;. Antigravity acelera la preparaci&oacute;n, pero no elimina la necesidad de control final por parte del equipo."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

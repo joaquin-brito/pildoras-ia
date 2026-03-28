@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Antigravity como tu Tutor Personal</h1>
     <p class="subtitle">3 prompts para que la IA te enseñe cualquier tarea mientras trabajas contigo</p>
-    <span class="time-badge">5 min de lectura</span>
+    <span class="time-badge">5 mín de lectura</span>
 </header>
 
 
@@ -1067,6 +1067,526 @@ Explícame qué cambias en cada paso para que yo pueda hacerlo solo la próxima 
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 1,
+  "pill_slug": "01",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "El director de l&iacute;nea necesita entregar hoy un informe Word de PLOCAN con portada, &iacute;ndice autom&aacute;tico y una tabla de datos. Quiere el documento listo, pero tambi&eacute;n quiere aprender a pedirlo bien para no depender de otra persona la pr&oacute;xima vez. &iquest;Qu&eacute; petici&oacute;n encaja mejor con la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "&laquo;Hazme un informe Word con estos apartados y entr&eacute;gamelo en cuanto puedas&raquo;"
+        },
+        {
+          "key": "b",
+          "text": "&laquo;Dame una plantilla vac&iacute;a y ya la relleno yo cuando tenga tiempo&raquo;"
+        },
+        {
+          "key": "c",
+          "text": "&laquo;Necesito este informe. Expl&iacute;came paso a paso qu&eacute; vas a hacer y por qu&eacute;, y despu&eacute;s hazlo&raquo;"
+        },
+        {
+          "key": "d",
+          "text": "&laquo;Escr&iacute;beme solo la portada y luego ya ver&eacute; c&oacute;mo completo el resto&raquo;"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La p&iacute;ldora propone usar Antigravity como tutor, no solo como ejecutor. Pedir explicaci&oacute;n y ejecuci&oacute;n a la vez permite entregar el informe y entender el proceso para reutilizarlo en la siguiente ocasi&oacute;n.",
+      "feedback_ko": "Las otras opciones priorizan sacar una pieza r&aacute;pida, pero no generan aprendizaje transferible. El valor de la p&iacute;ldora est&aacute; en producir mientras entiendes el porqu&eacute; de cada paso."
+    },
+    {
+      "id": "p_q02",
+      "situation": "La responsable de proyectos ya tiene un primer borrador de informe generado con Antigravity. Ahora necesita cambiar la fuente, a&ntilde;adir una tabla de tres columnas y colocar el logo de PLOCAN en la cabecera, pero quiere aprender a personalizar estos cambios por su cuenta. &iquest;Qu&eacute; deber&iacute;a pedir a continuaci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que rehaga el documento completo desde cero sin explicar nada para evitar errores"
+        },
+        {
+          "key": "b",
+          "text": "Que aplique los cambios y explique qu&eacute; modifica en cada paso y por qu&eacute;"
+        },
+        {
+          "key": "c",
+          "text": "Que solo enumere los cambios posibles, sin tocar el documento actual"
+        },
+        {
+          "key": "d",
+          "text": "Que convierta el Word en PDF para revisar el resultado final"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El segundo paso de la p&iacute;ldora consiste en modificar y explicar las diferencias sobre algo ya creado. As&iacute; no solo resuelves la versi&oacute;n actual, sino que aprendes a pedir ajustes concretos con criterio.",
+      "feedback_ko": "Rehacer todo o limitarse a listar opciones no ense&ntilde;a a intervenir sobre un documento real. La clave es vincular cada cambio con su explicaci&oacute;n para que la personalizaci&oacute;n sea una habilidad, no una petici&oacute;n aislada."
+    },
+    {
+      "id": "p_q03",
+      "situation": "Una t&eacute;cnica de administraci&oacute;n ha usado Antigravity para crear una memoria justificativa y ha quedado satisfecha. Quiere aprovechar ese &eacute;xito puntual para mejorar tambi&eacute;n otras tareas diarias de PLOCAN sin empezar de cero cada vez. &iquest;Qu&eacute; acci&oacute;n refleja mejor el tercer paso de la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir cinco ejemplos pr&aacute;cticos de documentos o tareas de su trabajo y el prompt exacto para cada uno"
+        },
+        {
+          "key": "b",
+          "text": "Guardar el documento y esperar a tener otra tarea parecida antes de volver a usar la herramienta"
+        },
+        {
+          "key": "c",
+          "text": "Solicitar una versi&oacute;n m&aacute;s bonita del mismo documento para practicar estilos"
+        },
+        {
+          "key": "d",
+          "text": "Pedir que exporte el archivo a varios formatos para tener copias"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. El tercer paso convierte una tarea puntual en capacidad permanente: pedir m&aacute;s ejemplos aplicados al trabajo real. Eso multiplica el aprendizaje porque te llevas varios prompts reutilizables para situaciones futuras.",
+      "feedback_ko": "Las otras opciones mantienen el foco en el documento que ya resolviste. La p&iacute;ldora insiste en ampliar el repertorio de uso, no en perfeccionar indefinidamente una sola entrega."
+    },
+    {
+      "id": "p_q04",
+      "situation": "Un t&eacute;cnico de operaciones pide a Antigravity: &laquo;Hazme una hoja Excel para seguimiento de proyectos&raquo;. Recibe un archivo funcional, pero al d&iacute;a siguiente no sabe c&oacute;mo repetir el proceso ni adaptar la hoja a otro proyecto. &iquest;Qu&eacute; fall&oacute; en su manera de trabajar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Debí&oacute; pedir primero explicaci&oacute;n del proceso y del porqu&eacute; antes de recibir el resultado"
+        },
+        {
+          "key": "b",
+          "text": "Debí&oacute; limitar la petici&oacute;n a una tabla simple para que fuera m&aacute;s f&aacute;cil copiarla"
+        },
+        {
+          "key": "c",
+          "text": "Debí&oacute; esperar a tener todos los datos finales antes de usar la herramienta"
+        },
+        {
+          "key": "d",
+          "text": "Debí&oacute; enviar la tarea a otra persona del equipo para contrastar el formato"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. La carencia no est&aacute; en el archivo, sino en que obtuvo ejecuci&oacute;n sin aprendizaje. La p&iacute;ldora plantea que el valor diferencial aparece cuando la herramienta explica el proceso mientras produce el resultado.",
+      "feedback_ko": "Reducir el alcance o retrasar la tarea no resuelve el problema de fondo. Si no pides explicaci&oacute;n y criterio, seguir&aacute;s dependiendo del resultado final sin entender c&oacute;mo replicarlo."
+    },
+    {
+      "id": "p_q05",
+      "situation": "La coordinadora de un proyecto europeo necesita preparar una hoja de seguimiento con formato condicional y gr&aacute;ficos para una reuní&oacute;n interna. Nunca ha pedido algo as&iacute; con Antigravity y duda si el patr&oacute;n de la p&iacute;ldora sirve fuera de Word. &iquest;Qu&eacute; deber&iacute;a concluir?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que el patr&oacute;n solo sirve para redactar documentos, no para hojas de c&aacute;lculo"
+        },
+        {
+          "key": "b",
+          "text": "Que primero necesita hacer un curso externo y luego usar Antigravity como apoyo"
+        },
+        {
+          "key": "c",
+          "text": "Que puede usar el mismo patr&oacute;n tutor: explicar y hacer, aunque la tarea sea en Excel"
+        },
+        {
+          "key": "d",
+          "text": "Que es mejor pedir solo los gr&aacute;ficos y crear manualmente el resto del archivo"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La p&iacute;ldora dice expl&iacute;citamente que el patr&oacute;n tutor funciona para cualquier tarea: Word, Excel, presentaciones, an&aacute;lisis o b&uacute;squeda de informaci&oacute;n. Lo importante no es la herramienta concreta, sino c&oacute;mo formulas la colaboraci&oacute;n.",
+      "feedback_ko": "Pensar que el m&eacute;todo es exclusivo de Word limita justo el aprendizaje que la p&iacute;ldora quiere expandir. El patr&oacute;n es transversal y sirve para adquirir habilidades nuevas mientras trabajas."
+    },
+    {
+      "id": "p_q06",
+      "situation": "El director de &aacute;rea quiere que una persona de su equipo aprenda por qu&eacute; un &iacute;ndice autom&aacute;tico y los estilos de encabezado son mejores que hacer el formato manualmente. Necesita adem&aacute;s que el informe salga hoy. &iquest;Qu&eacute; resultado deber&iacute;a pedir a Antigravity?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un documento final sin comentarios para que el equipo no se distraiga con explicaciones"
+        },
+        {
+          "key": "b",
+          "text": "Una explicaci&oacute;n breve de conceptos y luego el documento, detallando por qu&eacute; usa estilos e &iacute;ndice autom&aacute;tico"
+        },
+        {
+          "key": "c",
+          "text": "Solo una lista de atajos de Word para que el equipo practique por su cuenta"
+        },
+        {
+          "key": "d",
+          "text": "Una plantilla gen&eacute;rica descargada de internet para adaptarla internamente"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El objetivo es doble: resolver la necesidad del d&iacute;a y dejar entendidas las decisiones clave del formato. Si la herramienta explica por qu&eacute; usa estilos y un &iacute;ndice autom&aacute;tico, el equipo gana criterio adem&aacute;s de un entregable.",
+      "feedback_ko": "Un resultado sin contexto o una lista aislada de atajos no conecta aprendizaje con trabajo real. La p&iacute;ldora propone aprendizaje situado: entender justo lo que se est&aacute; haciendo mientras se produce."
+    },
+    {
+      "id": "p_q07",
+      "situation": "Una analista de proyectos ya pidi&oacute; un informe base y ahora necesita una segunda versi&oacute;n para otra reuní&oacute;n: misma estructura, pero con nueva fuente, una tabla distinta y cambios en cabecera. Su objetivo es poder repetir esas adaptaciones en el futuro sin improvisar. &iquest;Qu&eacute; interacci&oacute;n ser&iacute;a la m&aacute;s eficaz?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir un documento completamente nuevo para cada reuní&oacute;n y no reutilizar nada"
+        },
+        {
+          "key": "b",
+          "text": "Solicitar los cambios concretos sobre el documento existente y que explique qu&eacute; toc&oacute; y por qu&eacute;"
+        },
+        {
+          "key": "c",
+          "text": "Copiar manualmente la versi&oacute;n anterior y editarla sin ayuda para practicar autonom&iacute;a"
+        },
+        {
+          "key": "d",
+          "text": "Bloquear el formato para que nadie pueda cambiarlo y evitar inconsistencias"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Modificar sobre un caso real y entender las diferencias es la manera m&aacute;s directa de aprender personalizaci&oacute;n. La p&iacute;ldora subraya precisamente ese momento: cambio aplicado m&aacute;s explicaci&oacute;n de lo que se alter&oacute;.",
+      "feedback_ko": "Crear siempre de cero o practicar a ciegas puede consumir tiempo sin consolidar criterio. Lo que genera transferencia es ver los ajustes concretos y relacionarlos con su finalidad."
+    },
+    {
+      "id": "p_q08",
+      "situation": "Un gestor t&eacute;cnico ha usado Antigravity para resumir una convocatoria europea compleja. Como le función&oacute; bien, quiere convertir esa experiencia en una forma estable de trabajar tambi&eacute;n para presentaciones, cuadros de seguimiento y comparativas de propuestas. &iquest;Qu&eacute; siguiente paso es m&aacute;s coherente con la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedirle que proponga otras tareas reales de su puesto y le entregue prompts listos para copiarlos"
+        },
+        {
+          "key": "b",
+          "text": "Archivar el resumen y esperar a la siguiente convocatoria para repetir exactamente lo mismo"
+        },
+        {
+          "key": "c",
+          "text": "Usar el mismo prompt para todas las tareas, aunque cambie el objetivo"
+        },
+        {
+          "key": "d",
+          "text": "Cambiar de herramienta para comparar resultados antes de seguir aprendiendo"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Pedir ejemplos pr&aacute;cticos vinculados al puesto ampl&iacute;a el repertorio y convierte una victoria aislada en una rutina mejorada. La p&iacute;ldora insiste en salir de la tarea puntual para construir nuevas habilidades.",
+      "feedback_ko": "Repetir sin ampliar el repertorio no consolida aprendizaje transferible. El tercer paso busca precisamente descubrir m&aacute;s usos concretos y llevarse prompts reutilizables para otras situaciones."
+    },
+    {
+      "id": "p_q09",
+      "situation": "La responsable de comunicaci&oacute;n recibe de Antigravity una versi&oacute;n final de un documento que parece correcta, pero una semana despu&eacute;s no sabe c&oacute;mo adaptar el mismo esquema para otra unidad porque no recuerda qu&eacute; decisiones se tomaron. &iquest;Qu&eacute; falt&oacute; en el flujo de trabajo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Guardar tambi&eacute;n una copia en PDF para consultar el formato original"
+        },
+        {
+          "key": "b",
+          "text": "Pedir explicaci&oacute;n del proceso y de los cambios, no solo el entregable final"
+        },
+        {
+          "key": "c",
+          "text": "Trabajar siempre con documentos m&aacute;s cortos para recordar mejor"
+        },
+        {
+          "key": "d",
+          "text": "Evitar pedir cambios de formato para que la plantilla no var&iacute;e"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Si solo recibes el resultado, la comprensi&oacute;n se pierde y la reutilizaci&oacute;n depende de la memoria o de volver a pedirlo todo. La p&iacute;ldora propone capturar tambi&eacute;n la l&oacute;gica de trabajo para poder replicarla con autonom&iacute;a.",
+      "feedback_ko": "Tener m&aacute;s copias o reducir la longitud del documento no sustituye la falta de explicaci&oacute;n. El problema no es recordar el archivo, sino no haber entendido el criterio con el que se construy&oacute;."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Un t&eacute;cnico de divulgaci&oacute;n tiene que preparar una presentaci&oacute;n para una visita institucional y piensa usar Antigravity. Duda entre pedir directamente las diapositivas o usar el enfoque tutor para aprender una forma de estructurar presentaciones futuras. &iquest;Cu&aacute;l es la mejor decisi&oacute;n seg&uacute;n la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir las diapositivas cerradas para ahorrar tiempo, aunque no entienda la estructura"
+        },
+        {
+          "key": "b",
+          "text": "Pedir que le explique la estructura propuesta, por qu&eacute; ordena as&iacute; el contenido y despu&eacute;s genere la presentaci&oacute;n"
+        },
+        {
+          "key": "c",
+          "text": "Pedir solo un t&iacute;tulo potente y completar a mano el resto del material"
+        },
+        {
+          "key": "d",
+          "text": "Evitar usar Antigravity porque la p&iacute;ldora solo habla de documentos y no de presentaciones"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La l&oacute;gica de tutor tambi&eacute;n sirve para presentaciones: entender la estructura mientras se produce el material. Eso te deja un resultado usable hoy y un criterio aplicable en futuras visitas o reuniones.",
+      "feedback_ko": "Las otras respuestas vuelven a tratar la herramienta como un simple generador de salidas o niegan su uso fuera de Word. La p&iacute;ldora defiende justamente lo contrario: aprender mientras trabajas en cualquier formato."
+    },
+    {
+      "id": "p_q11",
+      "situation": "La responsable de administraci&oacute;n dice que no tiene tiempo para hacer un curso formal sobre hojas de c&aacute;lculo avanzadas, pero necesita ya un cuadro de seguimiento de hitos con colores y gr&aacute;ficos. Quiere aprender sin separar formaci&oacute;n y producci&oacute;n. &iquest;Qu&eacute; enfoque deber&iacute;a aplicar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Posponer la tarea hasta que tenga tiempo de formarse con calma"
+        },
+        {
+          "key": "b",
+          "text": "Pedir a Antigravity que le resuelva el archivo y, en paralelo, le explique paso a paso qu&eacute; hace y por qu&eacute;"
+        },
+        {
+          "key": "c",
+          "text": "Delegar la hoja en otra persona y limitarse a revisar el resultado final"
+        },
+        {
+          "key": "d",
+          "text": "Hacer primero una versi&oacute;n manual b&aacute;sica y luego pedir a Antigravity solo mejoras est&eacute;ticas"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La p&iacute;ldora se dise&ntilde;a precisamente para este contexto: aprender en el flujo del trabajo sin esperar a una formaci&oacute;n aparte. El patr&oacute;n tutor convierte una necesidad urgente en una ocasi&oacute;n de aprendizaje aplicada.",
+      "feedback_ko": "Aplazar, delegar sin entender o limitar la IA a retoques visuales separa producci&oacute;n y aprendizaje. La propuesta del contenido es unir ambas cosas en la misma interacci&oacute;n."
+    },
+    {
+      "id": "p_q12",
+      "situation": "Un responsable de l&iacute;nea compara dos formas de pedir ayuda a Antigravity para preparar una nota interna. Opci&oacute;n 1: &laquo;Escribe esta nota&raquo;. Opci&oacute;n 2: &laquo;Expl&iacute;came c&oacute;mo la vas a estructurar y por qu&eacute;, y luego red&aacute;ctala&raquo;. Su objetivo es que el equipo gane autonom&iacute;a progresiva. &iquest;Qu&eacute; opci&oacute;n deber&iacute;a escoger?",
+      "options": [
+        {
+          "key": "a",
+          "text": "La opci&oacute;n 1, porque cuanto menos explique la herramienta, m&aacute;s r&aacute;pido aprender&aacute; el equipo por ensayo y error"
+        },
+        {
+          "key": "b",
+          "text": "La opci&oacute;n 2, porque combina producci&oacute;n con comprensi&oacute;n del criterio"
+        },
+        {
+          "key": "c",
+          "text": "Ninguna, porque la autonom&iacute;a solo se logra si no se usa IA en tareas de redacci&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "La opci&oacute;n 1, porque una nota interna es demasiado simple para merecer explicaci&oacute;n"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La autonom&iacute;a no surge solo de recibir entregables, sino de entender el razonamiento que los sostiene. La segunda formulaci&oacute;n permite que el equipo internalice estructura, criterio y forma de pedir mejor la siguiente vez.",
+      "feedback_ko": "Asumir que las explicaciones sobran confunde rapidez con aprendizaje. Incluso en tareas aparentemente simples, pedir el porqu&eacute; de la estructura fortalece la capacidad de repetir y adaptar el trabajo."
+    },
+    {
+      "id": "p_q13",
+      "situation": "Una t&eacute;cnica de proyectos necesita redactar el acta de una reuní&oacute;n y quiere que la pr&oacute;xima vez sea m&aacute;s f&aacute;cil ajustar el formato y los apartados. Sabe que puede pedir solo el acta final, pero quiere aprovechar la ocasi&oacute;n para aprender un m&eacute;todo reutilizable. &iquest;Qu&eacute; deber&iacute;a solicitar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que redacte el acta y tambi&eacute;n explique c&oacute;mo estructura secciones, subt&iacute;tulos y formato para poder repetirlo"
+        },
+        {
+          "key": "b",
+          "text": "Que genere solo un resumen ejecutivo para ahorrar espacio"
+        },
+        {
+          "key": "c",
+          "text": "Que deje en blanco la mitad del documento para completarlo manualmente despu&eacute;s"
+        },
+        {
+          "key": "d",
+          "text": "Que entregue dos versiones casi iguales para elegir la m&aacute;s bonita"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. El contenido insiste en pedir explicaci&oacute;n de la l&oacute;gica y no solo del texto generado. Si entiendes c&oacute;mo se organizan apartados y formato, la siguiente acta deja de ser una tarea opaca.",
+      "feedback_ko": "Reducir el problema a una salida m&aacute;s breve o a una cuesti&oacute;n est&eacute;tica no construye capacidad. Lo que hace reutilizable el trabajo es comprender el patr&oacute;n aplicado y no solo recibir una versi&oacute;n final."
+    },
+    {
+      "id": "p_q14",
+      "situation": "Un t&eacute;cnico de soporte ha pedido varios cambios sobre un documento, y Antigravity los ha aplicado correctamente. Sin embargo, no le ha explicado qu&eacute; toc&oacute; en cada paso. Una semana despu&eacute;s necesita un ajuste parecido en otro archivo y vuelve a empezar desde cero. &iquest;Qu&eacute; riesgo ilustra mejor esta situaci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que la herramienta produzca documentos demasiado r&aacute;pido para revisarlos"
+        },
+        {
+          "key": "b",
+          "text": "Que sin explicaci&oacute;n de las diferencias, la persona sigue dependiendo del resultado y no aprende a personalizar"
+        },
+        {
+          "key": "c",
+          "text": "Que los cambios de formato solo funcionan en Word y no en otros programas"
+        },
+        {
+          "key": "d",
+          "text": "Que es preferible no pedir cambios y limitarse siempre al primer borrador"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El segundo paso de la p&iacute;ldora existe para evitar esa dependencia: cambio m&aacute;s explicaci&oacute;n de la diferencia. Sin esa capa de aprendizaje, cada nuevo ajuste vuelve a ser una tarea cerrada y poco transferible.",
+      "feedback_ko": "El problema no es la velocidad ni el programa usado. Lo cr&iacute;tico es que, si no se entiende qu&eacute; se modific&oacute; y por qu&eacute;, la personalizaci&oacute;n no se convierte en habilidad propia."
+    },
+    {
+      "id": "p_q15",
+      "situation": "La directora de proyectos quiere que su equipo use Antigravity no solo para salir del paso esta semana, sino para ganar independencia en tareas como informes, tablas, res&uacute;menes y presentaciones. Ya han probado un caso con &eacute;xito. &iquest;Qu&eacute; movimiento consolidar&iacute;a mejor ese aprendizaje a nivel de equipo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Guardar solo el documento final en una carpeta compartida y asumir que el equipo imitar&aacute; el resultado"
+        },
+        {
+          "key": "b",
+          "text": "Pedir una bater&iacute;a de ejemplos pr&aacute;cticos con prompts exactos para tareas habituales del equipo y reutilizarlos como base"
+        },
+        {
+          "key": "c",
+          "text": "Evitar cambiar los prompts para no introducir variaciones entre personas"
+        },
+        {
+          "key": "d",
+          "text": "Reservar Antigravity solo para tareas urgentes y mantener el resto del trabajo sin cambios"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Pedir ejemplos y prompts listos para varias tareas convierte una experiencia aislada en una biblioteca de uso pr&aacute;ctico para el equipo. Eso encaja con el tercer paso de la p&iacute;ldora: ampliar habilidades y no quedarse en un solo caso.",
+      "feedback_ko": "Conservar solo el entregable o restringir el uso a urgencias deja el aprendizaje encapsulado. La p&iacute;ldora propone sistematizar lo aprendido en nuevos casos de uso para que la mejora sea acumulativa."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

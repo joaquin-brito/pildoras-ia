@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Resumir documentos en 1 minuto</h1>
     <p class="subtitle">Convierte PDFs de 40 páginas en resúmenes ejecutivos de 1 página sin leer todo tú</p>
-    <span class="time-badge">4 min de lectura</span>
+    <span class="time-badge">4 mín de lectura</span>
 </header>
 
 
@@ -1067,6 +1067,526 @@ Redáctalo para presentárselo a dirección.
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 3,
+  "pill_slug": "03",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "El director de l&iacute;nea recibe un informe de proyecto de 35 p&aacute;ginas una hora antes de una reuní&oacute;n con direcci&oacute;n. Necesita entender el estado real sin leerlo entero. &iquest;Qu&eacute; deber&iacute;a pedir primero a Antigravity?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que copie literalmente el resumen que ya trae el documento, aunque no est&eacute; pensado para direcci&oacute;n."
+        },
+        {
+          "key": "b",
+          "text": "Un resumen ejecutivo de m&aacute;ximo 1 p&aacute;gina con objetivo, estado actual, riesgos y pr&oacute;ximos pasos."
+        },
+        {
+          "key": "c",
+          "text": "Que extraiga todas las tablas y anexos para revisarlos manualmente."
+        },
+        {
+          "key": "d",
+          "text": "Una comparativa con el plan del a&ntilde;o siguiente, aunque solo tiene un documento."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Es la mejor opci&oacute;n porque ajusta la salida al destinatario y al tiempo disponible. La estructura propuesta separa lo que direcci&oacute;n necesita para decidir de los detalles operativos.",
+      "feedback_ko": "Las otras opciones obligan a leer demasiado o piden un an&aacute;lisis que no responde a la urgencia real. Si no defines audiencia y foco, el resultado suele ser menos &uacute;til para tomar decisiones."
+    },
+    {
+      "id": "p_q02",
+      "situation": "La responsable de proyectos recibe una adenda extensa de un convenio y solo quiere saber qu&eacute; compromisos afectan a PLOCAN para planificar trabajo. &iquest;Cu&aacute;l es la petici&oacute;n m&aacute;s eficaz?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un resumen general de todo el convenio sin distinguir a qui&eacute;n afecta cada parte."
+        },
+        {
+          "key": "b",
+          "text": "Una lista de todas las tareas de todas las entidades firmantes para no perder contexto."
+        },
+        {
+          "key": "c",
+          "text": "Que extraiga solo las tareas y compromisos que afectan a PLOCAN, indicando qu&eacute; hay que hacer, fecha l&iacute;mite y responsable si aparece."
+        },
+        {
+          "key": "d",
+          "text": "Que reescriba toda la adenda en lenguaje m&aacute;s sencillo, aunque siga siendo igual de larga."
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Es correcta porque transforma un documento largo en una lista accionable para la organizaci&oacute;n. Adem&aacute;s, filtra el ruido de obligaciones ajenas y facilita priorizar plazos y responsables.",
+      "feedback_ko": "Las dem&aacute;s opciones mantienen demasiado contenido irrelevante o no convierten el texto en acciones concretas. Cuando la necesidad es operativa, el valor est&aacute; en filtrar y estructurar lo que realmente afecta a PLOCAN."
+    },
+    {
+      "id": "p_q03",
+      "situation": "Un t&eacute;cnico debe explicar en una reuní&oacute;n qu&eacute; cambia entre el plan de actuaciones de 2025 y el de 2026. Tiene poco tiempo y no quiere comparar ambos documentos a mano. &iquest;Qu&eacute; deber&iacute;a pedir?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una comparativa clara indicando qu&eacute; objetivos se mantienen, cu&aacute;les son nuevos en 2026 y qu&eacute; se ha eliminado o cambiado de forma significativa."
+        },
+        {
+          "key": "b",
+          "text": "Un resumen independiente de cada documento, sin relacionarlos entre s&iacute;."
+        },
+        {
+          "key": "c",
+          "text": "Que convierta ambos documentos en listas largas de vi&ntilde;etas para leerlas en la reuní&oacute;n."
+        },
+        {
+          "key": "d",
+          "text": "Que extraiga solo las tablas financieras, aunque la reuní&oacute;n trate sobre objetivos y cambios."
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Es la mejor petici&oacute;n porque responde exactamente a la tarea de an&aacute;lisis comparativo. En lugar de duplicar lectura, organiza los cambios de forma que puedan explicarse con rapidez y criterio.",
+      "feedback_ko": "Las opciones incorrectas dejan el trabajo de comparar para despu&eacute;s o se centran en partes que no responden a la pregunta de la reuní&oacute;n. Si el objetivo es detectar cambios, hay que pedir una comparaci&oacute;n expl&iacute;cita."
+    },
+    {
+      "id": "p_q04",
+      "situation": "La coordinadora de un &aacute;rea va a resumir un documento sensible con datos internos y presupuesto. Antes de adjuntarlo, quiere actuar correctamente desde el punto de vista de confidencialidad. &iquest;Qu&eacute; deber&iacute;a hacer?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Adjuntarlo sin revisar nada, porque un resumen siempre reduce el riesgo."
+        },
+        {
+          "key": "b",
+          "text": "Partirlo en capturas de pantalla y subirlas por separado para evitar preguntar."
+        },
+        {
+          "key": "c",
+          "text": "Descartar cualquier uso de Antigravity, aunque exista una opci&oacute;n de procesamiento local."
+        },
+        {
+          "key": "d",
+          "text": "Confirmar si puede procesarse localmente o consultar a la responsable de IA antes de pedir el resumen."
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Es la respuesta adecuada porque combina productividad con cumplimiento. El contenido de la p&iacute;ldora recuerda que, si el documento es confidencial, hay que validar el uso local o escalar la duda a quien gestiona IA.",
+      "feedback_ko": "Las otras respuestas o ignoran el control de confidencialidad o bloquean el uso sin valorar la alternativa local. La buena pr&aacute;ctica no es improvisar, sino verificar el tratamiento permitido antes de procesar el documento."
+    },
+    {
+      "id": "p_q05",
+      "situation": "El responsable de compras tiene notas desordenadas de una reuní&oacute;n con proveedores y necesita enviar hoy un acta formal con decisiones y acciones. &iquest;Qu&eacute; uso de Antigravity encaja mejor?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir un resumen libre de las notas, sin formato de acta ni reparto de acciones."
+        },
+        {
+          "key": "b",
+          "text": "Pedir que redacte un acta formal con decisiones adoptadas y acciones derivadas de la reuní&oacute;n."
+        },
+        {
+          "key": "c",
+          "text": "Solicitar una comparativa con el acta de la reuní&oacute;n anterior, aunque no se necesite."
+        },
+        {
+          "key": "d",
+          "text": "Pedir que reordene las notas alfab&eacute;ticamente para que parezcan m&aacute;s claras."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Es la mejor opci&oacute;n porque convierte notas informales en un documento usable para seguimiento. Adem&aacute;s, preserva dos elementos cr&iacute;ticos en PLOCAN: decisiones tomadas y acciones pendientes.",
+      "feedback_ko": "Las alternativas dejan demasiado trabajo de edici&oacute;n posterior o no producen un entregable formal. Cuando el objetivo es cerrar una reuní&oacute;n con claridad, el formato de acta es m&aacute;s &uacute;til que un resumen gen&eacute;rico."
+    },
+    {
+      "id": "p_q06",
+      "situation": "La directora de &aacute;rea recibe un deliverable de 42 p&aacute;ginas sobre el avance de un contrato y debe explicar a direcci&oacute;n si hay retrasos, riesgos y siguientes pasos. &iquest;Qu&eacute; petici&oacute;n es la m&aacute;s alineada con esa necesidad?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un resumen muy breve sin estructura, para no condicionar la lectura."
+        },
+        {
+          "key": "b",
+          "text": "Todas las tareas de todas las partes implicadas, aunque direcci&oacute;n no las necesite."
+        },
+        {
+          "key": "c",
+          "text": "Un resumen ejecutivo de m&aacute;ximo 1 p&aacute;gina con avances, retrasos, riesgos y pr&oacute;ximos pasos redactado para direcci&oacute;n."
+        },
+        {
+          "key": "d",
+          "text": "Una reescritura completa del deliverable con el mismo nivel de detalle t&eacute;cnico."
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Es correcta porque traduce un documento t&eacute;cnico a una vista de gesti&oacute;n orientada a decisi&oacute;n. La combinaci&oacute;n de avances, retrasos, riesgos y siguientes pasos cubre justo lo que la directora necesita comunicar.",
+      "feedback_ko": "Las otras opciones son demasiado vagas, demasiado extensas o demasiado operativas para el destinatario. Si el mensaje va a direcci&oacute;n, conviene adaptar el resumen a ese nivel de lectura."
+    },
+    {
+      "id": "p_q07",
+      "situation": "Un analista tiene una normativa extensa y el comit&eacute; solo le va a preguntar qu&eacute; debe hacer la organizaci&oacute;n durante el pr&oacute;ximo mes. &iquest;Qu&eacute; petici&oacute;n genera la salida m&aacute;s &uacute;til?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que extraiga solo las tareas y compromisos que afectan a PLOCAN, con plazo y responsable si figura en el texto."
+        },
+        {
+          "key": "b",
+          "text": "Un resumen general de la normativa para comprender su contexto completo."
+        },
+        {
+          "key": "c",
+          "text": "Un glosario de todos los conceptos t&eacute;cnicos antes de revisar obligaciones."
+        },
+        {
+          "key": "d",
+          "text": "Una copia del &iacute;ndice y de los anexos para localizar luego la informaci&oacute;n manualmente."
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Es la mejor opci&oacute;n porque responde directamente a una necesidad operativa y temporal. En lugar de resumir todo el marco, filtra qu&eacute; hacer y c&oacute;mo priorizarlo en PLOCAN.",
+      "feedback_ko": "Las dem&aacute;s respuestas aportan contexto, pero no reducen el trabajo de convertir la norma en acci&oacute;n. Si el comit&eacute; pedir&aacute; obligaciones concretas, hay que solicitar precisamente eso."
+    },
+    {
+      "id": "p_q08",
+      "situation": "La responsable de IA recibe de un equipo un Word y un PowerPoint sobre la misma iniciativa. Necesitan una nota breve para direcci&oacute;n sin reconstruir manualmente la historia entre ambos archivos. &iquest;Qu&eacute; enfoque aprovecha mejor la herramienta?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pasar solo el PowerPoint, porque las diapositivas ya resumen todo por s&iacute; mismas."
+        },
+        {
+          "key": "b",
+          "text": "Leer el Word por un lado y pedir un resumen separado del PowerPoint para fusionarlos manualmente."
+        },
+        {
+          "key": "c",
+          "text": "Copiar al chat solo los t&iacute;tulos de ambos archivos y esperar que con eso baste."
+        },
+        {
+          "key": "d",
+          "text": "Adjuntar ambos archivos y pedir una s&iacute;ntesis ejecutiva conjunta orientada a direcci&oacute;n."
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Es la respuesta m&aacute;s eficaz porque usa la capacidad de trabajar con distintos formatos y evita una integraci&oacute;n manual innecesaria. Adem&aacute;s, la orientaci&oacute;n a direcci&oacute;n obliga a priorizar lo importante en una sola salida.",
+      "feedback_ko": "Las otras opciones pierden contexto, duplican trabajo o se quedan cortas de informaci&oacute;n. Si el valor est&aacute; repartido entre Word y PowerPoint, conviene sintetizarlos juntos desde el principio."
+    },
+    {
+      "id": "p_q09",
+      "situation": "Un gestor debe preparar una reuní&oacute;n de seguimiento sobre el plan 2026 y quiere mostrar de forma clara qu&eacute; se mantiene y qu&eacute; cambia respecto a 2025. &iquest;Qu&eacute; salida le ayudar&aacute; m&aacute;s?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un resumen del plan 2026 sin referencia a la versi&oacute;n anterior."
+        },
+        {
+          "key": "b",
+          "text": "Una comparativa entre 2025 y 2026 con objetivos mantenidos, nuevos y eliminados o modificados de forma relevante."
+        },
+        {
+          "key": "c",
+          "text": "Una lista de todos los p&aacute;rrafos que contienen cifras presupuestarias."
+        },
+        {
+          "key": "d",
+          "text": "Una versi&oacute;n abreviada de ambos documentos, pero sin explicar diferencias."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Es la opci&oacute;n correcta porque convierte dos documentos largos en una narrativa de cambio f&aacute;cil de defender en reuní&oacute;n. Lo importante no es resumir cada plan, sino hacer visibles las diferencias con criterio.",
+      "feedback_ko": "Las otras opciones obligan a inferir cambios a mano o se centran en una parte demasiado estrecha del contenido. Si la reuní&oacute;n trata sobre evoluci&oacute;n entre versiones, la comparaci&oacute;n debe pedirse de forma expl&iacute;cita."
+    },
+    {
+      "id": "p_q10",
+      "situation": "La jefa de unidad sale de una reuní&oacute;n con socios con apuntes r&aacute;pidos y varias decisiones cruzadas. Necesita enviar un documento claro para que el equipo sepa qu&eacute; se acord&oacute; y qu&eacute; toca hacer. &iquest;Qu&eacute; deber&iacute;a pedir a Antigravity?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una lista plana de frases copiadas desde las notas, sin reorganizaci&oacute;n."
+        },
+        {
+          "key": "b",
+          "text": "Un resumen de ambiente y comentarios generales de la reuní&oacute;n."
+        },
+        {
+          "key": "c",
+          "text": "Un acta formal con decisiones y acciones derivadas, redactada a partir de las notas."
+        },
+        {
+          "key": "d",
+          "text": "Una comparativa con el orden del d&iacute;a, aunque el problema real sea cerrar el acta."
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Es la mejor respuesta porque convierte notas de trabajo en un entregable compartible y accionable. La clave no es solo resumir, sino dejar trazabilidad de acuerdos y tareas para el equipo.",
+      "feedback_ko": "Las opciones incorrectas no cierran el ciclo de la reuní&oacute;n o siguen dejando ambig&uuml;edad. Cuando varias personas deben ejecutar acuerdos, un acta estructurada aporta mucha m&aacute;s claridad que un resumen difuso."
+    },
+    {
+      "id": "p_q11",
+      "situation": "Un t&eacute;cnico de operaciones ya recibí&oacute; un resumen general de un informe, pero ve que no deja claro d&oacute;nde est&aacute;n los riesgos ni qu&eacute; viene despu&eacute;s. Antes de reenviarlo a direcci&oacute;n, quiere mejorarlo. &iquest;Qu&eacute; deber&iacute;a hacer?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir de nuevo un resumen ejecutivo de m&aacute;ximo 1 p&aacute;gina especificando que incluya estado actual, riesgos y pr&oacute;ximos pasos."
+        },
+        {
+          "key": "b",
+          "text": "Enviar el resumen tal como est&aacute; y aclarar los riesgos en una llamada posterior."
+        },
+        {
+          "key": "c",
+          "text": "Solicitar que se copien todas las conclusiones del informe sin sintetizar."
+        },
+        {
+          "key": "d",
+          "text": "Cambiar a una comparativa entre versiones, aunque solo necesite afinar el resumen actual."
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Es correcta porque demuestra un uso iterativo y dirigido de la herramienta. Si el primer resultado no responde bien a la necesidad de decisi&oacute;n, conviene precisar la estructura y el foco en la siguiente petici&oacute;n.",
+      "feedback_ko": "Las otras opciones aceptan una salida incompleta o cambian de tarea sin necesidad. El valor de Antigravity aumenta cuando ajustas el prompt para obtener exactamente el nivel de detalle que necesitas."
+    },
+    {
+      "id": "p_q12",
+      "situation": "La responsable de programa tiene el plan 2025, el plan 2026 y una reuní&oacute;n de implantaci&oacute;n ma&ntilde;Ana. Necesita explicar qu&eacute; ha cambiado y, a partir de ah&iacute;, qu&eacute; acciones afectan a PLOCAN. &iquest;Qu&eacute; estrategia es m&aacute;s s&oacute;lida?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir un resumen gen&eacute;rico de ambos documentos y deducir luego las acciones manualmente."
+        },
+        {
+          "key": "b",
+          "text": "Leer solo el plan 2026, porque el nuevo ya deber&iacute;a incluir todos los cambios."
+        },
+        {
+          "key": "c",
+          "text": "Solicitar un acta formal aunque todav&iacute;a no se haya celebrado la reuní&oacute;n."
+        },
+        {
+          "key": "d",
+          "text": "Primero pedir una comparativa entre 2025 y 2026 y despu&eacute;s extraer solo las tareas y compromisos que afectan a PLOCAN."
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Es la opci&oacute;n m&aacute;s completa porque separa dos preguntas distintas: qu&eacute; cambi&oacute; y qu&eacute; toca hacer. Ese orden reduce errores de interpretaci&oacute;n y convierte el an&aacute;lisis en un plan operativo m&aacute;s claro.",
+      "feedback_ko": "Las otras respuestas mezclan tareas o dejan demasiado razonamiento manual para despu&eacute;s. Cuando necesitas cambio m&aacute;s acci&oacute;n, conviene resolver primero la comparaci&oacute;n y luego filtrar impactos para PLOCAN."
+    },
+    {
+      "id": "p_q13",
+      "situation": "El director de proyecto ya tiene un resumen de un informe largo, pero ahora necesita bajar de nivel y saber qu&eacute; compromisos concretos afectan a su equipo. &iquest;Cu&aacute;l es el siguiente paso m&aacute;s inteligente?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que el resumen sea todav&iacute;a m&aacute;s corto, aunque no a&ntilde;ada informaci&oacute;n accionable."
+        },
+        {
+          "key": "b",
+          "text": "Sobre el mismo documento, pedir solo las tareas y compromisos que afectan a PLOCAN, con fechas y responsables si aparecen."
+        },
+        {
+          "key": "c",
+          "text": "Solicitar que se traduzca todo el informe a un tono m&aacute;s formal."
+        },
+        {
+          "key": "d",
+          "text": "Preparar una comparativa con otro documento distinto aunque el problema sea operativo."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Es correcto porque aprovecha el resumen como paso previo y luego profundiza donde hace falta actuar. Pasar de visi&oacute;n global a lista de compromisos es una transici&oacute;n l&oacute;gica cuando el equipo necesita ejecuci&oacute;n, no solo contexto.",
+      "feedback_ko": "Las alternativas reducen o desv&iacute;an el trabajo sin resolver la necesidad pr&aacute;ctica del equipo. Si ya tienes contexto general, el siguiente valor est&aacute; en identificar qu&eacute; acciones concretas debes gestionar."
+    },
+    {
+      "id": "p_q14",
+      "situation": "Una t&eacute;cnica de administraci&oacute;n tiene parte de la informaci&oacute;n en un PDF y parte en texto copiado de un correo interno. Debe preparar una nota de 1 p&aacute;gina para direcci&oacute;n sin perder ning&uacute;n punto importante. &iquest;Qu&eacute; enfoque encaja mejor?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usar solo el correo, porque el PDF probablemente repita el mismo contenido."
+        },
+        {
+          "key": "b",
+          "text": "Resumir el PDF primero y dejar el texto copiado para otro momento."
+        },
+        {
+          "key": "c",
+          "text": "Adjuntar el PDF, pegar el texto relevante y pedir un resumen ejecutivo unificado orientado a direcci&oacute;n."
+        },
+        {
+          "key": "d",
+          "text": "Convertir el correo en una lista de vi&ntilde;etas y confiar en que eso sustituya al documento."
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Es la mejor respuesta porque integra varias fuentes en una sola salida y evita huecos de contexto. La p&iacute;ldora recuerda que la herramienta funciona con PDF y tambi&eacute;n con texto copiado, as&iacute; que tiene sentido combinarlos.",
+      "feedback_ko": "Las otras opciones dejan informaci&oacute;n fuera o fuerzan una consolidaci&oacute;n manual posterior. Si la nota final debe ser breve pero completa, conviene dar a Antigravity todas las piezas relevantes desde el inicio."
+    },
+    {
+      "id": "p_q15",
+      "situation": "El coordinador de equipo tiene dos versiones de un informe de proyecto y adem&aacute;s necesita salir de la reuní&oacute;n semanal con una lista clara de tareas para PLOCAN. Quiere el camino m&aacute;s r&aacute;pido y &uacute;til. &iquest;Qu&eacute; deber&iacute;a hacer?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir una comparativa entre ambas versiones y, a partir de la versi&oacute;n vigente, extraer solo las acciones y compromisos que afectan a PLOCAN."
+        },
+        {
+          "key": "b",
+          "text": "Solicitar un resumen gen&eacute;rico de cada versi&oacute;n por separado y deducir manualmente qu&eacute; ha cambiado."
+        },
+        {
+          "key": "c",
+          "text": "Quedarse solo con la versi&oacute;n nueva y asumir que las tareas antiguas ya no importan."
+        },
+        {
+          "key": "d",
+          "text": "Pedir un acta formal aunque lo que tiene son dos informes, no notas de reuní&oacute;n."
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Es la estrategia m&aacute;s robusta porque combina an&aacute;lisis de cambio con aterrizaje operativo. Primero aclara qu&eacute; se modific&oacute; y luego traduce la versi&oacute;n vigente en acciones concretas para la organizaci&oacute;n.",
+      "feedback_ko": "Las otras opciones dejan trabajo manual innecesario o mezclan tipos de salida que no corresponden al material disponible. Cuando necesitas entender cambios y actuar, la secuencia comparar m&aacute;s extraer acciones es la m&aacute;s eficaz."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

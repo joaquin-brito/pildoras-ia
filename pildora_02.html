@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Tu primer chat: 5 minutos para empezar</h1>
     <p class="subtitle">Abre Antigravity, escribe tu primer prompt y obtén un resultado útil en menos de 5 minutos</p>
-    <span class="time-badge">5 min de lectura</span>
+    <span class="time-badge">5 mín de lectura</span>
 </header>
 
 
@@ -1055,6 +1055,526 @@ body.template-technical .action-card {
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 2,
+  "pill_slug": "02",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p2_q01",
+      "situation": "El director de l&iacute;nea necesita pedir por email los datos del &uacute;ltimo informe trimestral a otro equipo y quiere obtener un borrador &uacute;til en menos de 5 minutos. &iquest;Qu&eacute; primer prompt le ayudar&iacute;a m&aacute;s?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Hazme algo bonito para pedir unos datos"
+        },
+        {
+          "key": "b",
+          "text": "Expl&iacute;came todas las formas posibles de escribir emails profesionales"
+        },
+        {
+          "key": "c",
+          "text": "Tengo que enviar un email a un colega para pedirle los datos del &uacute;ltimo informe trimestral. Red&aacute;ctame un borrador breve y profesional"
+        },
+        {
+          "key": "d",
+          "text": "Decide t&uacute; qu&eacute; necesito y escr&iacute;belo como prefieras"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. El prompt define la tarea real, el objetivo y el tono, as&iacute; que Antigravity puede devolver un borrador accionable desde el primer intento. Eso encaja con la idea de empezar por algo sencillo pero &uacute;til de verdad.",
+      "feedback_ko": "Las otras opciones dejan demasiados huecos o se van a una explicaci&oacute;n te&oacute;rica. En esta p&iacute;ldora, lo eficaz es pedir una tarea concreta que tengas pendiente hoy, no una respuesta gen&eacute;rica."
+    },
+    {
+      "id": "p2_q02",
+      "situation": "La responsable de proyectos ya tiene un borrador correcto, pero su destinatario es un compa&ntilde;ero cercano y adem&aacute;s necesita los datos antes del viernes. &iquest;Qu&eacute; siguiente mensaje aprovecha mejor la iteraci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Empieza de cero y escribe otra cosa distinta"
+        },
+        {
+          "key": "b",
+          "text": "Bien, pero hazlo m&aacute;s informal. Somos compa&ntilde;eros de trabajo. Y a&ntilde;ade que necesito los datos antes del viernes"
+        },
+        {
+          "key": "c",
+          "text": "Mej&oacute;ralo un poco"
+        },
+        {
+          "key": "d",
+          "text": "Hazlo perfecto"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La instrucci&oacute;n concreta qu&eacute; debe cambiar: tono y plazo. Cuanto m&aacute;s espec&iacute;fica es la petici&oacute;n, m&aacute;s cerca queda el resultado final sin tener que rehacer todo.",
+      "feedback_ko": "Pedir que lo mejore sin indicar c&oacute;mo obliga a la herramienta a adivinar. La iteraci&oacute;n funciona cuando se marcan cambios precisos, no cuando se usa una consigna ambigua."
+    },
+    {
+      "id": "p2_q03",
+      "situation": "Un t&eacute;cnico de observaci&oacute;n va a recibir una visita externa y quiere una explicaci&oacute;n sencilla de PLOCAN para alguien que no sabe nada de oceanograf&iacute;a. &iquest;Qu&eacute; prompt aplicar&iacute;a mejor lo aprendido?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Dame un resumen en 5 puntos de qu&eacute; es la Plataforma Oce&aacute;nica de Canarias y a qu&eacute; se dedica. Escribe como para alguien que no sabe nada de oceanograf&iacute;a"
+        },
+        {
+          "key": "b",
+          "text": "Descr&iacute;beme PLOCAN con todo el detalle t&eacute;cnico posible"
+        },
+        {
+          "key": "c",
+          "text": "Haz una definici&oacute;n acad&eacute;mica extensa y con jerga"
+        },
+        {
+          "key": "d",
+          "text": "Busca algo sobre PLOCAN y escribe lo que te parezca"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. El prompt fija formato, tema y nivel de conocimiento del lector, por eso el resultado ser&aacute; claro y utilizable. Aplicar la herramienta bien no es pedir m&aacute;s texto, sino pedir el texto adecuado para la audiencia real.",
+      "feedback_ko": "Las otras opciones empujan hacia tecnicismo, vaguedad o exceso de longitud. Si el destinatario no es especialista, el valor est&aacute; en adaptar el mensaje, no en acumular detalle."
+    },
+    {
+      "id": "p2_q04",
+      "situation": "Una analista prueba Antigravity con el mensaje Hazme algo bonito sobre PLOCAN y recibe una respuesta difusa que no le sirve para trabajar. &iquest;Cu&aacute;l es el mejor diagn&oacute;stico?",
+      "options": [
+        {
+          "key": "a",
+          "text": "La herramienta falla cuando se usa para temas institucionales"
+        },
+        {
+          "key": "b",
+          "text": "Necesita subir antes un documento PDF, aunque no tenga ninguno"
+        },
+        {
+          "key": "c",
+          "text": "El prompt es demasiado vago y no concreta tarea, formato ni destinatario"
+        },
+        {
+          "key": "d",
+          "text": "Deber&iacute;a haber pedido una respuesta m&aacute;s larga para que fuera mejor"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. El problema no es la herramienta, sino la falta de contexto operativo en el prompt. Cuando defines qu&eacute; necesitas, para qui&eacute;n y con qu&eacute; tono o formato, la respuesta mejora mucho.",
+      "feedback_ko": "Ni subir un archivo ni pedir m&aacute;s longitud arregla una instrucci&oacute;n mal planteada. La p&iacute;ldora insiste en evitar prompts vagos y sustituirlos por peticiones concretas y accionables."
+    },
+    {
+      "id": "p2_q05",
+      "situation": "El coordinador de un proyecto europeo quiere probar Antigravity por primera vez y duda entre hacer una demostraci&oacute;n gen&eacute;rica o resolver una tarea pendiente del d&iacute;a. &iquest;Qu&eacute; decisi&oacute;n refleja mejor los primeros reflejos recomendados?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usar una tarea real que tenga pendiente, aunque sea peque&ntilde;a"
+        },
+        {
+          "key": "b",
+          "text": "Empezar por una prueba abstracta para no arriesgarse"
+        },
+        {
+          "key": "c",
+          "text": "Esperar a tener una tarea compleja para que se note m&aacute;s la IA"
+        },
+        {
+          "key": "d",
+          "text": "Pedir a Antigravity que elija una tarea cualquiera"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. La recomendaci&oacute;n es pedir algo real, no hacer una demo vac&iacute;a. Cuando resuelves una necesidad inmediata, entiendes antes qu&eacute; valor aporta la herramienta en tu trabajo.",
+      "feedback_ko": "Las pruebas abstractas suelen dejar una sensaci&oacute;n difusa y poco transferible. El aprendizaje inicial mejora cuando la IA produce un resultado que puedes usar hoy mismo."
+    },
+    {
+      "id": "p2_q06",
+      "situation": "Una t&eacute;cnica de comunicaci&oacute;n necesita traducir al ingl&eacute;s un p&aacute;rrafo para un informe de la UE y quiere un tono formal. &iquest;Qu&eacute; prompt est&aacute; mejor planteado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Trad&uacute;ceme esto"
+        },
+        {
+          "key": "b",
+          "text": "Trad&uacute;ceme este p&aacute;rrafo al ingl&eacute;s con tono formal para un informe EU"
+        },
+        {
+          "key": "c",
+          "text": "P&aacute;salo a otro idioma y ya ver&eacute; cu&aacute;l"
+        },
+        {
+          "key": "d",
+          "text": "Haz que suene internacional"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. El prompt indica idioma de destino, tono y contexto de uso, tres variables clave para una buena traducci&oacute;n. Eso reduce ambig&uuml;edad y acerca la salida al documento final.",
+      "feedback_ko": "Si no se concreta el idioma, el tono o el contexto, la respuesta puede quedarse corta o desviarse. Una buena instrucci&oacute;n no pide traducir sin m&aacute;s, pide traducir para una situaci&oacute;n concreta."
+    },
+    {
+      "id": "p2_q07",
+      "situation": "El responsable de compras obtiene un borrador de email bastante bueno para pedir una oferta, pero est&aacute; a punto de copiarlo y enviarlo sin leerlo. &iquest;Qu&eacute; deber&iacute;a hacer seg&uacute;n el uso recomendado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Enviar el texto tal cual para ahorrar el m&aacute;ximo tiempo posible"
+        },
+        {
+          "key": "b",
+          "text": "Revisarlo y ajustarlo antes de enviarlo"
+        },
+        {
+          "key": "c",
+          "text": "Volver a generar cinco versiones nuevas aunque la primera sirva"
+        },
+        {
+          "key": "d",
+          "text": "Pedir otro texto m&aacute;s largo para estar seguro"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Antigravity acelera el borrador, pero la persona usuaria sigue validando el mensaje final. Revisar evita errores de tono, fechas o contexto y convierte una buena salida en una salida segura.",
+      "feedback_ko": "Enviar sin revisar confunde rapidez con criterio. La herramienta ayuda a producir antes, pero no sustituye la comprobaci&oacute;n humana del contenido que se va a mandar."
+    },
+    {
+      "id": "p2_q08",
+      "situation": "La gestora de proyectos ya ha probado un email y ahora quiere comprobar si Antigravity le sirve para algo m&aacute;s dentro de PLOCAN. &iquest;Qu&eacute; siguiente prueba mostrar&iacute;a mejor esa versatilidad?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir otro email casi igual al anterior"
+        },
+        {
+          "key": "b",
+          "text": "Solicitar un resumen claro de un concepto, proyecto o normativa para alguien no especialista"
+        },
+        {
+          "key": "c",
+          "text": "Cerrar la herramienta porque ya ha visto una funci&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Esperar a que otra persona del equipo la use primero"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La p&iacute;ldora propone cambiar de tipo de tarea para ver que la herramienta no solo redacta emails. Pasar a un resumen o explicaci&oacute;n permite comprobar c&oacute;mo organiza y simplifica informaci&oacute;n.",
+      "feedback_ko": "Repetir la misma prueba apenas ampl&iacute;a el aprendizaje. La versatilidad se comprueba mejor cuando cambias de tarea y observas c&oacute;mo responde en otro contexto de trabajo."
+    },
+    {
+      "id": "p2_q09",
+      "situation": "El jefe de laboratorio pide un resumen de una normativa interna y Antigravity devuelve 12 puntos cuando &eacute;l solo necesita 5 para una reuní&oacute;n breve. &iquest;Qu&eacute; har&iacute;as para acercar la respuesta a su necesidad real?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que lo reescriba en 5 puntos claros para la reuní&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Aceptar los 12 puntos y recortarlos luego sin m&aacute;s"
+        },
+        {
+          "key": "c",
+          "text": "Volver a empezar con otro tema"
+        },
+        {
+          "key": "d",
+          "text": "Pedir una versi&oacute;n todav&iacute;a m&aacute;s larga para no perder matices"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Iterar no es repetir, sino acotar mejor el resultado deseado. Si ya sabes que necesitas 5 puntos y un uso concreto, decirlo mejora mucho la utilidad de la respuesta.",
+      "feedback_ko": "Recortar manualmente puede funcionar, pero desaprovecha una de las ventajas de la herramienta: ajustar la salida al formato necesario. Pedir m&aacute;s texto o cambiar de tema no resuelve la necesidad concreta."
+    },
+    {
+      "id": "p2_q10",
+      "situation": "La responsable de comunicaci&oacute;n quiere resumir una nota t&eacute;cnica para enviarla a una entidad externa no especializada. &iquest;Qu&eacute; enfoque es m&aacute;s s&oacute;lido?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir un resumen sin indicar qui&eacute;n lo va a leer"
+        },
+        {
+          "key": "b",
+          "text": "Pedir que mantenga toda la jerga original para no simplificar demasiado"
+        },
+        {
+          "key": "c",
+          "text": "Indicar que haga un resumen claro, breve y pensado para una audiencia no especialista"
+        },
+        {
+          "key": "d",
+          "text": "Limitarse a copiar el texto original en el email"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. El valor est&aacute; en definir la audiencia y el prop&oacute;sito del resumen, no solo en pedir que acorte texto. As&iacute; la IA adapta lenguaje y nivel de detalle a la situaci&oacute;n real.",
+      "feedback_ko": "Si no marcas para qui&eacute;n es el mensaje, la salida puede quedarse demasiado t&eacute;cnica o poco orientada. El uso eficaz de Antigravity depende mucho de contextualizar destinatario y objetivo."
+    },
+    {
+      "id": "p2_q11",
+      "situation": "Un t&eacute;cnico de datos piensa que no deber&iacute;a usar Antigravity hasta aprender algo de programaci&oacute;n. Tiene que redactar hoy un breve correo para coordinar una entrega interna. &iquest;Qu&eacute; opci&oacute;n aplica mejor la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Esperar a recibir formaci&oacute;n t&eacute;cnica avanzada antes de probar"
+        },
+        {
+          "key": "b",
+          "text": "Escribir en lenguaje natural lo que necesita y pedir un borrador"
+        },
+        {
+          "key": "c",
+          "text": "No usar la herramienta porque solo sirve para perfiles t&eacute;cnicos"
+        },
+        {
+          "key": "d",
+          "text": "Buscar primero comandos complejos para que el prompt parezca m&aacute;s profesional"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La p&iacute;ldora subraya que no hace falta programar, sino saber pedir con claridad. Si tienes una tarea de oficina real, puedes empezar en lenguaje natural y obtener un resultado &uacute;til enseguida.",
+      "feedback_ko": "Esperar a dominar algo t&eacute;cnico retrasa un uso que ya podr&iacute;a aportar valor hoy. El enfoque correcto es simple: plantear la necesidad como se la explicar&iacute;as a un colega."
+    },
+    {
+      "id": "p2_q12",
+      "situation": "La directora de programa recibe un borrador correcto, pero detecta que el tono suena demasiado seco para un intercambio interno entre compa&ntilde;eros. &iquest;Qu&eacute; ajuste ser&iacute;a m&aacute;s coherente?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que lo haga m&aacute;s informal manteniendo el objetivo del mensaje"
+        },
+        {
+          "key": "b",
+          "text": "Borrar el borrador y escribirlo entero sin usar la herramienta"
+        },
+        {
+          "key": "c",
+          "text": "Pedir que a&ntilde;ada tecnicismos para que parezca m&aacute;s serio"
+        },
+        {
+          "key": "d",
+          "text": "Mandarlo igual porque el contenido ya est&aacute; correcto"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Cambiar el tono sin perder el objetivo es una iteraci&oacute;n t&iacute;pica y muy valiosa. Antigravity no solo genera un primer borrador, tambi&eacute;n permite afinar c&oacute;mo quieres sonar ante ese destinatario.",
+      "feedback_ko": "Si el tono no encaja, el mensaje puede funcionar peor aunque el contenido sea correcto. Reescribir desde cero o a&ntilde;adir tecnicismo no es la mejor salida cuando basta con pedir un ajuste preciso."
+    },
+    {
+      "id": "p2_q13",
+      "situation": "Un administrativo prepara un recordatorio para que varias unidades env&iacute;en informaci&oacute;n pendiente y quiere evitar un prompt excesivamente abierto. &iquest;Cu&aacute;l de estas opciones es la m&aacute;s eficaz?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Haz un mensaje convincente"
+        },
+        {
+          "key": "b",
+          "text": "Red&aacute;ctame un email breve y profesional para recordar a varias unidades que necesito la informaci&oacute;n pendiente antes del jueves"
+        },
+        {
+          "key": "c",
+          "text": "Escribe cualquier texto para insistir en algo importante"
+        },
+        {
+          "key": "d",
+          "text": "Genera un texto largo para que luego yo saque una versi&oacute;n corta"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El prompt fija acci&oacute;n, tono, destinatarios y plazo, que son los datos que Antigravity necesita para acertar mejor. Eso reduce idas y vueltas y produce un texto directamente aprovechable.",
+      "feedback_ko": "Las formulaciones abiertas dejan a la IA demasiada libertad sobre algo que t&uacute; ya sabes. Cuanto m&aacute;s concreta es la necesidad, menos gen&eacute;rica ser&aacute; la respuesta."
+    },
+    {
+      "id": "p2_q14",
+      "situation": "La responsable de formaci&oacute;n pide una explicaci&oacute;n de un procedimiento interno y recibe una respuesta clara, pero todav&iacute;a con demasiada jerga para personal nuevo. &iquest;Qu&eacute; deber&iacute;a hacer?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que la reescriba para alguien que acaba de incorporarse y no conoce el tema"
+        },
+        {
+          "key": "b",
+          "text": "Aceptar la versi&oacute;n t&eacute;cnica porque siempre es m&aacute;s precisa"
+        },
+        {
+          "key": "c",
+          "text": "Eliminar t&eacute;rminos al azar sin volver a preguntar"
+        },
+        {
+          "key": "d",
+          "text": "Cambiar de herramienta porque Antigravity ya dio su mejor respuesta"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. La mejor iteraci&oacute;n concreta de nuevo la audiencia y obliga a simplificar lo que sigue siendo demasiado t&eacute;cnico. Ajustar el nivel de explicaci&oacute;n es una aplicaci&oacute;n directa de la p&iacute;ldora.",
+      "feedback_ko": "Una respuesta puede ser correcta y aun as&iacute; no servir al p&uacute;blico real. Cuando el problema es el nivel de lenguaje, la soluci&oacute;n no es resignarse, sino pedir la adaptaci&oacute;n adecuada."
+    },
+    {
+      "id": "p2_q15",
+      "situation": "El coordinador de unidad quiere ense&ntilde;ar a su equipo los tres primeros reflejos con Antigravity para que empiecen bien. &iquest;Qu&eacute; consejo resume mejor esa forma de trabajar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Empieza por una prueba abstracta, evita cambiar el prompt y usa siempre la misma clase de tarea"
+        },
+        {
+          "key": "b",
+          "text": "Pide algo real, concreta bien lo que necesitas y ajusta el resultado con cambios espec&iacute;ficos"
+        },
+        {
+          "key": "c",
+          "text": "Haz prompts largos desde el principio, aunque no tengas claro el objetivo"
+        },
+        {
+          "key": "d",
+          "text": "Usa la herramienta solo cuando tengas una tarea muy compleja y cerrada"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Ese consejo junta lo esencial de la p&iacute;ldora: empezar con una necesidad real, ser espec&iacute;fico y aprovechar la iteraci&oacute;n. As&iacute; la herramienta genera valor r&aacute;pido y el equipo aprende a pedir mejor.",
+      "feedback_ko": "Las otras opciones contradicen el enfoque pr&aacute;ctico de arranque. No se trata de impresionar con prompts largos ni de esperar a un caso complejo, sino de usar tareas reales y afinar la petici&oacute;n paso a paso."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

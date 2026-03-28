@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Emails profesionales sin sudar</h1>
     <p class="subtitle">Redacta emails en español e inglés con el tono justo. De borrador a enviado en 2 minutos</p>
-    <span class="time-badge">5 min de lectura</span>
+    <span class="time-badge">5 mín de lectura</span>
 </header>
 
 
@@ -1060,6 +1060,526 @@ Firma: mi nombre es [tu nombre], PLOCAN.
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 4,
+  "pill_slug": "04",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "Un t&eacute;cnico de PLOCAN necesita escribir en ingl&eacute;s a un posible socio europeo para presentarse y explorar una colaboraci&oacute;n en un proyecto Horizon. Quiere usar Antigravity para obtener un borrador &uacute;til a la primera. &iquest;Qu&eacute; instrucci&oacute;n inicial ayudar&iacute;a m&aacute;s?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Redacta un email profesional en ingl&eacute;s."
+        },
+        {
+          "key": "b",
+          "text": "Escribe a un socio y dile que queremos colaborar."
+        },
+        {
+          "key": "c",
+          "text": "Soy t&eacute;cnico de PLOCAN. Escribo a un posible socio europeo para presentarnos, explicar brevemente qu&eacute; hace PLOCAN y proponer una reuní&oacute;n breve. Tono: profesional y cordial."
+        },
+        {
+          "key": "d",
+          "text": "Haz un email formal y largo para quedar bien."
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La mejor petici&oacute;n combina contexto, objetivo, destinatario y tono, que es justo la f&oacute;rmula explicada en la p&iacute;ldora. As&iacute; Antigravity puede adaptar el borrador a una relaci&oacute;n nueva sin obligarte a rehacerlo despu&eacute;s.",
+      "feedback_ko": "Las otras opciones son demasiado vagas o se centran en la apariencia del correo, no en su funci&oacute;n. Si falta contexto sobre qui&eacute;n escribe, a qui&eacute;n y para qu&eacute;, el borrador puede sonar gen&eacute;rico o inadecuado."
+    },
+    {
+      "id": "p_q02",
+      "situation": "La responsable de proyectos recibe un borrador en ingl&eacute;s para un coordinador con quien lleva dos a&ntilde;os trabajando. El texto suena correcto, pero demasiado distante y ocupa nueve l&iacute;neas. &iquest;Qu&eacute; ajuste pedir a Antigravity es m&aacute;s eficaz?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Hazlo m&aacute;s corto, pero deja el mismo tono."
+        },
+        {
+          "key": "b",
+          "text": "Est&aacute; bien, pero demasiado formal. Llevamos tiempo trabajando juntos: usa un tono m&aacute;s cercano y red&uacute;celo a un m&aacute;ximo de cinco l&iacute;neas."
+        },
+        {
+          "key": "c",
+          "text": "C&aacute;mbialo por completo y escribe algo diferente."
+        },
+        {
+          "key": "d",
+          "text": "Trad&uacute;celo al espa&ntilde;ol para revisarlo mejor."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La p&iacute;ldora insiste en que el tono se puede dirigir con instrucciones simples y concretas. Indicar la relaci&oacute;n previa y la extensi&oacute;n deseada permite ajustar el correo sin perder la profesionalidad.",
+      "feedback_ko": "Las otras opciones se quedan cortas porque no explican qu&eacute; debe cambiar ni por qu&eacute;. Si no especificas el tipo de relaci&oacute;n y el l&iacute;mite de extensi&oacute;n, Antigravity puede mantener un registro poco natural para ese contexto."
+    },
+    {
+      "id": "p_q03",
+      "situation": "El director de l&iacute;nea recibe un correo molesto de un socio por un retraso en el WP4. Quiere responder con ayuda de Antigravity sin sonar defensivo ni evasivo. &iquest;Qu&eacute; enfoque es m&aacute;s adecuado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Negar que haya retraso y pedir paciencia."
+        },
+        {
+          "key": "b",
+          "text": "Responder solo con una disculpa breve y sin explicar nada."
+        },
+        {
+          "key": "c",
+          "text": "Pedir una respuesta que reconozca el retraso, explique que se debí&oacute; a un problema t&eacute;cnico ya resuelto y proponga el siguiente paso con tono firme y emp&aacute;tico."
+        },
+        {
+          "key": "d",
+          "text": "Esperar unos d&iacute;as para que baje la tensi&oacute;n antes de contestar."
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Ese enfoque equilibra tres cosas que importan en un correo dif&iacute;cil: reconocimiento del problema, contexto suficiente y una salida pr&aacute;ctica. La p&iacute;ldora presenta precisamente ese tipo de uso para responder sin bloquearse al redactar.",
+      "feedback_ko": "Negar, ocultar o retrasar la respuesta suele empeorar la situaci&oacute;n. Una disculpa sin explicaci&oacute;n tampoco ayuda a recuperar confianza; hace falta mostrar comprensi&oacute;n y orientaci&oacute;n a soluci&oacute;n."
+    },
+    {
+      "id": "p_q04",
+      "situation": "Una t&eacute;cnica quiere que un nuevo email mantenga el mismo estilo que otro mensaje anterior que ya función&oacute; muy bien con un socio internacional. &iquest;Qu&eacute; uso de Antigravity aprovecha mejor esa situaci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pegar el email anterior y pedir: usa este estilo para redactar el nuevo mensaje sobre el tema actual."
+        },
+        {
+          "key": "b",
+          "text": "Copiar solo la despedida del correo anterior."
+        },
+        {
+          "key": "c",
+          "text": "Pedir un email completamente distinto para no repetirse."
+        },
+        {
+          "key": "d",
+          "text": "Usar el mismo correo anterior cambiando solo la fecha."
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. La p&iacute;ldora propone reutilizar un email previo como referencia de voz y estilo, porque eso da a Antigravity un ejemplo concreto de lo que funciona. No se trata de copiar literalmente, sino de transferir el tono al nuevo contexto.",
+      "feedback_ko": "Las otras opciones no aprovechan el aprendizaje impl&iacute;cito del ejemplo completo. Cambiar solo una despedida o reciclar el mensaje casi entero puede producir un correo incoherente o poco adaptado a la nueva situaci&oacute;n."
+    },
+    {
+      "id": "p_q05",
+      "situation": "Una responsable debe informar en ingl&eacute;s de que el deliverable D3.2 est&aacute; terminado y pedir comentarios antes de una fecha concreta. El primer borrador de Antigravity explica bien el contexto, pero el pedido de feedback queda difuso. &iquest;Qu&eacute; revisi&oacute;n humana es m&aacute;s importante antes de enviarlo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Asegurarse de que la solicitud de feedback y la fecha l&iacute;mite queden expl&iacute;citas."
+        },
+        {
+          "key": "b",
+          "text": "A&ntilde;adir m&aacute;s adjetivos para sonar m&aacute;s amable."
+        },
+        {
+          "key": "c",
+          "text": "Eliminar la referencia al deliverable para que el correo sea m&aacute;s ligero."
+        },
+        {
+          "key": "d",
+          "text": "Cambiarlo a un tono m&aacute;s formal aunque ya no refleje la relaci&oacute;n real."
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Un email profesional no solo debe sonar bien: tambi&eacute;n tiene que dejar clara la acci&oacute;n esperada. Si la petici&oacute;n y la fecha no se entienden con claridad, el correo pierde eficacia aunque el tono sea correcto.",
+      "feedback_ko": "Las otras opciones atienden detalles secundarios o incluso empeoran el mensaje. Lo decisivo aqu&iacute; es que la persona destinataria sepa qu&eacute; tiene que hacer y para cu&aacute;ndo."
+    },
+    {
+      "id": "p_q06",
+      "situation": "Un t&eacute;cnico va a escribir a una autoridad portuaria en ingl&eacute;s sobre una incidencia operativa. Tiene prisa y piensa pedir a Antigravity que traduzca literalmente un borrador informal escrito en espa&ntilde;ol. &iquest;Qu&eacute; har&iacute;a mejor uso de la herramienta?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir una traducci&oacute;n palabra por palabra para no perder matices."
+        },
+        {
+          "key": "b",
+          "text": "Pedir que adapte el mensaje al contexto, al destinatario institucional y al tono profesional necesario, no solo que lo traduzca."
+        },
+        {
+          "key": "c",
+          "text": "Enviar el borrador en espa&ntilde;ol y confiar en que lo entiendan."
+        },
+        {
+          "key": "d",
+          "text": "Quitar toda explicaci&oacute;n t&eacute;cnica para que el correo sea m&aacute;s corto."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La p&iacute;ldora no trata solo de traducir, sino de redactar con el tono adecuado para cada interlocuci&oacute;n. Adaptar el mensaje al contexto institucional evita giros impropios o demasiado coloquiales en una comunicaci&oacute;n sensible.",
+      "feedback_ko": "Una traducci&oacute;n literal puede conservar palabras, pero no siempre conserva la intenci&oacute;n profesional adecuada. En relaciones formales, el problema no es solo el idioma: tambi&eacute;n importa el registro y la estructura del mensaje."
+    },
+    {
+      "id": "p_q07",
+      "situation": "La directora de un proyecto usa Antigravity para preparar una respuesta sobre un retraso que puede tener implicaciones contractuales. El borrador parece convincente. &iquest;Qu&eacute; decisi&oacute;n demuestra un uso responsable de la IA?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Enviar el texto tal cual para ahorrar tiempo."
+        },
+        {
+          "key": "b",
+          "text": "Pedir una versi&oacute;n todav&iacute;a m&aacute;s firme y dejar de revisarla personalmente."
+        },
+        {
+          "key": "c",
+          "text": "Revisar que los hechos, compromisos y tono sean correctos antes de enviarlo, porque la responsabilidad final sigue siendo humana."
+        },
+        {
+          "key": "d",
+          "text": "Pasar el texto a un compa&ntilde;ero para que lo env&iacute;e sin leerlo."
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La p&iacute;ldora plantea que Antigravity acelera el borrador, pero no sustituye el juicio profesional al enviar. Cuando hay riesgo reputacional o contractual, revisar hechos y compromisos es indispensable.",
+      "feedback_ko": "Las otras opciones confunden rapidez con delegaci&oacute;n total. La herramienta ayuda a redactar, pero no puede asumir por s&iacute; sola la responsabilidad sobre plazos, compromisos o matices institucionales."
+    },
+    {
+      "id": "p_q08",
+      "situation": "Una coordinadora recibe un correo largo con varias quejas mezcladas: retraso, dudas presupuestarias y petici&oacute;n de reuní&oacute;n. Quiere usar Antigravity para responder bien. &iquest;Qu&eacute; prompt aprovecha mejor la herramienta?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Responde a este correo de forma profesional."
+        },
+        {
+          "key": "b",
+          "text": "Resume lo que dice y luego escribe cualquier respuesta correcta."
+        },
+        {
+          "key": "c",
+          "text": "Pega el correo recibido y pide una respuesta que reconozca cada problema, separe los temas y proponga una acci&oacute;n para cada uno con tono profesional."
+        },
+        {
+          "key": "d",
+          "text": "Pide una respuesta muy breve para cerrar el tema cuanto antes."
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. Cuando el correo de entrada es complejo, conviene darle a Antigravity el texto original y una instrucci&oacute;n clara sobre c&oacute;mo estructurar la respuesta. As&iacute; reduces el riesgo de olvidar un punto importante o mezclar asuntos distintos.",
+      "feedback_ko": "Las instrucciones gen&eacute;ricas no garantizan que se atiendan todos los frentes del mensaje. En correos complicados, la calidad de la salida depende mucho de pedir reconocimiento expl&iacute;cito de cada problema y una estructura ordenada."
+    },
+    {
+      "id": "p_q09",
+      "situation": "El responsable de operaciones necesita escribir un correo biling&uuml;e: versi&oacute;n en espa&ntilde;ol para uso interno y versi&oacute;n en ingl&eacute;s para un socio externo, ambas con el mismo mensaje clave. &iquest;Qu&eacute; uso de Antigravity minimiza inconsistencias?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Redactar primero una versi&oacute;n en ingl&eacute;s y luego traducirla manualmente al espa&ntilde;ol de memoria."
+        },
+        {
+          "key": "b",
+          "text": "Pedir dos versiones alineadas, indicando destinatario, objetivo y tono para cada una, y revisar que ambas mantengan el mismo contenido esencial."
+        },
+        {
+          "key": "c",
+          "text": "Escribir solo la versi&oacute;n en ingl&eacute;s, porque la interna no es prioritaria."
+        },
+        {
+          "key": "d",
+          "text": "Usar una versi&oacute;n gen&eacute;rica igual para interno y externo."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Dar a la herramienta el mismo contexto y dos destinatarios distintos permite mantener coherencia de fondo y adaptar el tono seg&uacute;n la audiencia. Luego la revisi&oacute;n humana confirma que no haya diferencias de contenido no deseadas.",
+      "feedback_ko": "Las otras opciones aumentan el riesgo de contradicciones o de usar un tono inadecuado. Interno y externo pueden compartir mensaje central, pero no necesariamente el mismo registro ni el mismo nivel de detalle."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Una t&eacute;cnica debe escribir a un contacto nuevo de una entidad europea y duda entre pedir a Antigravity un tono cercano o uno muy formal. Seg&uacute;n la situaci&oacute;n, &iquest;cu&aacute;l es la mejor decisi&oacute;n inicial?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Elegir un tono profesional y cordial, porque a&uacute;n no existe confianza previa."
+        },
+        {
+          "key": "b",
+          "text": "Usar un tono muy cercano desde el inicio para parecer accesible."
+        },
+        {
+          "key": "c",
+          "text": "Ser ambiguo con el tono y corregirlo m&aacute;s tarde si hace falta."
+        },
+        {
+          "key": "d",
+          "text": "Eliminar las f&oacute;rmulas de cortes&iacute;a para sonar m&aacute;s directo."
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Cuando la relaci&oacute;n es nueva, lo prudente es partir de un registro profesional y cordial, no excesivamente cercano. La p&iacute;ldora insiste en que la relaci&oacute;n con el destinatario es una pieza clave del contexto.",
+      "feedback_ko": "Las otras opciones ignoran que el tono debe ajustarse al grado de confianza real. Empezar con demasiada cercan&iacute;a o dejar el tono sin definir puede generar una primera impresi&oacute;n poco profesional."
+    },
+    {
+      "id": "p_q11",
+      "situation": "La responsable de un entregable sabe que el trabajo est&aacute; terminado, pero todav&iacute;a falta una validaci&oacute;n interna antes de compartirlo. Va a pedir a Antigravity un correo para el consorcio. &iquest;Qu&eacute; mensaje gestiona mejor la situaci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Informar de que el documento est&aacute; listo para env&iacute;o final cuando concluya la revisi&oacute;n interna, y anticipar cu&aacute;ndo podr&aacute; compartirse."
+        },
+        {
+          "key": "b",
+          "text": "Decir que ya est&aacute; completamente cerrado para transmitir seguridad."
+        },
+        {
+          "key": "c",
+          "text": "No mencionar la revisi&oacute;n interna para evitar preguntas."
+        },
+        {
+          "key": "d",
+          "text": "Esperar varios d&iacute;as sin contestar hasta tener la validaci&oacute;n."
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. La mejor respuesta informa sin prometer m&aacute;s de lo que hoy se puede cumplir. Explica el estado real y da una expectativa temporal, lo que mantiene la confianza y evita compromisos err&oacute;neos.",
+      "feedback_ko": "Las otras opciones crean riesgo reputacional o de coordinaci&oacute;n. Ocultar el estado real o retrasar la respuesta puede generar m&aacute;s fricci&oacute;n que una explicaci&oacute;n clara y profesional."
+    },
+    {
+      "id": "p_q12",
+      "situation": "Un director recibe un email duro de un socio que exagera la situaci&oacute;n y culpa a PLOCAN de forma injusta. Quiere apoyarse en Antigravity. &iquest;Qu&eacute; respuesta es m&aacute;s inteligente?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Contestar con el mismo tono para marcar l&iacute;mites."
+        },
+        {
+          "key": "b",
+          "text": "Pedir una respuesta firme pero emp&aacute;tica, que corrija los hechos con calma y proponga una v&iacute;a de resoluci&oacute;n."
+        },
+        {
+          "key": "c",
+          "text": "Responder solo con datos t&eacute;cnicos, sin reconocer la preocupaci&oacute;n del remitente."
+        },
+        {
+          "key": "d",
+          "text": "No responder hasta que el remitente se disculpe."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. En un conflicto, firmeza no significa agresividad; significa sostener los hechos y orientar la conversaci&oacute;n hacia una soluci&oacute;n. Reconocer la preocupaci&oacute;n ayuda a rebajar tensi&oacute;n sin ceder en lo importante.",
+      "feedback_ko": "Escalar el tono o responder solo con tecnicismos suele cerrar puertas. La p&iacute;ldora plantea justo lo contrario: usar la IA para encontrar una formulaci&oacute;n profesional cuando el correo es inc&oacute;modo o emocional."
+    },
+    {
+      "id": "p_q13",
+      "situation": "Una coordinadora entra en una cadena larga de correos y necesita contestar r&aacute;pido sin perder el hilo. Quiere que Antigravity le ayude en dos pasos. &iquest;Qu&eacute; secuencia tiene m&aacute;s sentido?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir primero un resumen de los puntos clave y despu&eacute;s un borrador de respuesta basado en esos puntos."
+        },
+        {
+          "key": "b",
+          "text": "Pedir solo una respuesta autom&aacute;tica sin revisar la cadena."
+        },
+        {
+          "key": "c",
+          "text": "Responder manualmente y usar Antigravity solo para traducir la despedida."
+        },
+        {
+          "key": "d",
+          "text": "Ignorar la cadena anterior y escribir un mensaje nuevo desde cero."
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Resumir primero te ayuda a entender el problema real antes de redactar, sobre todo si hay varios interlocutores o decisiones mezcladas. Luego el borrador sale m&aacute;s enfocado y con menos riesgo de omitir algo relevante.",
+      "feedback_ko": "Las otras alternativas reducen velocidad aparente, pero aumentan el riesgo de contestar fuera de contexto. Cuando la cadena es compleja, comprender antes de responder suele ahorrar correcciones posteriores."
+    },
+    {
+      "id": "p_q14",
+      "situation": "Una responsable usa Antigravity para generar un correo en ingl&eacute;s que parece impecable. Antes de enviarlo, dispone de solo treinta segundos para revisar. &iquest;En qu&eacute; deber&iacute;a fijarse primero?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo en que la gram&aacute;tica inglesa sea perfecta."
+        },
+        {
+          "key": "b",
+          "text": "En si el texto incluye el contexto correcto, la acci&oacute;n pedida, la fecha y un tono coherente con la relaci&oacute;n."
+        },
+        {
+          "key": "c",
+          "text": "En cambiar algunas palabras para que no parezca escrito con IA."
+        },
+        {
+          "key": "d",
+          "text": "En a&ntilde;adir una introducci&oacute;n m&aacute;s larga para sonar m&aacute;s formal."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La revisi&oacute;n r&aacute;pida debe centrarse en lo funcional: si el correo dice lo correcto, pide lo correcto y suena como debe sonar. La gram&aacute;tica importa, pero un mensaje impecable y mal enfocado sigue siendo un mal email.",
+      "feedback_ko": "Las otras opciones ponen el foco en se&ntilde;ales superficiales. En esta p&iacute;ldora, la calidad se mide por adecuaci&oacute;n al contexto y utilidad real del correo, no solo por pulido ling&uuml;&iacute;stico."
+    },
+    {
+      "id": "p_q15",
+      "situation": "Un t&eacute;cnico prometí&oacute; pedir feedback antes del viernes, pero un problema operativo impide llegar a tiempo. Quiere escribir a la otra parte con ayuda de Antigravity sin deteriorar la relaci&oacute;n. &iquest;Cu&aacute;l es la mejor estrategia?",
+      "options": [
+        {
+          "key": "a",
+          "text": "No decir nada hasta tener la versi&oacute;n final."
+        },
+        {
+          "key": "b",
+          "text": "Enviar un correo que explique brevemente el motivo, reconozca el cambio de plazo y proponga una nueva fecha realista."
+        },
+        {
+          "key": "c",
+          "text": "Decir que el feedback llegar&aacute; ese mismo viernes aunque no sea seguro."
+        },
+        {
+          "key": "d",
+          "text": "Pedir a Antigravity un mensaje muy ambiguo para ganar tiempo sin comprometerse."
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Cuando no puedes cumplir el plazo previsto, lo profesional es avisar pronto, contextualizar sin dramatizar y ofrecer una alternativa concreta. Eso protege la confianza mejor que el silencio o una promesa poco realista.",
+      "feedback_ko": "Las otras opciones intentan evitar la incomodidad inmediata, pero aumentan el coste posterior. En correos profesionales, la claridad con una nueva propuesta viable suele ser mejor que la ambig&uuml;edad."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

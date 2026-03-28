@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Compartir lo que Funciona: Cultura de Conocimiento IA</h1>
     <p class="subtitle">Material para el grupo IA + Datos</p>
-    <span class="time-badge">10 min de lectura</span>
+    <span class="time-badge">10 mín de lectura</span>
 </header>
 
 
@@ -1022,7 +1022,7 @@ Formato limpio y breve, que se pueda pegar en un canal de Teams.
                 <button class="copy-btn" onclick="copyPrompt('prompt2')">Copiar</button>Quiero documentar una lecci&oacute;n aprendida usando IA para compartirla con mi equipo.
 
 Lo que intent&eacute;: [DESCRIBIR LA TAREA]
-Lo que pas&oacute;: [QU&Eacute; SALI&Oacute; MAL O QU&Eacute; FUNCION&Oacute;]
+Lo que pas&oacute;: [QU&Eacute; SALÍ&Oacute; MAL O QU&Eacute; FUNCIÓN&Oacute;]
 La soluci&oacute;n o conclusi&oacute;n: [QU&Eacute; APRENDISTE]
 
 Redacta una lecci&oacute;n aprendida breve (m&aacute;ximo 8 l&iacute;neas) con este formato:
@@ -1041,10 +1041,10 @@ Tono profesional y directo. Que cualquier compa&ntilde;ero lo entienda sin conte
 Somos [N&Uacute;MERO] personas. Usamos IA principalmente para [TAREAS PRINCIPALES].
 
 Dise&ntilde;a una din&aacute;mica &aacute;gil con:
-1. Pregunta de apertura (1 min) para romper hielo sobre IA
-2. Ronda r&aacute;pida &laquo;Mi mejor truco IA este mes&raquo; (5 min)
-3. Ronda &laquo;Algo que NO funcion&oacute;&raquo; (5 min)
-4. Cierre con 2-3 acciones concretas del grupo (4 min)
+1. Pregunta de apertura (1 mín) para romper hielo sobre IA
+2. Ronda r&aacute;pida &laquo;Mi mejor truco IA este mes&raquo; (5 mín)
+3. Ronda &laquo;Algo que NO función&oacute;&raquo; (5 mín)
+4. Cierre con 2-3 acciones concretas del grupo (4 mín)
 
 Incluye instrucciones para el facilitador y plantilla de notas para registrar lo compartido.
 Formato pr&aacute;ctico, sin teor&iacute;a innecesaria.
@@ -1063,6 +1063,526 @@ Formato pr&aacute;ctico, sin teor&iacute;a innecesaria.
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 33,
+  "pill_slug": "compartir",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "En el equipo IA + Datos de PLOCAN, una persona descubre un prompt que resume incidencias de sensores con mucha precisi&oacute;n. Varias &aacute;reas podr&iacute;an reutilizarlo esta semana. &iquest;Qu&eacute; acci&oacute;n aplica mejor la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pegar solo el prompt en Teams con el mensaje &laquo;me ha funcionado&raquo;"
+        },
+        {
+          "key": "b",
+          "text": "Crear una ficha breve con nombre, para qu&eacute; sirve, prompt exacto, ejemplo real y cu&aacute;ndo funciona mejor o peor"
+        },
+        {
+          "key": "c",
+          "text": "Guardarlo en una carpeta personal hasta probarlo durante un mes m&aacute;s"
+        },
+        {
+          "key": "d",
+          "text": "Explicarlo oralmente en la siguiente reuní&oacute;n sin dejar registro escrito"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La ficha convierte un hallazgo individual en un recurso reutilizable por otras personas del equipo. Adem&aacute;s de compartir el prompt, aporta contexto para saber cu&aacute;ndo conviene usarlo y evitar malos usos.",
+      "feedback_ko": "Las otras opciones comparten algo, pero no facilitan la reutilizaci&oacute;n real. Sin estructura, ejemplo y l&iacute;mites de uso, el conocimiento se pierde o cada persona tiene que redescubrirlo por su cuenta."
+    },
+    {
+      "id": "p_q02",
+      "situation": "Tras usar IA para preparar una nota t&eacute;cnica de un proyecto europeo, el resultado salí&oacute; mal porque el prompt no delimitaba el alcance. El equipo quiere evitar repetir ese error en futuras entregas. &iquest;Qu&eacute; har&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "No comentarlo para no generar desconfianza sobre la IA"
+        },
+        {
+          "key": "b",
+          "text": "Compartir una lecci&oacute;n aprendida con contexto, qu&eacute; fall&oacute; y recomendaci&oacute;n concreta para el pr&oacute;ximo uso"
+        },
+        {
+          "key": "c",
+          "text": "Guardar el prompt corregido en local y asumir que el resto ya aprender&aacute; por experiencia"
+        },
+        {
+          "key": "d",
+          "text": "Mandar un mensaje diciendo solo &laquo;ojo, esto puede fallar&raquo; sin explicar por qu&eacute;"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Documentar el error con una recomendaci&oacute;n accionable evita que el aprendizaje quede encerrado en una sola persona. Compartir tambi&eacute;n lo que no funciona acelera la madurez del equipo.",
+      "feedback_ko": "Ocultar el fallo o dejar un aviso ambiguo no crea aprendizaje transferible. La p&iacute;ldora insiste en que el conocimiento valioso incluye tanto aciertos como errores bien explicados."
+    },
+    {
+      "id": "p_q03",
+      "situation": "Un &aacute;rea de PLOCAN quiere abrir un canal para compartir trucos de IA, pero teme que se convierta en una lista ca&oacute;tica de mensajes dif&iacute;ciles de encontrar despu&eacute;s. &iquest;Qu&eacute; dise&ntilde;o es m&aacute;s eficaz?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Permitir mensajes libres y confiar en que el buscador resuelva el resto"
+        },
+        {
+          "key": "b",
+          "text": "Pedir que cada aportaci&oacute;n siga un formato m&iacute;nimo com&uacute;n y se archive en un repositorio accesible"
+        },
+        {
+          "key": "c",
+          "text": "Limitar el canal a personas con perfil t&eacute;cnico para reducir ruido"
+        },
+        {
+          "key": "d",
+          "text": "Centralizar todo en una sola persona que decida qu&eacute; merece compartirse"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La combinaci&oacute;n de formato y repositorio evita que el conocimiento quede enterrado en conversaciones. As&iacute; se gana accesibilidad sin depender de la memoria del grupo.",
+      "feedback_ko": "El canal libre, la filtraci&oacute;n por perfil o la centralizaci&oacute;n excesiva crean nuevos cuellos de botella. Compartir bien requiere que el contenido sea encontrable, comparable y f&aacute;cil de reutilizar."
+    },
+    {
+      "id": "p_q04",
+      "situation": "En una reuní&oacute;n de retrospectiva, cada equipo comenta r&aacute;pidamente su mejor uso de IA del mes, pero al mes siguiente nadie recuerda los ejemplos concretos. &iquest;C&oacute;mo aplicar&iacute;as mejor la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mantener la din&aacute;mica igual porque la conversaci&oacute;n ya aporta valor en directo"
+        },
+        {
+          "key": "b",
+          "text": "Registrar cada aporte en una plantilla breve durante la sesi&oacute;n y publicarlo despu&eacute;s en un espacio compartido"
+        },
+        {
+          "key": "c",
+          "text": "Pedir a cada rol que recuerde sus mejores ejemplos sin tomar notas"
+        },
+        {
+          "key": "d",
+          "text": "Reducir la retrospectiva a una votaci&oacute;n sobre si la IA ha ido bien o mal"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La sesi&oacute;n oral sirve para aflorar conocimiento, pero el valor compuesto aparece cuando queda documentado y accesible. Convertir la conversaci&oacute;n en activo compartido evita empezar de cero cada mes.",
+      "feedback_ko": "Si el aprendizaje solo vive en la reuní&oacute;n, desaparece r&aacute;pido. La p&iacute;ldora plantea que compartir eficazmente exige registro y accesibilidad, no solo intercambio puntual."
+    },
+    {
+      "id": "p_q05",
+      "situation": "Una persona del &aacute;rea de operaciones dice: &laquo;Ya tengo un prompt excelente para preparar borradores de respuesta a proveedores, pero prefiero no compartirlo porque me cost&oacute; mucho pulirlo&raquo;. Como responsable de equipo, &iquest;qu&eacute; enfoque aplicar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aceptar la decisi&oacute;n porque cada cual gestiona su conocimiento como quiera"
+        },
+        {
+          "key": "b",
+          "text": "Explicar que el valor del prompt aumenta al compartirse y reconocer la autor&iacute;a de quien lo desarroll&oacute;"
+        },
+        {
+          "key": "c",
+          "text": "Copiar el prompt del equipo sin comentarlo para que deje de depender de una sola persona"
+        },
+        {
+          "key": "d",
+          "text": "Prohibir el uso de prompts no publicados hasta nuevo aviso"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La p&iacute;ldora subraya que el conocimiento compartido se multiplica y no se agota. Reconocer la contribuci&oacute;n ayuda a cambiar la cultura sin castigar a quien aport&oacute; el hallazgo inicial.",
+      "feedback_ko": "Aceptar el silo, apropiarse del contenido o responder con prohibiciones erosiona la cultura de aprendizaje. Lo &uacute;til es alinear incentivos para que compartir sea natural y valioso para quien contribuye."
+    },
+    {
+      "id": "p_q06",
+      "situation": "En un proyecto con varias &aacute;reas, cada rol guarda sus prompts en formatos distintos: capturas, notas sueltas, emails reenviados y documentos largos. El resultado es que casi nadie reutiliza lo que ya existe. &iquest;Qu&eacute; har&iacute;as primero?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Crear una plantilla m&iacute;nima com&uacute;n para documentar prompts y lecciones aprendidas"
+        },
+        {
+          "key": "b",
+          "text": "Pedir que cada persona elija el formato que le resulte m&aacute;s c&oacute;modo"
+        },
+        {
+          "key": "c",
+          "text": "Esperar a tener una plataforma perfecta antes de ordenar nada"
+        },
+        {
+          "key": "d",
+          "text": "Mover todos los archivos a una carpeta compartida sin tocar su estructura"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. La estandarizaci&oacute;n ligera reduce fricci&oacute;n y hace comparables las aportaciones. No hace falta una gran plataforma para empezar: basta con una estructura clara que favorezca la reutilizaci&oacute;n.",
+      "feedback_ko": "Mantener formatos dispersos o limitarse a mover archivos no resuelve el problema de fondo. Si cada aporte se documenta de forma distinta, encontrarlo y entenderlo seguir&aacute; costando demasiado."
+    },
+    {
+      "id": "p_q07",
+      "situation": "Un equipo de observaci&oacute;n marina comparte un prompt muy &uacute;til, pero omite un detalle: solo funciona bien con series temporales ya depuradas. Otro equipo lo reutiliza con datos brutos y obtiene conclusiones err&oacute;neas. &iquest;Qu&eacute; falt&oacute; al compartir?",
+      "options": [
+        {
+          "key": "a",
+          "text": "A&ntilde;adir m&aacute;s tecnicismos para que pareciera m&aacute;s completo"
+        },
+        {
+          "key": "b",
+          "text": "Indicar contexto y l&iacute;mites de uso, no solo el prompt en s&iacute;"
+        },
+        {
+          "key": "c",
+          "text": "Restringir el acceso al prompt a un grupo m&aacute;s peque&ntilde;o"
+        },
+        {
+          "key": "d",
+          "text": "Esperar a tener diez casos de &eacute;xito antes de publicarlo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Compartir eficazmente no es solo publicar texto para copiar y pegar. El contexto operativo y las condiciones de uso son lo que permite reutilizar sin generar errores.",
+      "feedback_ko": "M&aacute;s restricci&oacute;n o m&aacute;s espera no arreglan la falta de claridad. Sin explicar cu&aacute;ndo sirve y cu&aacute;ndo no, incluso un buen prompt puede causar decisiones equivocadas."
+    },
+    {
+      "id": "p_q08",
+      "situation": "PLOCAN quiere medir si su cultura de conocimiento IA est&aacute; mejorando. Una propuesta es contar cu&aacute;ntos mensajes se publican en el canal interno cada mes. &iquest;Qu&eacute; indicador complementar&iacute;a mejor esa m&eacute;trica?",
+      "options": [
+        {
+          "key": "a",
+          "text": "N&uacute;mero de veces que otras &aacute;reas reutilizan una ficha o una lecci&oacute;n aprendida compartida"
+        },
+        {
+          "key": "b",
+          "text": "Cantidad de emoticonos que reciben los mensajes sobre IA"
+        },
+        {
+          "key": "c",
+          "text": "N&uacute;mero de personas que leen los mensajes sin intervenir"
+        },
+        {
+          "key": "d",
+          "text": "Longitud media en palabras de cada publicaci&oacute;n"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. El objetivo no es solo publicar m&aacute;s, sino lograr que el conocimiento se reutilice y genere valor en otras &aacute;reas. Medir la reutilizaci&oacute;n aproxima mucho mejor el retorno compuesto del conocimiento compartido.",
+      "feedback_ko": "Actividad no equivale a impacto. Reacciones, lecturas o longitud pueden indicar movimiento, pero no demuestran que el conocimiento haya sido aplicado por otras personas del equipo."
+    },
+    {
+      "id": "p_q09",
+      "situation": "Un rol de coordinaci&oacute;n recibe cada semana las mismas preguntas sobre c&oacute;mo pedir a la IA un resumen ejecutivo de un documento t&eacute;cnico. Ya existe una respuesta efectiva, pero sigue respondiendo caso por caso. &iquest;Qu&eacute; har&iacute;as para aplicar la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Seguir respondiendo individualmente para asegurar atenci&oacute;n personalizada"
+        },
+        {
+          "key": "b",
+          "text": "Convertir esa respuesta en una ficha reutilizable y compartirla en un espacio visible para el equipo"
+        },
+        {
+          "key": "c",
+          "text": "Pedir que nadie vuelva a preguntar sobre ese tema"
+        },
+        {
+          "key": "d",
+          "text": "Responder con un archivo adjunto distinto cada vez seg&uacute;n la persona que pregunte"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Cuando una pregunta se repite, es una se&ntilde;al clara de conocimiento que conviene externalizar y hacer accesible. As&iacute; se reduce dependencia de una sola persona y se gana tiempo colectivo.",
+      "feedback_ko": "Seguir resolviendo uno a uno mantiene el cuello de botella. La p&iacute;ldora propone precisamente transformar soluciones repetidas en recursos compartidos y reutilizables."
+    },
+    {
+      "id": "p_q10",
+      "situation": "El grupo IA + Datos quiere fomentar que las personas compartan aprendizajes, pero observa que casi todo se publica al final de los proyectos, cuando muchos detalles ya se han olvidado. &iquest;Qu&eacute; cambio pr&aacute;ctico introducir&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Reservar un momento breve al cierre de cada sprint o hito para capturar un prompt o lecci&oacute;n aprendida"
+        },
+        {
+          "key": "b",
+          "text": "Esperar al informe final para no interrumpir el trabajo"
+        },
+        {
+          "key": "c",
+          "text": "Pedir una memoria extensa trimestral sobre todos los usos de IA"
+        },
+        {
+          "key": "d",
+          "text": "Compartir solo cuando el resultado sea claramente excepcional"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Capturar el aprendizaje cerca del momento en que ocurre reduce p&eacute;rdida de contexto y baja el coste de compartir. Integrarlo en la rutina hace que la cultura sea sostenible, no dependiente de esfuerzos extraordinarios.",
+      "feedback_ko": "Posponer la captura al final del proyecto suele degradar la calidad del aprendizaje recogido. Si compartir solo ocurre en momentos excepcionales o muy tard&iacute;os, el conocimiento cotidiano se pierde."
+    },
+    {
+      "id": "p_q11",
+      "situation": "En una unidad de soporte, dos roles han resuelto por separado el mismo problema de prompting para clasificar correos entrantes. Al descubrirlo, proponen seguir cada cual con su versi&oacute;n porque &laquo;ya funciona&raquo;. &iquest;Qu&eacute; har&iacute;as como responsable de mejora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Dejar ambas versiones activas para no perder autonom&iacute;a individual"
+        },
+        {
+          "key": "b",
+          "text": "Comparar las dos soluciones, documentar una versi&oacute;n compartida y dejar constancia de variantes y contexto"
+        },
+        {
+          "key": "c",
+          "text": "Elegir una al azar para cerrar la discusi&oacute;n cuanto antes"
+        },
+        {
+          "key": "d",
+          "text": "Pedir que ninguna se comparta hasta tener validaci&oacute;n formal externa"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Compartir bien tambi&eacute;n implica consolidar y hacer visible qu&eacute; alternativa sirve mejor en cada contexto. As&iacute; el equipo evita duplicidades y convierte dos esfuerzos paralelos en un activo com&uacute;n.",
+      "feedback_ko": "Mantener duplicidades invisibles perpet&uacute;a los silos. Elegir sin documentar o bloquear la publicaci&oacute;n retrasa el aprendizaje colectivo y deja el conocimiento fragmentado."
+    },
+    {
+      "id": "p_q12",
+      "situation": "Durante una sesi&oacute;n interna, una persona comparte un prompt muy t&eacute;cnico que otras &aacute;reas no entienden. El contenido es valioso, pero apenas se reutiliza fuera del equipo original. &iquest;Qu&eacute; ajuste har&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mantenerlo tal cual, porque simplificarlo har&iacute;a perder rigor"
+        },
+        {
+          "key": "b",
+          "text": "Acompa&ntilde;arlo con una explicaci&oacute;n breve en lenguaje claro sobre qu&eacute; problema resuelve y c&oacute;mo aplicarlo"
+        },
+        {
+          "key": "c",
+          "text": "Limitar su uso al equipo que ya lo domina para evitar errores"
+        },
+        {
+          "key": "d",
+          "text": "Publicarlo sin descripci&oacute;n y dejar que quien lo necesite pregunte despu&eacute;s"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El repositorio debe ser &uacute;til para no especialistas, no solo para quien cre&oacute; el contenido. Traducir el valor pr&aacute;ctico a lenguaje claro ampl&iacute;a la reutilizaci&oacute;n sin perder el detalle t&eacute;cnico esencial.",
+      "feedback_ko": "Si compartir exige demasiado contexto previo, muchas personas no podr&aacute;n aplicar el recurso. La p&iacute;ldora insiste en estructura y accesibilidad, y eso incluye explicar de forma simple qu&eacute; aporta cada pieza."
+    },
+    {
+      "id": "p_q13",
+      "situation": "El equipo ha creado un repositorio de prompts, pero la mayor&iacute;a no incluye ejemplos reales de salida. Varias personas dudan en reutilizarlos porque no saben qu&eacute; esperar. &iquest;Qu&eacute; mejora priorizar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "A&ntilde;adir un ejemplo de resultado real o representativo en cada ficha"
+        },
+        {
+          "key": "b",
+          "text": "Eliminar los prompts que generen dudas hasta que el repositorio sea perfecto"
+        },
+        {
+          "key": "c",
+          "text": "Sustituir las fichas por mensajes r&aacute;pidos para que la lectura sea m&aacute;s corta"
+        },
+        {
+          "key": "d",
+          "text": "Ordenar las fichas alfab&eacute;ticamente sin cambiar su contenido"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. El ejemplo reduce incertidumbre y ayuda a evaluar r&aacute;pidamente si el recurso encaja con la necesidad de cada rol. No solo se comparte el prompt, tambi&eacute;n se comparte la expectativa de uso.",
+      "feedback_ko": "La duda no se resuelve solo ordenando o acortando. Sin ejemplo, cada persona debe imaginar el resultado, y eso frena la adopci&oacute;n incluso cuando el prompt es bueno."
+    },
+    {
+      "id": "p_q14",
+      "situation": "Una direcci&oacute;n de proyecto pide &laquo;compartid m&aacute;s sobre IA&raquo;, pero no reserva tiempo ni reconoce a quien documenta aprendizajes. Tras varias semanas, casi nadie publica nada. &iquest;Qu&eacute; lectura es m&aacute;s adecuada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "El equipo no tiene ínter&eacute;s real en aprender sobre IA"
+        },
+        {
+          "key": "b",
+          "text": "Falta convertir el compartir en una pr&aacute;ctica respaldada por tiempo, rituales y reconocimiento"
+        },
+        {
+          "key": "c",
+          "text": "La soluci&oacute;n es exigir una publicaci&oacute;n diaria por persona"
+        },
+        {
+          "key": "d",
+          "text": "No hace falta hacer nada; la cultura aparecer&aacute; sola con el tiempo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La cultura no se crea solo con un mensaje, sino con condiciones que hagan viable y valioso compartir. Reservar tiempo y reconocer la aportaci&oacute;n reduce la fricci&oacute;n y legitima la pr&aacute;ctica.",
+      "feedback_ko": "Atribuirlo a falta de ínter&eacute;s o imponer volumen sin apoyo suele empeorar el problema. Si compartir no est&aacute; integrado en la forma de trabajar, seguir&aacute; siendo una actividad residual."
+    },
+    {
+      "id": "p_q15",
+      "situation": "PLOCAN quiere lanzar una acci&oacute;n r&aacute;pida para extender el uso responsable de la IA entre varias &aacute;reas. Hay poco tiempo y hace falta algo que genere aprendizaje compartido desde la pr&oacute;xima semana. &iquest;Qu&eacute; piloto encaja mejor con la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Crear un repositorio sencillo con fichas de prompt y una retrospectiva mensual de 15 minutos para capturar aprendizajes"
+        },
+        {
+          "key": "b",
+          "text": "Esperar a implantar una plataforma completa antes de empezar a compartir nada"
+        },
+        {
+          "key": "c",
+          "text": "Enviar una presentaci&oacute;n te&oacute;rica sobre cultura de conocimiento y dejar la aplicaci&oacute;n para m&aacute;s adelante"
+        },
+        {
+          "key": "d",
+          "text": "Nombrar un &uacute;nico rol experto para que responda todas las dudas de IA bajo demanda"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Es un piloto ligero, accionable y alineado con la idea central de la p&iacute;ldora: estructurar, compartir y reutilizar conocimiento desde ya. Combina accesibilidad con un ritual breve para mantener el flujo de aprendizaje.",
+      "feedback_ko": "Esperar a la soluci&oacute;n perfecta, quedarse en la teor&iacute;a o concentrar todo en una sola persona retrasa el aprendizaje colectivo. La p&iacute;ldora propone empezar con mecanismos simples que multipliquen lo que el equipo ya descubre."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Buscar información sin perderte</h1>
     <p class="subtitle">Encuentra lo que necesitas en la web, en papers o en normativa sin 20 pestañas abiertas</p>
-    <span class="time-badge">5 min de lectura</span>
+    <span class="time-badge">5 mín de lectura</span>
 </header>
 
 
@@ -1066,6 +1066,526 @@ Formato: tabla comparativa.
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 7,
+  "pill_slug": "07",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "El director de l&iacute;nea necesita preparar hoy una nota para PLOCAN sobre qu&eacute; normativa europea aplica a los residuos generados en plataformas oceanogr&aacute;ficas. Quiere ahorrar tiempo sin perder rigor. &iquest;Qu&eacute; petici&oacute;n a Antigravity es la m&aacute;s adecuada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Buscar en Google \"residuos marinos normativa\" y abrir varias pesta&ntilde;as hasta encontrar algo parecido"
+        },
+        {
+          "key": "b",
+          "text": "Pedir: \"Dime todo lo que sepas sobre residuos en el mar\""
+        },
+        {
+          "key": "c",
+          "text": "Pedir: \"Necesito identificar la normativa europea aplicable a residuos generados en plataformas oceanogr&aacute;ficas como PLOCAN, incluyendo equipos electr&oacute;nicos, obligaciones de reporte y diferencias entre aguas territoriales y ZEE. Dame las referencias legales principales con su n&uacute;mero y fecha\""
+        },
+        {
+          "key": "d",
+          "text": "Pedir solo un resumen breve sin necesidad de referencias legales"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La petici&oacute;n aporta contexto, objetivo y formato de salida, por eso orienta mejor la b&uacute;squeda y devuelve algo utilizable. Adem&aacute;s, exigir n&uacute;mero y fecha de la norma facilita la verificaci&oacute;n posterior.",
+      "feedback_ko": "Las otras opciones son demasiado vagas o trasladan el trabajo de filtrar al humano. Si no defines para qu&eacute; necesitas la informaci&oacute;n y qu&eacute; referencias exactas quieres, volver&aacute;s a perder tiempo revisando resultados dispersos."
+    },
+    {
+      "id": "p_q02",
+      "situation": "La responsable de proyectos debe comparar opciones de anclaje para una boya en aguas profundas y necesita una base r&aacute;pida para una decisi&oacute;n t&eacute;cnica preliminar. &iquest;Qu&eacute; prompt le ayudar&iacute;a m&aacute;s?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir: \"&iquest;Cu&aacute;l es el mejor anclaje para boyas?\""
+        },
+        {
+          "key": "b",
+          "text": "Pedir: \"Compara las tres principales tecnolog&iacute;as de anclaje para boyas oceanogr&aacute;ficas en aguas profundas, indicando tipo, profundidad m&aacute;xima, coste aproximado, ventajas e inconvenientes. Formato: tabla comparativa\""
+        },
+        {
+          "key": "c",
+          "text": "Pedir una lista de proveedores sin criterios t&eacute;cnicos"
+        },
+        {
+          "key": "d",
+          "text": "Pedir una explicaci&oacute;n larga sobre la historia de los sistemas de fondeo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Cuando la decisi&oacute;n exige comparar alternativas, conviene pedir criterios homog&eacute;neos y un formato estructurado. As&iacute; reduces interpretaciones y obtienes un punto de partida &uacute;til para valorar opciones.",
+      "feedback_ko": "Las otras opciones dejan sin definir el criterio de comparaci&oacute;n o se desv&iacute;an del problema. Si no pides variables concretas, acabar&aacute;s con una respuesta dif&iacute;cil de usar para una decisi&oacute;n real."
+    },
+    {
+      "id": "p_q03",
+      "situation": "Un t&eacute;cnico recibe una respuesta de Antigravity sobre normativa, bien redactada y aparentemente convincente, pero no incluye la fuente original de cada afirmaci&oacute;n. Tiene que usarla en un documento interno. &iquest;Qu&eacute; deber&iacute;a hacer?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Copiar la respuesta tal cual porque suena coherente"
+        },
+        {
+          "key": "b",
+          "text": "Pedir que la respuesta sea m&aacute;s breve y visual"
+        },
+        {
+          "key": "c",
+          "text": "Traducirla al ingl&eacute;s para revisarla despu&eacute;s"
+        },
+        {
+          "key": "d",
+          "text": "Pedir la fuente original de cada dato y verificar las referencias cr&iacute;ticas antes de usar la informaci&oacute;n"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Exacto. La p&iacute;ldora insiste en pedir fuentes y verificar las cr&iacute;ticas, porque una respuesta pulida puede contener referencias inventadas o imprecisas. Verificar antes de reutilizar evita trasladar un error a un documento oficial.",
+      "feedback_ko": "Las otras opciones mejoran la forma, pero no la fiabilidad. Si falta la fuente original, el riesgo no est&aacute; en el estilo de la respuesta, sino en asumir que el contenido ya es v&aacute;lido."
+    },
+    {
+      "id": "p_q04",
+      "situation": "La coordinadora cient&iacute;fica necesita localizar en poco tiempo los papers m&aacute;s relevantes sobre sensorizaci&oacute;n de corrientes marinas con ADCP para una reuní&oacute;n t&eacute;cnica. &iquest;Qu&eacute; petici&oacute;n es la m&aacute;s eficaz?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir: \"Busca en Google Scholar los 5 papers m&aacute;s citados sobre sensorizaci&oacute;n de corrientes marinas con ADCP publicados entre 2020 y 2025, resume sus aportes y dame el DOI para poder verificarlo\""
+        },
+        {
+          "key": "b",
+          "text": "Pedir: \"Expl&iacute;came qu&eacute; es un ADCP\""
+        },
+        {
+          "key": "c",
+          "text": "Pedir: \"Dame noticias recientes sobre sensores marinos\""
+        },
+        {
+          "key": "d",
+          "text": "Pedir una lista de palabras clave para buscar manualmente despu&eacute;s"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. La petici&oacute;n fija fuente de b&uacute;squeda, periodo, criterio de relevancia y dato verificable, que es justo lo que necesitas para una revisi&oacute;n r&aacute;pida con base real. Eso reduce mucho el trabajo posterior de cribado.",
+      "feedback_ko": "Las otras opciones son demasiado gen&eacute;ricas o no apuntan a evidencia relevante. Si no acotas la base, el rango temporal y el criterio de selecci&oacute;n, es f&aacute;cil terminar con informaci&oacute;n poco &uacute;til para la reuní&oacute;n."
+    },
+    {
+      "id": "p_q05",
+      "situation": "Un responsable de compras quiere incluir en un informe una referencia normativa que Antigravity ha dado con mucho detalle, pero al buscarla no encuentra el documento original. El plazo aprieta. &iquest;Qu&eacute; decisi&oacute;n es la m&aacute;s correcta?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mantener la referencia porque el texto parece preciso y profesional"
+        },
+        {
+          "key": "b",
+          "text": "Sustituir la referencia por una entrada de blog que hable del tema"
+        },
+        {
+          "key": "c",
+          "text": "No usar ese dato hasta verificarlo en la fuente original o sustituirlo por informaci&oacute;n confirmada"
+        },
+        {
+          "key": "d",
+          "text": "Cambiar solo la fecha para que parezca m&aacute;s actual"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Cuando el dato es cr&iacute;tico y no puedes comprobar la fuente, lo prudente es no incorporarlo como si fuera fiable. La rapidez no compensa el riesgo de introducir una referencia falsa en un documento de trabajo.",
+      "feedback_ko": "Las otras opciones intentan maquillar la incertidumbre, no resolverla. Si no aparece la fuente original, el problema es de verificaci&oacute;n y no de redacci&oacute;n o actualidad."
+    },
+    {
+      "id": "p_q06",
+      "situation": "Una t&eacute;cnica de observaci&oacute;n est&aacute; abriendo decenas de pesta&ntilde;as para entender el estado del arte en sensores de corrientes marinas. Quiere dejar de buscar por palabras sueltas. &iquest;C&oacute;mo deber&iacute;a reformular la consulta?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir: \"sensores corrientes marinas 2024\""
+        },
+        {
+          "key": "b",
+          "text": "Pedir: \"Quiero entender el estado del arte en sensorizaci&oacute;n de corrientes marinas para preparar una nota interna en PLOCAN. Resume enfoques 2024-2025, ventajas, l&iacute;mites y fuentes clave\""
+        },
+        {
+          "key": "c",
+          "text": "Pedir: \"Dame todo lo que exista sobre sensores\""
+        },
+        {
+          "key": "d",
+          "text": "Pedir: \"Busca r&aacute;pido algo &uacute;til\""
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La clave es sustituir keywords por contexto y objetivo, porque eso orienta la respuesta hacia la tarea real. Tambi&eacute;n define el tipo de salida esperada, lo que hace la informaci&oacute;n mucho m&aacute;s accionable.",
+      "feedback_ko": "Las otras formulaciones dejan demasiadas decisiones a la herramienta y generan ruido. Si no explicas para qu&eacute; necesitas la informaci&oacute;n, seguir&aacute;s recibiendo resultados difusos y poco priorizados."
+    },
+    {
+      "id": "p_q07",
+      "situation": "El director de &aacute;rea necesita aclarar si hay diferencias regulatorias entre aguas territoriales y ZEE para una instalaci&oacute;n oceanogr&aacute;fica. No quiere una explicaci&oacute;n acad&eacute;mica, sino algo &uacute;til para decidir qu&eacute; revisar primero. &iquest;Qu&eacute; deber&iacute;a pedir?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una explicaci&oacute;n general sobre derecho mar&iacute;timo internacional"
+        },
+        {
+          "key": "b",
+          "text": "Una lista de siglas jur&iacute;dicas relacionadas con el mar"
+        },
+        {
+          "key": "c",
+          "text": "Una respuesta que indique si existen diferencias aplicables a plataformas oceanogr&aacute;ficas y cite para cada punto la norma o documento con su fecha"
+        },
+        {
+          "key": "d",
+          "text": "Una opini&oacute;n sobre qu&eacute; zona parece menos compleja"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La necesidad no es aprender teor&iacute;a, sino identificar diferencias aplicables y rastreables a una fuente concreta. Pedir norma y fecha por cada punto permite convertir la respuesta en una lista de verificaci&oacute;n operativa.",
+      "feedback_ko": "Las otras opciones aportan contexto gen&eacute;rico, pero no resuelven la necesidad de decisi&oacute;n. Cuando una cuesti&oacute;n afecta a cumplimiento, las opiniones o res&uacute;menes vagos no sustituyen referencias verificables."
+    },
+    {
+      "id": "p_q08",
+      "situation": "La coordinadora del proyecto tiene informaci&oacute;n sobre tres alternativas t&eacute;cnicas repartida entre fichas comerciales y art&iacute;culos cient&iacute;ficos. Necesita compararlas sin mezclar afirmaciones de marketing con evidencia t&eacute;cnica. &iquest;Qu&eacute; enfoque es mejor?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usar la ficha comercial m&aacute;s completa y asumir que resume bien el resto"
+        },
+        {
+          "key": "b",
+          "text": "Pedir a Antigravity que elija la mejor opci&oacute;n sin explicar el criterio"
+        },
+        {
+          "key": "c",
+          "text": "Pedir un texto persuasivo para defender una alternativa ante direcci&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Pedir una tabla comparativa que diferencie evidencia t&eacute;cnica y claims comerciales, indicando la fuente de cada fila"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Exacto. Comparar fuentes implica hacer visibles las diferencias de origen y de solidez de cada dato. Si cada fila queda trazada a una fuente, es m&aacute;s f&aacute;cil detectar d&oacute;nde hay evidencia y d&oacute;nde solo hay promesa comercial.",
+      "feedback_ko": "Las otras opciones reducen el esfuerzo, pero tambi&eacute;n ocultan el nivel de fiabilidad de la informaci&oacute;n. En una decisi&oacute;n t&eacute;cnica, mezclar sin distinguir lo comercial y lo validado te puede llevar a conclusiones pobres."
+    },
+    {
+      "id": "p_q09",
+      "situation": "Un t&eacute;cnico de datos detecta que uno de los DOI que Antigravity ha devuelto no existe, aunque el resto de la respuesta parece consistente. &iquest;Qu&eacute; lectura deber&iacute;a hacer de esa situaci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que solo ese DOI concreto falla, as&iacute; que el resto puede darse por bueno"
+        },
+        {
+          "key": "b",
+          "text": "Que debe verificar todas las referencias cr&iacute;ticas, porque una respuesta bien escrita tambi&eacute;n puede incluir fuentes inventadas"
+        },
+        {
+          "key": "c",
+          "text": "Que el problema seguramente es del navegador"
+        },
+        {
+          "key": "d",
+          "text": "Que basta con pedir la misma respuesta con otro tono"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Detectar una referencia falsa es una se&ntilde;al de alerta sobre la trazabilidad de la respuesta completa, no un detalle aislado sin importancia. La p&iacute;ldora deja claro que las fuentes cr&iacute;ticas deben comprobarse una a una antes de usarlas.",
+      "feedback_ko": "Las otras interpretaciones minimizan el riesgo o lo atribuyen a algo accesorio. Si una cita clave falla, lo razonable es revisar el conjunto de referencias que sostienen la decisi&oacute;n."
+    },
+    {
+      "id": "p_q10",
+      "situation": "La responsable de innovaci&oacute;n tiene 30 minutos para preparar una conversaci&oacute;n sobre si un piloto de PLOCAN encaja mejor con ADCP o con otra tecnolog&iacute;a de medida. &iquest;C&oacute;mo aprovechar&iacute;a mejor Antigravity?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir una definici&oacute;n general de cada tecnolog&iacute;a"
+        },
+        {
+          "key": "b",
+          "text": "Pedir una comparativa enfocada al piloto de PLOCAN con criterios como rango operativo, complejidad de instalaci&oacute;n, coste, limitaciones y tipo de dato generado"
+        },
+        {
+          "key": "c",
+          "text": "Pedir la marca m&aacute;s conocida de cada soluci&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Pedir un informe largo sin estructura para revisarlo luego"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. En una conversaci&oacute;n de decisi&oacute;n preliminar, lo &uacute;til es comparar alternativas contra criterios de uso, no recibir definiciones aisladas. El contexto del piloto hace que la respuesta sea m&aacute;s relevante para PLOCAN.",
+      "feedback_ko": "Las otras opciones aportan cultura general, pero no ayudan a decidir con poco tiempo. Si no conectas la pregunta con el caso de uso y los criterios pr&aacute;cticos, el resultado tendr&aacute; poco valor operativo."
+    },
+    {
+      "id": "p_q11",
+      "situation": "El director de l&iacute;nea recibe un resumen correcto en apariencia, pero sin n&uacute;meros de norma ni fechas. Necesita convertirlo en una base de trabajo fiable para el equipo. &iquest;Qu&eacute; paso es el m&aacute;s sensato?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir las referencias legales principales con n&uacute;mero y fecha, y que se se&ntilde;alen expl&iacute;citamente los puntos inciertos"
+        },
+        {
+          "key": "b",
+          "text": "Acortarlo a un solo p&aacute;rrafo para compartirlo m&aacute;s r&aacute;pido"
+        },
+        {
+          "key": "c",
+          "text": "Pedir que tenga un tono m&aacute;s seguro y concluyente"
+        },
+        {
+          "key": "d",
+          "text": "Eliminar los matices para que parezca m&aacute;s claro"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Los identificadores concretos y el reconocimiento de incertidumbre convierten un resumen en algo comprobable. Sin ese paso, el equipo solo tendr&iacute;a una s&iacute;ntesis bonita, pero no una base fiable para trabajar.",
+      "feedback_ko": "Las otras opciones mejoran la apariencia o la velocidad de circulaci&oacute;n, pero no la calidad de fondo. Cuando falta la referencia exacta, el problema no es de estilo, sino de trazabilidad."
+    },
+    {
+      "id": "p_q12",
+      "situation": "La coordinadora de fondeos necesita una nota de decisi&oacute;n sobre anclajes para una boya en aguas profundas (&gt;1000 m). Quiere minimizar vueltas posteriores con el equipo t&eacute;cnico. &iquest;Qu&eacute; prompt es m&aacute;s adecuado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir: \"&iquest;Cu&aacute;l es el mejor anclaje para una boya?\""
+        },
+        {
+          "key": "b",
+          "text": "Pedir solo un cat&aacute;logo de proveedores"
+        },
+        {
+          "key": "c",
+          "text": "Pedir una explicaci&oacute;n hist&oacute;rica sobre la evoluci&oacute;n de los fondeos"
+        },
+        {
+          "key": "d",
+          "text": "Pedir una tabla con tipo de anclaje, profundidad m&aacute;xima, coste aproximado, ventajas, inconvenientes y una nota cuando el dato sea estimado"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Correcto. Ese prompt obliga a entregar la comparaci&oacute;n en los t&eacute;rminos que luego usar&aacute; el equipo para revisar la decisi&oacute;n. Adem&aacute;s, pedir que se se&ntilde;alen estimaciones ayuda a distinguir dato duro de aproximaci&oacute;n.",
+      "feedback_ko": "Las otras opciones son demasiado abiertas o parciales para una nota de decisi&oacute;n. Si no dejas claros los criterios y la calidad del dato, aparecer&aacute;n muchas preguntas en la siguiente revisi&oacute;n."
+    },
+    {
+      "id": "p_q13",
+      "situation": "Un analista t&eacute;cnico teme que la herramienta complete huecos inventando referencias cuando no est&aacute; segura. Quiere reducir ese riesgo desde el propio prompt. &iquest;Qu&eacute; instrucci&oacute;n deber&iacute;a incluir?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Indicar que, si falta un dato, invente una fuente probable para no dejar vac&iacute;os"
+        },
+        {
+          "key": "b",
+          "text": "Pedir que, si no est&aacute; segura de alg&uacute;n dato, lo diga expl&iacute;citamente en lugar de inventar una fuente"
+        },
+        {
+          "key": "c",
+          "text": "Pedir que omita siempre las fuentes para ganar rapidez"
+        },
+        {
+          "key": "d",
+          "text": "Pedir que use solo una enciclopedia generalista como respaldo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Forzar a explicitar la incertidumbre reduce el incentivo del modelo a rellenar huecos con aparente seguridad. Eso te permite separar r&aacute;pidamente lo verificable de lo que necesita revisi&oacute;n adicional.",
+      "feedback_ko": "Las otras instrucciones empeoran justo el problema que quieres evitar. Si premias la completitud por encima de la honestidad sobre la duda, obtendr&aacute;s respuestas m&aacute;s peligrosas para el trabajo t&eacute;cnico."
+    },
+    {
+      "id": "p_q14",
+      "situation": "La responsable de operaciones debe incorporar hoy una referencia normativa en un documento formal de PLOCAN. Ya tiene una respuesta de Antigravity y el contenido parece razonable. &iquest;Qu&eacute; pr&aacute;ctica es correcta antes de usarla?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usarla directamente porque la urgencia es mayor que el riesgo"
+        },
+        {
+          "key": "b",
+          "text": "Esperar a ver si alguien cuestiona la referencia m&aacute;s adelante"
+        },
+        {
+          "key": "c",
+          "text": "Verificar primero la fuente original de la referencia cr&iacute;tica antes de incorporarla al documento"
+        },
+        {
+          "key": "d",
+          "text": "Citar a Antigravity como fuente principal de la norma"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. En un documento formal, la responsabilidad no se delega en la herramienta, sino en quien valida la fuente. Verificar la referencia cr&iacute;tica antes de incorporarla evita errores de cumplimiento y retrabajo posterior.",
+      "feedback_ko": "Las otras opciones asumen que la plausibilidad basta o trasladan el control a otra persona. Precisamente en usos oficiales es donde la verificaci&oacute;n previa deja de ser opcional."
+    },
+    {
+      "id": "p_q15",
+      "situation": "Un t&eacute;cnico de proyectos quiere definir una forma repetible de buscar informaci&oacute;n para futuras tareas en PLOCAN sin caer otra vez en las 20 pesta&ntilde;as abiertas. &iquest;Qu&eacute; secuencia refleja mejor la l&oacute;gica de la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Explicar contexto y objetivo, pedir comparaci&oacute;n de fuentes o alternativas cuando haga falta, solicitar fuentes originales y verificar las referencias cr&iacute;ticas antes de usar el resultado"
+        },
+        {
+          "key": "b",
+          "text": "Empezar por keywords sueltas, copiar la primera respuesta convincente y comprobar algo solo si sobra tiempo"
+        },
+        {
+          "key": "c",
+          "text": "Pedir siempre respuestas muy largas y asumir que si llevan citas ya son fiables"
+        },
+        {
+          "key": "d",
+          "text": "Buscar manualmente en muchas webs y usar la herramienta solo para reescribir al final"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Esa secuencia recoge los tres pasos clave: contexto, comparaci&oacute;n cuando aporta valor y verificaci&oacute;n de fuentes. Es la manera de usar la herramienta para reducir navegaci&oacute;n, sin renunciar al criterio profesional.",
+      "feedback_ko": "Las otras secuencias reproducen el problema original o delegan demasiado en la primera respuesta. La p&iacute;ldora no propone confiar ciegamente, sino buscar mejor y revisar mejor."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

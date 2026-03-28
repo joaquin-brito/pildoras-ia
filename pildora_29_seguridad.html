@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Lo que NO Debes Poner en un Prompt</h1>
     <p class="subtitle">Seguridad y Confidencialidad &middot; Material para el grupo IA + Datos</p>
-    <span class="time-badge">8 min de lectura</span>
+    <span class="time-badge">8 mín de lectura</span>
 </header>
 
 
@@ -1050,6 +1050,526 @@ Extensi&oacute;n deseada: [N&Uacute;MERO] palabras aproximadamente.
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 29,
+  "pill_slug": "seguridad",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "Una persona del equipo de proyectos quiere pegar en una IA un borrador de propuesta europea con presupuesto detallado, nombres de entidades asociadas y comentarios internos para que &laquo;lo deje m&aacute;s elegante&raquo;. &iquest;Qu&eacute; deber&iacute;as hacer?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que lo pegue todo, porque la IA necesita el documento completo para ayudar bien"
+        },
+        {
+          "key": "b",
+          "text": "Sustituir nombres, cifras y comentarios sensibles por marcadores, y pedir a la IA una estructura o plantilla de mejora sin compartir el contenido real"
+        },
+        {
+          "key": "c",
+          "text": "Enviar solo el presupuesto real, porque el riesgo est&aacute; en el texto y no en los n&uacute;meros"
+        },
+        {
+          "key": "d",
+          "text": "Copiar el documento en varias partes para que cada prompt tenga menos informaci&oacute;n"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La IA puede ayudarte con la estructura, el tono o la checklist sin ver datos reales. Si anonimizas y sustituyes por marcadores, reduces el riesgo de exponer informaci&oacute;n sensible y mantienes el control del contenido.",
+      "feedback_ko": "Las otras opciones siguen exponiendo datos que no hacen falta para resolver la tarea. Dividir el documento o dejar solo parte de la informaci&oacute;n no cambia el problema: sigues sacando datos sensibles de tu control."
+    },
+    {
+      "id": "p_q02",
+      "situation": "El &aacute;rea de administraci&oacute;n quiere usar IA para revisar un contrato antes de enviarlo a una entidad externa. El documento incluye cl&aacute;usulas econ&oacute;micas, anexos operativos y datos identificativos de personas de contacto. &iquest;Cu&aacute;l es la petici&oacute;n m&aacute;s segura y &uacute;til?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pegar el contrato entero y pedir un an&aacute;lisis jur&iacute;dico completo"
+        },
+        {
+          "key": "b",
+          "text": "Pedir una gu&iacute;a de revisi&oacute;n contractual, secciones habituales, riesgos a comprobar y una lista de preguntas, sin compartir el texto real"
+        },
+        {
+          "key": "c",
+          "text": "Pegar solo las p&aacute;ginas con firmas y datos de contacto, porque son las m&aacute;s importantes"
+        },
+        {
+          "key": "d",
+          "text": "Convertir el contrato en imagen y subirlo, porque as&iacute; la IA no procesa el texto igual"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Cuando el objetivo es revisar mejor, la IA no necesita el contrato real sino el m&eacute;todo de revisi&oacute;n. Pedir checklist, estructura y preguntas de control conserva la utilidad y evita compartir datos innecesarios.",
+      "feedback_ko": "Pegar el contrato completo o parcial sigue exponiendo informaci&oacute;n sensible. Cambiar el formato a imagen tampoco resuelve nada: el problema no es el soporte, sino compartir contenido real sin necesidad."
+    },
+    {
+      "id": "p_q03",
+      "situation": "Desde un &aacute;rea t&eacute;cnica se quiere pedir a una IA que analice incidencias de un sensor marino. El informe original incluye coordenadas exactas, identificadores internos de equipos y observaciones operativas no publicadas. &iquest;Qu&eacute; transformaci&oacute;n aplica mejor el sem&aacute;foro de datos antes de pegar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Dejar todo igual y a&ntilde;adir al final &laquo;mant&eacute;n confidencialidad&raquo;"
+        },
+        {
+          "key": "b",
+          "text": "Cambiar solo las coordenadas, porque los identificadores de equipo no importan"
+        },
+        {
+          "key": "c",
+          "text": "Sustituir coordenadas, identificadores y referencias operativas por marcadores y describir el patr&oacute;n de incidencia de forma gen&eacute;rica"
+        },
+        {
+          "key": "d",
+          "text": "Reducir el texto a un resumen con todos los datos clave reales para no perder contexto"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. El principio no es ocultar una sola variable, sino eliminar o sustituir todos los elementos que permitan identificar activos, ubicaciones o contexto sensible. La IA necesita el patr&oacute;n del problema, no los datos exactos.",
+      "feedback_ko": "Avisar de que algo es confidencial no protege el contenido. Cambiar solo una parte o resumir con datos reales sigue permitiendo exponer informaci&oacute;n operativa que no hace falta compartir."
+    },
+    {
+      "id": "p_q04",
+      "situation": "Una persona responsable de RR. HH. quiere usar IA para mejorar una comunicaci&oacute;n interna sobre un proceso de selecci&oacute;n. Tiene un borrador con valoraciones individuales, nombres, tel&eacute;fonos y comentarios de entrevistas. &iquest;Qu&eacute; opci&oacute;n aplica mejor la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir a la IA que reescriba el borrador completo y luego borrar los nombres en la versi&oacute;n final"
+        },
+        {
+          "key": "b",
+          "text": "Crear una plantilla de comunicado con marcadores [ROL], [FECHA], [MENSAJE], sin incluir valoraciones ni datos personales"
+        },
+        {
+          "key": "c",
+          "text": "Dejar solo las iniciales y mantener tel&eacute;fonos y comentarios para no perder detalle"
+        },
+        {
+          "key": "d",
+          "text": "Pegar el texto en dos sesiones distintas para repartir el riesgo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. En este caso la IA puede aportar forma, tono y estructura sin ver datos personales ni evaluaciones sensibles. Una plantilla con marcadores resuelve la necesidad real y evita un tratamiento innecesario de datos.",
+      "feedback_ko": "Las otras opciones siguen enviando informaci&oacute;n personal o sensible. Borrar despu&eacute;s, usar iniciales o fragmentar el contenido no evita que los datos ya hayan sido compartidos con el sistema."
+    },
+    {
+      "id": "p_q05",
+      "situation": "Est&aacute;s preparando un informe para direcci&oacute;n sobre compras de equipamiento y quieres pedir a la IA que identifique riesgos. Tienes importes exactos, proveedores, plazos y comentarios internos sobre negociaci&oacute;n. &iquest;Qu&eacute; har&iacute;as para mantener utilidad sin exponer demasiado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Cambiar los importes por rangos o porcentajes, sustituir proveedores por [PROVEEDOR-1] y pedir una matriz de riesgos tipo"
+        },
+        {
+          "key": "b",
+          "text": "Pegar todo porque, al no haber datos de salud, el riesgo es bajo"
+        },
+        {
+          "key": "c",
+          "text": "Quitar solo el nombre del proveedor principal y dejar el resto igual"
+        },
+        {
+          "key": "d",
+          "text": "Enviar solo los comentarios internos, porque son m&aacute;s importantes que los datos econ&oacute;micos"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Convertir cifras a rangos y usar marcadores mantiene la l&oacute;gica del an&aacute;lisis sin compartir detalles comerciales reales. As&iacute; la IA trabaja sobre la estructura del riesgo, no sobre informaci&oacute;n identificable del caso.",
+      "feedback_ko": "El problema no es solo el tipo de dato, sino su sensibilidad y su contexto. Dejar cifras, comentarios internos o referencias reales sigue exponiendo informaci&oacute;n estrat&eacute;gica que no es necesaria para recibir ayuda metodol&oacute;gica."
+    },
+    {
+      "id": "p_q06",
+      "situation": "Un rol de coordinaci&oacute;n de proyecto europeo necesita redactar un email delicado para un partner sobre un retraso. Tiene un borrador con detalles del conflicto interno, evaluaciones de desempe&ntilde;o y decisiones todav&iacute;a no cerradas. &iquest;Cu&aacute;l es el mejor uso de IA?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pegar el email completo para que la IA lo suavice manteniendo todos los detalles"
+        },
+        {
+          "key": "b",
+          "text": "Pedir una plantilla diplom&aacute;tica para comunicar retrasos a un partner, con tono, estructura y frases tipo, y luego rellenarla manualmente"
+        },
+        {
+          "key": "c",
+          "text": "Pegar solo los p&aacute;rrafos conflictivos y ocultar el saludo y la firma"
+        },
+        {
+          "key": "d",
+          "text": "Resumir el conflicto con nombres de roles y decisiones reales para que la IA tenga contexto suficiente"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La necesidad real es disponer de una buena plantilla de comunicaci&oacute;n, no entregar a la IA el conflicto concreto. Pedir estructura y tono permite redactar mejor sin exponer evaluaciones internas ni decisiones sensibles.",
+      "feedback_ko": "Aunque quites partes del mensaje, sigues compartiendo contenido delicado de negociaci&oacute;n o gobernanza. Si la IA puede ayudarte con un modelo gen&eacute;rico, no hay justificaci&oacute;n para enviar el caso real."
+    },
+    {
+      "id": "p_q07",
+      "situation": "En un equipo se comenta: &laquo;Si anonimizo los nombres, ya puedo pegar cualquier documento en una IA&raquo;. A partir de la p&iacute;ldora, &iquest;qu&eacute; respuesta es la m&aacute;s correcta?",
+      "options": [
+        {
+          "key": "a",
+          "text": "S&iacute;, porque sin nombres ya no hay ning&uacute;n riesgo relevante"
+        },
+        {
+          "key": "b",
+          "text": "No necesariamente; tambi&eacute;n pueden identificar el caso cifras, ubicaciones, roles, fechas, entidades o contexto operativo"
+        },
+        {
+          "key": "c",
+          "text": "S&iacute;, salvo en documentos de recursos humanos"
+        },
+        {
+          "key": "d",
+          "text": "No, porque nunca se puede usar IA para documentos de trabajo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Anonimizar no es solo borrar nombres: tambi&eacute;n hay que revisar si el conjunto de datos permite reidentificar personas, proyectos o activos. La seguridad est&aacute; en minimizar el contexto identificable, no en cambiar una sola variable.",
+      "feedback_ko": "Quitar nombres puede ser insuficiente si el resto del contenido sigue delatando el caso. Tampoco hace falta prohibir todo uso de IA: la clave es decidir qu&eacute; informaci&oacute;n es realmente necesaria compartir."
+    },
+    {
+      "id": "p_q08",
+      "situation": "Una persona del equipo legal recuerda que quien introduce datos personales en un sistema de IA es corresponsable de su tratamiento. Est&aacute;s a punto de pegar una tabla con incidencias de personal para que la IA la clasifique. &iquest;Qu&eacute; decisi&oacute;n refleja mejor esa responsabilidad?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pegarla completa, porque la responsabilidad es solo del proveedor de IA"
+        },
+        {
+          "key": "b",
+          "text": "Pegarla si antes marcas el prompt como &laquo;uso interno&raquo;"
+        },
+        {
+          "key": "c",
+          "text": "Replantear la tarea para usar categor&iacute;as ficticias o una muestra sint&eacute;tica y pedir el criterio de clasificaci&oacute;n, no el tratamiento del dato real"
+        },
+        {
+          "key": "d",
+          "text": "Quitar la columna de nombres y dejar el resto de incidencias detalladas"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. Si eres corresponsable, debes aplicar minimizaci&oacute;n y evitar compartir datos reales cuando no es imprescindible. Pedir el criterio con ejemplos sint&eacute;ticos resuelve la necesidad sin trasladar incidencias personales reales al sistema.",
+      "feedback_ko": "Las otras opciones parten de una falsa seguridad. Etiquetar el uso como interno o quitar solo una columna no elimina el tratamiento del resto de datos personales ni tu responsabilidad sobre esa decisi&oacute;n."
+    },
+    {
+      "id": "p_q09",
+      "situation": "Necesitas analizar un acta interna sobre una incidencia operativa en una infraestructura. El texto contiene fechas, referencias de equipos, decisiones pendientes y entidades externas implicadas. &iquest;Qu&eacute; prompt est&aacute; mejor planteado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Te pego el acta completa: dime qu&eacute; errores de coordinaci&oacute;n ves"
+        },
+        {
+          "key": "b",
+          "text": "Dame una matriz para analizar incidencias operativas y una lista de causas, impactos y mitigaciones que deber&iacute;a revisar en un acta de este tipo"
+        },
+        {
+          "key": "c",
+          "text": "Te pego solo las decisiones pendientes y los nombres de las entidades para que entiendas el contexto"
+        },
+        {
+          "key": "d",
+          "text": "Resume el acta manteniendo fechas y referencias t&eacute;cnicas porque son esenciales"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Cuando buscas analizar mejor una incidencia, lo valioso es la metodolog&iacute;a: matriz, criterios y preguntas de revisi&oacute;n. Eso permite trabajar con el documento real fuera de la IA y mantener control sobre la informaci&oacute;n sensible.",
+      "feedback_ko": "Pegar el acta o partes sustanciales mantiene el mismo riesgo de exposici&oacute;n. Si la IA puede darte el marco de an&aacute;lisis sin ver el caso real, esa es la opci&oacute;n m&aacute;s segura y suficiente."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Una persona responsable de comunicaci&oacute;n quiere usar IA para preparar una nota sobre un proyecto todav&iacute;a no anunciado. Tiene hitos, socios, fechas y mensajes que a&uacute;n no se pueden hacer p&uacute;blicos. &iquest;Qu&eacute; har&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir a la IA una plantilla de nota de prensa para lanzamiento de proyecto, con secciones, tono y placeholders, y completar luego la versi&oacute;n real fuera de la herramienta"
+        },
+        {
+          "key": "b",
+          "text": "Pegar la nota real porque solo la va a leer el equipo de comunicaci&oacute;n"
+        },
+        {
+          "key": "c",
+          "text": "Pegar solo los hitos y fechas, porque el texto narrativo es menos sensible"
+        },
+        {
+          "key": "d",
+          "text": "Sustituir el nombre del proyecto y mantener los socios y calendario reales"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. La IA puede ayudarte a dise&ntilde;ar la pieza sin recibir informaci&oacute;n de un proyecto no publicado. Separar plantilla y contenido real es una forma pr&aacute;ctica de aplicar confidencialidad sin perder productividad.",
+      "feedback_ko": "Aunque cambies un nombre, socios, hitos y fechas pueden identificar el proyecto igualmente. Si el anuncio a&uacute;n no es p&uacute;blico, lo prudente es no compartir el caso real y trabajar con una estructura gen&eacute;rica."
+    },
+    {
+      "id": "p_q11",
+      "situation": "Durante una reuní&oacute;n, un rol t&eacute;cnico propone: &laquo;Para que la IA detecte patrones, le voy a volcar varios correos con incidencias tal cual llegaron&raquo;. &iquest;Qu&eacute; alternativa aplica mejor la p&iacute;ldora 29?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Volcar los correos completos, porque si no la IA perder&aacute; matices"
+        },
+        {
+          "key": "b",
+          "text": "Crear una tabla saneada con tipo de incidencia, impacto, momento y categor&iacute;as gen&eacute;ricas, eliminando direcciones, firmas y texto identificable"
+        },
+        {
+          "key": "c",
+          "text": "Eliminar solo las firmas finales de cada correo y dejar el resto igual"
+        },
+        {
+          "key": "d",
+          "text": "Reenviar los correos desde una cuenta compartida para que no se asocien a una persona concreta"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Si el objetivo es detectar patrones, basta con variables relevantes y bien estructuradas; no hacen falta correos completos con firmas, direcciones o contexto innecesario. Convertir texto libre en datos minimizados reduce riesgo y mejora el an&aacute;lisis.",
+      "feedback_ko": "Las otras opciones mantienen demasiada informaci&oacute;n innecesaria. Cambiar la cuenta o quitar firmas no evita que el cuerpo del correo siga conteniendo datos personales, operativos o contextuales sensibles."
+    },
+    {
+      "id": "p_q12",
+      "situation": "Tienes que pedir a una IA ayuda para revisar un presupuesto de un piloto de 6 meses, pero no quieres compartir cifras exactas ni proveedores. &iquest;Qu&eacute; formulaci&oacute;n es m&aacute;s adecuada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Analiza este presupuesto: proveedor A 47.800 euros, proveedor B 18.300 euros, y dime si est&aacute; equilibrado"
+        },
+        {
+          "key": "b",
+          "text": "Dame criterios para revisar si un presupuesto piloto est&aacute; equilibrado por partidas, usando rangos porcentuales y categor&iacute;as como [PROVEEDOR-1] o [PARTIDA-2]"
+        },
+        {
+          "key": "c",
+          "text": "Te doy cifras exactas pero sin decir a qu&eacute; proyecto pertenecen"
+        },
+        {
+          "key": "d",
+          "text": "Te comparto solo la partida m&aacute;s alta real y construyes el resto a partir de ah&iacute;"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Pedir criterios de equilibrio y usar rangos o porcentajes permite obtener orientaci&oacute;n sin revelar datos comerciales concretos. La IA aporta el m&eacute;todo; la aplicaci&oacute;n al caso real la haces t&uacute; fuera del prompt.",
+      "feedback_ko": "Las otras opciones siguen entregando datos econ&oacute;micos reales del caso. Aunque falte el nombre del proyecto, cifras y distribuciones pueden ser suficientemente sensibles o identificables por s&iacute; mismas."
+    },
+    {
+      "id": "p_q13",
+      "situation": "En una revisi&oacute;n de seguridad, alguien afirma: &laquo;Si el prompt es corto, el riesgo tambi&eacute;n es bajo&raquo;. &iquest;C&oacute;mo aplicar&iacute;as la p&iacute;ldora a esa idea?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Es correcta: menos texto siempre implica menos riesgo"
+        },
+        {
+          "key": "b",
+          "text": "Es incompleta: un prompt breve puede seguir conteniendo datos sensibles si incluye identificadores, cifras o contexto suficiente"
+        },
+        {
+          "key": "c",
+          "text": "Es falsa solo en documentos jur&iacute;dicos; en lo dem&aacute;s no importa"
+        },
+        {
+          "key": "d",
+          "text": "Es correcta si no adjuntas archivos adicionales"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. El riesgo no depende solo de la longitud, sino del contenido y de su capacidad de identificar un caso real. Un prompt de dos l&iacute;neas puede ser m&aacute;s sensible que una p&aacute;gina entera si incluye datos clave.",
+      "feedback_ko": "Reducir longitud no equivale a anonimizar. Si dejas identificadores, fechas, cifras o contexto suficiente, sigues compartiendo informaci&oacute;n sensible aunque el prompt sea breve."
+    },
+    {
+      "id": "p_q14",
+      "situation": "Un rol de soporte quiere pedir a la IA ayuda para responder una reclamaci&oacute;n compleja recibida por email. El mensaje original incluye datos identificativos, historial de interacciones y referencias a terceros. &iquest;Qu&eacute; enfoque deber&iacute;as recomendar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pegar el hilo completo para que la IA redacte una respuesta definitiva"
+        },
+        {
+          "key": "b",
+          "text": "Extraer el problema en t&eacute;rminos gen&eacute;ricos, sustituir actores por roles, y pedir una propuesta de estructura de respuesta y tono adecuado"
+        },
+        {
+          "key": "c",
+          "text": "Pegar solo el &uacute;ltimo correo, porque el historial previo ya no cuenta"
+        },
+        {
+          "key": "d",
+          "text": "Quitar el nombre principal y mantener referencias a terceros y fechas exactas"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Lo prudente es abstraer el caso y pedir ayuda sobre c&oacute;mo responder, no sobre la reclamaci&oacute;n real con todos sus datos. Roles, problema gen&eacute;rico y tono buscado suelen ser suficientes para obtener una buena base.",
+      "feedback_ko": "Un hilo real de reclamaci&oacute;n suele concentrar muchos datos identificativos y de contexto. Quitar una sola pieza no basta si la situaci&oacute;n sigue siendo reconocible o contiene informaci&oacute;n personal de terceros."
+    },
+    {
+      "id": "p_q15",
+      "situation": "Antes de usar IA con cualquier documento interno de PLOCAN, quieres aplicar una comprobaci&oacute;n r&aacute;pida de seguridad. &iquest;Qu&eacute; secuencia refleja mejor la p&iacute;ldora 29?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pegar primero y decidir despu&eacute;s si el resultado merece la pena"
+        },
+        {
+          "key": "b",
+          "text": "Clasificar el tipo de dato, eliminar o sustituir lo sensible, y reformular la petici&oacute;n para que la IA trabaje sobre estructura, m&eacute;todo o plantilla"
+        },
+        {
+          "key": "c",
+          "text": "Pasar el documento a PDF y usarlo igual, porque as&iacute; parece m&aacute;s formal"
+        },
+        {
+          "key": "d",
+          "text": "Usar siempre el mismo prompt gen&eacute;rico de confidencialidad antes de adjuntar cualquier archivo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Esa secuencia obliga a pensar antes de pegar: primero clasificas, luego minimizas y por &uacute;ltimo redise&ntilde;as el prompt. Es una forma pr&aacute;ctica de evitar compartir datos reales cuando la IA solo necesita entender la estructura del problema.",
+      "feedback_ko": "Las otras opciones confunden forma con control real. Cambiar el formato o a&ntilde;adir una advertencia no sustituye la clasificaci&oacute;n del dato ni la minimizaci&oacute;n previa del contenido compartido."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

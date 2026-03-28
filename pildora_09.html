@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Analizar datos sin programar</h1>
     <p class="subtitle">Desde un CSV de sensores hasta un gráfico con tendencias, sin escribir una línea de código</p>
-    <span class="time-badge">5 min de lectura</span>
+    <span class="time-badge">5 mín de lectura</span>
 </header>
 
 
@@ -1071,6 +1071,526 @@ Explícamelo en lenguaje sencillo, no técnico.
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 9,
+  "pill_slug": "09",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "La responsable de proyectos recibe un CSV de una boya y necesita preparar un breve informe para una reuní&oacute;n esa misma ma&ntilde;Ana. Tiene poco tiempo y quiere usar Antigravity. &iquest;Cu&aacute;l es la mejor primera petici&oacute;n para evitar conclusiones precipitadas?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir directamente un gr&aacute;fico atractivo para incluirlo en la presentaci&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Pedir primero un resumen con variables, rango temporal y posibles datos faltantes o an&oacute;malos"
+        },
+        {
+          "key": "c",
+          "text": "Solicitar una comparaci&oacute;n con otra boya aunque todav&iacute;a no haya revisado el archivo"
+        },
+        {
+          "key": "d",
+          "text": "Preguntar si la serie demuestra un problema en el sensor antes de ver la estructura del dato"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Antes de interpretar o visualizar, conviene entender qu&eacute; contiene el archivo y si tiene problemas de calidad. Ese paso evita construir gr&aacute;ficos o conclusiones sobre datos incompletos o mal fechados.",
+      "feedback_ko": "La clave es explorar primero, no saltar al resultado final. Si no sabes qu&eacute; variables hay, cu&aacute;l es el periodo y si faltan datos, cualquier comparaci&oacute;n o gr&aacute;fico puede llevar a una lectura err&oacute;nea."
+    },
+    {
+      "id": "p_q02",
+      "situation": "Un t&eacute;cnico obtiene un resumen inicial del CSV y ve que hay varias fechas vac&iacute;as en marzo. Aun as&iacute;, el director de l&iacute;nea le pide un an&aacute;lisis de tendencia anual inmediato. &iquest;Qu&eacute; deber&iacute;a hacer primero con Antigravity?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Seguir adelante con la tendencia anual y omitir cualquier comentario sobre las fechas vac&iacute;as"
+        },
+        {
+          "key": "b",
+          "text": "Pedir una explicaci&oacute;n de c&oacute;mo podr&iacute;an afectar esos vac&iacute;os al an&aacute;lisis antes de sacar conclusiones"
+        },
+        {
+          "key": "c",
+          "text": "Solicitar que rellene los huecos con valores inventados para que la serie quede completa"
+        },
+        {
+          "key": "d",
+          "text": "Cambiar el tema y pedir un gr&aacute;fico mensual sin revisar la calidad de la serie"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Si hay vac&iacute;os temporales, primero hay que entender su impacto en la lectura de la tendencia. Analizar la calidad del dato forma parte del trabajo, no es un paso accesorio.",
+      "feedback_ko": "El problema no es hacer el gr&aacute;fico r&aacute;pido, sino decidir con criterio. Ignorar huecos o inventar valores introduce sesgos y puede convertir un an&aacute;lisis aparentemente correcto en una conclusi&oacute;n poco fiable."
+    },
+    {
+      "id": "p_q03",
+      "situation": "La coordinadora de una campa&ntilde;a quiere mostrar la temperatura superficial del agua por mes y resaltar episodios por encima de 24 grados. Ya subí&oacute; el archivo, pero Antigravity le devuelve un gr&aacute;fico gen&eacute;rico. &iquest;Qu&eacute; ajuste de petici&oacute;n mejorar&iacute;a m&aacute;s el resultado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir un gr&aacute;fico bonito y dejar que el sistema elija libremente los ejes"
+        },
+        {
+          "key": "b",
+          "text": "Especificar eje X mensual, eje Y con temperatura superficial, l&iacute;nea de tendencia y marcado de valores por encima de 24 grados"
+        },
+        {
+          "key": "c",
+          "text": "Solicitar que use cualquier variable similar a temperatura para ahorrar tiempo"
+        },
+        {
+          "key": "d",
+          "text": "Pedir que genere tres gr&aacute;ficos distintos sin decir para qu&eacute; se usar&aacute;n"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Cuando la necesidad es concreta, el prompt debe describir la visualizaci&oacute;n y los criterios relevantes. Eso reduce ambig&uuml;edad y alinea el gr&aacute;fico con la pregunta de negocio o de operaci&oacute;n.",
+      "feedback_ko": "Un encargo difuso suele producir una salida gen&eacute;rica. Si no indicas ejes, variable y umbral relevante, el sistema no tiene por qu&eacute; resaltar justo lo que necesitas para tomar una decisi&oacute;n."
+    },
+    {
+      "id": "p_q04",
+      "situation": "Una analista recibe de Antigravity un gr&aacute;fico correcto, pero el sistema indica que lo gener&oacute; con Python. Ella no programa y duda si podr&aacute; seguir trabajando con el resultado. &iquest;Qu&eacute; actuaci&oacute;n es la m&aacute;s adecuada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Descartar el gr&aacute;fico porque si hay c&oacute;digo detr&aacute;s no podr&aacute; modificar nada"
+        },
+        {
+          "key": "b",
+          "text": "Aceptar el gr&aacute;fico tal como est&aacute; y no pedir ning&uacute;n ajuste para no complicarse"
+        },
+        {
+          "key": "c",
+          "text": "Pedir cambios en lenguaje natural, como mover la leyenda, cambiar color o a&ntilde;adir etiquetas"
+        },
+        {
+          "key": "d",
+          "text": "Exportar la imagen y rehacerla manualmente en Excel desde cero"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. La p&iacute;ldora insiste en que no hace falta entender el c&oacute;digo si el sistema ya produjo el gr&aacute;fico. Lo pr&aacute;ctico es iterar sobre el resultado con instrucciones claras en lenguaje natural.",
+      "feedback_ko": "Ver que hay Python no significa que el trabajo deje de ser accesible. Rehacer todo o renunciar a ajustar el gr&aacute;fico desperdicia el valor de la herramienta y te devuelve a un proceso m&aacute;s lento."
+    },
+    {
+      "id": "p_q05",
+      "situation": "El director de l&iacute;nea sospecha que un sensor est&aacute; fallando porque aparecen dos picos extremos en una serie mensual. Quiere saber si debe avisar ya al equipo de mantenimiento. &iquest;Qu&eacute; an&aacute;lisis pedir&iacute;a mejor la t&eacute;cnica para apoyar esa decisi&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Preguntar solo si la media anual subí&oacute; o baj&oacute;"
+        },
+        {
+          "key": "b",
+          "text": "Pedir detecci&oacute;n de anomal&iacute;as y una explicaci&oacute;n de si esos picos parecen errores de sensor o variaci&oacute;n plausible"
+        },
+        {
+          "key": "c",
+          "text": "Solicitar un resumen ejecutivo sin mencionar los valores extremos"
+        },
+        {
+          "key": "d",
+          "text": "Pedir un gr&aacute;fico de barras para que el equipo interprete por su cuenta qu&eacute; pas&oacute;"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La situaci&oacute;n requiere analizar anomal&iacute;as con contexto, no solo describir la media o cambiar el formato del gr&aacute;fico. As&iacute; la persona responsable puede distinguir entre una alerta t&eacute;cnica y una variaci&oacute;n razonable de la serie.",
+      "feedback_ko": "El objetivo no es embellecer los datos ni resumirlos superficialmente. Si hay picos sospechosos, lo importante es evaluar su plausibilidad y el riesgo operativo asociado antes de movilizar recursos."
+    },
+    {
+      "id": "p_q06",
+      "situation": "La responsable de un informe institucional necesita explicar los datos a un p&uacute;blico no especialista. Antigravity ya detect&oacute; tendencia, estacionalidad y posibles anomal&iacute;as. &iquest;Qu&eacute; salida es m&aacute;s &uacute;til para ese contexto?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un texto narrativo en lenguaje sencillo que describa qu&eacute; est&aacute; pasando en la serie"
+        },
+        {
+          "key": "b",
+          "text": "Una lista de f&oacute;rmulas estad&iacute;sticas para justificar el c&aacute;lculo"
+        },
+        {
+          "key": "c",
+          "text": "El c&oacute;digo completo utilizado para cada transformaci&oacute;n de datos"
+        },
+        {
+          "key": "d",
+          "text": "Un volcado bruto de todas las filas para que el lector saque sus propias conclusiones"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Si el destinatario no es especialista, lo valioso es traducir el an&aacute;lisis a una explicaci&oacute;n comprensible y accionable. Eso permite incorporar el resultado al informe sin exigir conocimientos t&eacute;cnicos avanzados.",
+      "feedback_ko": "Las f&oacute;rmulas, el c&oacute;digo o el dato en bruto pueden ser &uacute;tiles en otros contextos, pero no resuelven la necesidad de comunicaci&oacute;n. Aqu&iacute; importa explicar el significado del patr&oacute;n, no solo mostrar c&oacute;mo se calcul&oacute;."
+    },
+    {
+      "id": "p_q07",
+      "situation": "Un gestor quiere comparar enero-junio de 2024 con enero-junio de 2025 en temperatura media. Sin embargo, una compa&ntilde;era detecta que en 2025 faltan datos de febrero. &iquest;Cu&aacute;l es la mejor respuesta anal&iacute;tica?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Comparar igual ambos periodos y asumir que el hueco no cambia nada"
+        },
+        {
+          "key": "b",
+          "text": "Pedir una comparaci&oacute;n que explicite la falta de datos y eval&uacute;e si la diferencia observada sigue siendo interpretable"
+        },
+        {
+          "key": "c",
+          "text": "Eliminar tambi&eacute;n febrero de 2024 sin informar a nadie para que el cuadro quede sim&eacute;trico"
+        },
+        {
+          "key": "d",
+          "text": "Posponer cualquier revisi&oacute;n y limitarse a describir que hay dos a&ntilde;os distintos"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La comparaci&oacute;n sigue siendo posible si se hace con transparencia sobre la calidad del dato y sus l&iacute;mites. Lo importante es no presentar como equivalente lo que en realidad tiene coberturas diferentes.",
+      "feedback_ko": "La decisi&oacute;n no debe ocultar el problema de calidad. Asumir que no afecta o recortar datos sin explicarlo puede distorsionar la lectura y debilitar la credibilidad del an&aacute;lisis frente a quien lo reciba."
+    },
+    {
+      "id": "p_q08",
+      "situation": "La t&eacute;cnica de una plataforma marina quiere saber en qu&eacute; meses la temperatura suele ser m&aacute;s alta y cu&aacute;ndo baja de forma habitual para planificar una operaci&oacute;n. &iquest;Qu&eacute; tipo de pregunta aprovecha mejor Antigravity?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que enumere todas las filas del archivo ordenadas alfab&eacute;ticamente"
+        },
+        {
+          "key": "b",
+          "text": "Preguntar si hay estacionalidad y qu&eacute; meses son m&aacute;s c&aacute;lidos o m&aacute;s fr&iacute;os"
+        },
+        {
+          "key": "c",
+          "text": "Solicitar solo el valor m&aacute;ximo absoluto sin contexto temporal"
+        },
+        {
+          "key": "d",
+          "text": "Pedir una explicaci&oacute;n sobre c&oacute;mo programar sensores nuevos"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La necesidad es operativa y depende de patrones recurrentes, no de un dato aislado. Preguntar por la estacionalidad conecta mejor el an&aacute;lisis con la planificaci&oacute;n de trabajo real.",
+      "feedback_ko": "Listar filas o quedarse con un m&aacute;ximo absoluto no ayuda a entender el comportamiento c&iacute;clico. Para decidir cu&aacute;ndo actuar, necesitas el patr&oacute;n temporal completo y no solo un valor llamativo."
+    },
+    {
+      "id": "p_q09",
+      "situation": "El responsable de calidad quiere revisar si un archivo recibido est&aacute; listo para generar indicadores. El sistema puede hacer solo una acci&oacute;n primero. &iquest;Cu&aacute;l aporta m&aacute;s valor inmediato?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Crear un dashboard final con colores corporativos"
+        },
+        {
+          "key": "b",
+          "text": "Resumir estructura, cobertura temporal y posibles incidencias de calidad en una tabla"
+        },
+        {
+          "key": "c",
+          "text": "Exportar el archivo a otro formato para archivarlo"
+        },
+        {
+          "key": "d",
+          "text": "Preparar un correo anunciando que el an&aacute;lisis ya termin&oacute;"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Antes de producir indicadores conviene confirmar que el conjunto de datos es entendible y utilizable. Ese resumen inicial funciona como control de calidad y como gu&iacute;a para decidir el siguiente paso.",
+      "feedback_ko": "Un dashboard o un correo pueden venir despu&eacute;s, pero no sustituyen la validaci&oacute;n b&aacute;sica. Si no compruebas cobertura, variables y anomal&iacute;as, puedes automatizar una salida vistosa sobre una base defectuosa."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Una gestora recibe un comentario de Antigravity que dice: &laquo;Hay una subida clara en los &uacute;ltimos 12 meses&raquo;. Antes de incluir esa frase en un documento, quiere comprobar que no sea una impresi&oacute;n superficial. &iquest;Qu&eacute; har&iacute;a mejor?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que muestre el gr&aacute;fico correspondiente y explique en lenguaje sencillo de d&oacute;nde sale esa conclusi&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Copiar la frase tal cual porque el sistema ya la formul&oacute; con seguridad"
+        },
+        {
+          "key": "c",
+          "text": "Eliminar cualquier referencia a tendencias para evitar riesgos"
+        },
+        {
+          "key": "d",
+          "text": "Sustituir la frase por otra m&aacute;s contundente sin pedir evidencia adicional"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Una buena pr&aacute;ctica es pedir respaldo visual o explicativo antes de reutilizar la conclusi&oacute;n. As&iacute; validas si la afirmaci&oacute;n se sostiene y la puedes comunicar con mayor confianza.",
+      "feedback_ko": "Confiar ciegamente o eliminar toda interpretaci&oacute;n son extremos poco &uacute;tiles. Lo razonable es contrastar la afirmaci&oacute;n con evidencia del propio an&aacute;lisis para no convertir una pista en una verdad no revisada."
+    },
+    {
+      "id": "p_q11",
+      "situation": "El director de una l&iacute;nea pide un resultado r&aacute;pido para una reuní&oacute;n y propone: &laquo;Haz cualquier gr&aacute;fico de temperatura y ya veremos&raquo;. La analista quiere que el trabajo sea realmente &uacute;til. &iquest;Qu&eacute; enfoque conviene defender?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aceptar y generar cualquier visualizaci&oacute;n, porque lo importante es llenar la diapositiva"
+        },
+        {
+          "key": "b",
+          "text": "Parar y concretar qu&eacute; pregunta debe responder el gr&aacute;fico antes de generarlo"
+        },
+        {
+          "key": "c",
+          "text": "Usar el primer template disponible en Excel para ahorrar tiempo"
+        },
+        {
+          "key": "d",
+          "text": "Pedir cinco gr&aacute;ficos distintos y elegir luego el m&aacute;s decorativo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Un gr&aacute;fico vale por la pregunta que ayuda a responder, no por su apariencia. Aclarar el objetivo antes de visualizar evita trabajo innecesario y mejora la utilidad del resultado.",
+      "feedback_ko": "Generar visualizaciones sin pregunta concreta suele producir material vistoso pero poco accionable. El problema no es la velocidad, sino hacer una pieza que realmente sirva para decidir o explicar algo."
+    },
+    {
+      "id": "p_q12",
+      "situation": "Una t&eacute;cnica de observaci&oacute;n marina quiere incluir en un informe una explicaci&oacute;n breve sobre por qu&eacute; ciertos meses fueron m&aacute;s c&aacute;lidos. No necesita una clase de estad&iacute;stica, sino una lectura comprensible del patr&oacute;n. &iquest;Qu&eacute; petici&oacute;n encaja mejor?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que interprete la estacionalidad en lenguaje sencillo, destacando meses m&aacute;s c&aacute;lidos y m&aacute;s fr&iacute;os"
+        },
+        {
+          "key": "b",
+          "text": "Solicitar las librer&iacute;as de Python usadas para construir la serie"
+        },
+        {
+          "key": "c",
+          "text": "Pedir solo una tabla con todos los decimales posibles"
+        },
+        {
+          "key": "d",
+          "text": "Preguntar por sensores alternativos sin analizar el patr&oacute;n actual"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. La herramienta aporta valor cuando traduce datos en significado entendible para la audiencia del informe. Eso permite pasar de una serie núm&eacute;rica a una explicaci&oacute;n que se puede comunicar y usar.",
+      "feedback_ko": "Los detalles t&eacute;cnicos o el exceso de dato bruto no responden a la necesidad planteada. Aqu&iacute; se busca interpretar un patr&oacute;n y explicarlo con claridad, no profundizar en la parte de implementaci&oacute;n."
+    },
+    {
+      "id": "p_q13",
+      "situation": "La responsable de proyectos observa que el resumen inicial menciona valores an&oacute;malos, pero no sabe si son muchos o pocos respecto al total. Necesita decidir si el archivo es usable para una presentaci&oacute;n ejecutiva. &iquest;Qu&eacute; pedir&iacute;a a continuaci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una aclaraci&oacute;n sobre cu&aacute;ntos casos an&oacute;malos hay, d&oacute;nde aparecen y si condicionan la lectura general"
+        },
+        {
+          "key": "b",
+          "text": "Que elimine autom&aacute;ticamente todos los valores raros sin avisar"
+        },
+        {
+          "key": "c",
+          "text": "Que prepare ya el texto final del informe sin revisar ese detalle"
+        },
+        {
+          "key": "d",
+          "text": "Que convierta la tabla en una imagen para que nadie vea las anomal&iacute;as"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. No todas las anomal&iacute;as invalidan un conjunto de datos, pero hay que dimensionarlas antes de usarlo. Pedir contexto ayuda a decidir si se puede presentar el resultado con cautelas o si antes hace falta depuraci&oacute;n.",
+      "feedback_ko": "Borrar sin criterio o esconder el problema no mejora la calidad del an&aacute;lisis. La decisi&oacute;n profesional es entender el alcance de la anomal&iacute;a y su impacto antes de reutilizar el archivo."
+    },
+    {
+      "id": "p_q14",
+      "situation": "Un analista junior necesita pasar de un Excel recibido por correo a una visualizaci&oacute;n comprensible para una reuní&oacute;n interna. Tiene la tentaci&oacute;n de preguntar a Antigravity: &laquo;&iquest;Qu&eacute; opinas de estos datos?&raquo;. &iquest;Por qu&eacute; esa petici&oacute;n no es la m&aacute;s eficaz?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Porque pedir opini&oacute;n general es demasiado ambiguo y no orienta el an&aacute;lisis hacia una necesidad concreta"
+        },
+        {
+          "key": "b",
+          "text": "Porque Antigravity solo funciona si los archivos son CSV y no Excel"
+        },
+        {
+          "key": "c",
+          "text": "Porque la herramienta no puede generar res&uacute;menes antes de hacer c&aacute;lculos avanzados"
+        },
+        {
+          "key": "d",
+          "text": "Porque primero siempre hay que exportar el Excel a PDF para que el sistema lo lea mejor"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Las mejores respuestas salen de peticiones que delimitan qu&eacute; se quiere saber o mostrar. Un encargo ambiguo puede producir una salida correcta pero irrelevante para la reuní&oacute;n.",
+      "feedback_ko": "El problema no es el formato ni una limitaci&oacute;n t&eacute;cnica inexistente. Lo que falla es la formulaci&oacute;n: sin objetivo claro, el sistema no sabe si debe resumir, comparar, visualizar o detectar anomal&iacute;as."
+    },
+    {
+      "id": "p_q15",
+      "situation": "La directora de un proyecto quiere trabajar sin programar, pero con rigor suficiente para apoyar decisiones. Ha recibido un resumen, un gr&aacute;fico y un comentario narrativo. &iquest;Qu&eacute; combinaci&oacute;n de uso refleja mejor el enfoque de la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usar solo el comentario narrativo y omitir cualquier revisi&oacute;n visual o de calidad del dato"
+        },
+        {
+          "key": "b",
+          "text": "Empezar por explorar el archivo, luego pedir la visualizaci&oacute;n adecuada y finalmente analizar patrones y anomal&iacute;as"
+        },
+        {
+          "key": "c",
+          "text": "Crear primero una presentaci&oacute;n y adaptar despu&eacute;s los datos a lo que necesite la narrativa"
+        },
+        {
+          "key": "d",
+          "text": "Delegar todo el proceso en una persona t&eacute;cnica y limitarse a recibir la conclusi&oacute;n final"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Ese orden reproduce el flujo de trabajo recomendado: explorar, visualizar y luego interpretar. Permite trabajar sin programar, pero manteniendo trazabilidad sobre la calidad del dato y el sentido del resultado.",
+      "feedback_ko": "Saltarse la exploraci&oacute;n o apoyarse solo en una conclusi&oacute;n final reduce el control sobre el an&aacute;lisis. La p&iacute;ldora propone un proceso simple, pero no superficial: primero entender, luego ver y despu&eacute;s interpretar."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

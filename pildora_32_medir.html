@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Medir el Impacto: &iquest;Funciona o es Teatro?</h1>
     <p class="subtitle">KPIs reales para saber si la IA aporta valor o solo genera ruido</p>
-    <span class="time-badge">6 min de lectura</span>
+    <span class="time-badge">6 mín de lectura</span>
 </header>
 
 
@@ -989,7 +989,7 @@ body.template-technical .action-card {
             
         </div>
                 <div class="section-body">
-                    <p>La prueba definitiva para saber si la IA aporta valor: <strong>imagina que ma&ntilde;ana desaparece</strong>. &iquest;Qu&eacute; echas de menos? &iquest;Qu&eacute; tarda m&aacute;s? &iquest;Qu&eacute;... no cambia?</p>
+                    <p>La prueba definitiva para saber si la IA aporta valor: <strong>imagina que ma&ntilde;Ana desaparece</strong>. &iquest;Qu&eacute; echas de menos? &iquest;Qu&eacute; tarda m&aacute;s? &iquest;Qu&eacute;... no cambia?</p>
 
     <div class="gallery" id="gallery-s3">
         <div class="gallery-viewport">
@@ -1093,6 +1093,526 @@ Tono: profesional, basado en evidencia, sin autocomplacencia.
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 32,
+  "pill_slug": "medir",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "El equipo de comunicaci&oacute;n de PLOCAN usa IA para redactar notas breves sobre campa&ntilde;as oceanogr&aacute;ficas. La direcci&oacute;n pide un KPI para saber si realmente aporta valor. &iquest;Cu&aacute;l elegir&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "N&uacute;mero total de prompts lanzados cada semana"
+        },
+        {
+          "key": "b",
+          "text": "Tiempo medio desde que llega la informaci&oacute;n hasta que la nota queda validada para publicar, comparado con la l&iacute;nea base previa"
+        },
+        {
+          "key": "c",
+          "text": "Cantidad de versiones que genera la IA por cada nota"
+        },
+        {
+          "key": "d",
+          "text": "N&uacute;mero de personas del equipo que dicen estar satisfechas con la herramienta"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Ese KPI mide un resultado operativo claro y obliga a compararlo con un antes, no solo con impresiones. Adem&aacute;s, si empeora o no mejora lo suficiente, permite decidir si se cambia el flujo, la herramienta o la validaci&oacute;n.",
+      "feedback_ko": "Las otras opciones son m&eacute;tricas de actividad o percepci&oacute;n, pero no prueban impacto real. M&aacute;s prompts o m&aacute;s versiones no implican m&aacute;s valor si la nota sigue tardando lo mismo o llega con errores."
+    },
+    {
+      "id": "p_q02",
+      "situation": "Un responsable de proyecto europeo afirma que la IA &laquo;ha mejorado mucho los informes&raquo;, pero no hay datos previos. Quieres medir de forma seria el impacto durante el siguiente trimestre. &iquest;Qu&eacute; har&iacute;as primero?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir al equipo que estime de memoria cu&aacute;nto tardaban antes"
+        },
+        {
+          "key": "b",
+          "text": "Definir desde ahora una l&iacute;nea base comparable: tiempo de preparaci&oacute;n, n&uacute;mero de correcciones y plazo de entrega por informe"
+        },
+        {
+          "key": "c",
+          "text": "Medir solo cu&aacute;ntos informes se hacen con IA frente a sin IA"
+        },
+        {
+          "key": "d",
+          "text": "Esperar seis meses para tener m&aacute;s casos y luego preguntar impresiones"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Sin l&iacute;nea base, la conversaci&oacute;n queda en percepciones y no en evidencia. Medir tiempo, correcciones y cumplimiento de plazos crea un punto de comparaci&oacute;n &uacute;til para decidir si la mejora es real.",
+      "feedback_ko": "Recordar de memoria el pasado introduce sesgo y medir solo adopci&oacute;n no demuestra impacto. Si no defines ahora una base objetiva, dentro de unos meses seguir&aacute;s sin poder atribuir la mejora a la IA."
+    },
+    {
+      "id": "p_q03",
+      "situation": "El equipo de observaci&oacute;n marina usa IA para clasificar incidencias de sensores antes de revisarlas manualmente. Quieres evitar una m&eacute;trica de vanidad. &iquest;Cu&aacute;l descartar&iacute;as como KPI principal?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Porcentaje de incidencias correctamente priorizadas frente a la revisi&oacute;n experta"
+        },
+        {
+          "key": "b",
+          "text": "Tiempo medio de respuesta desde la alerta hasta la decisi&oacute;n operativa"
+        },
+        {
+          "key": "c",
+          "text": "N&uacute;mero de incidencias procesadas por la IA al d&iacute;a"
+        },
+        {
+          "key": "d",
+          "text": "Reducci&oacute;n de falsas alarmas que llegan al equipo"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Procesar muchas incidencias no significa que el sistema ayude a decidir mejor ni m&aacute;s r&aacute;pido. Lo importante es si prioriza bien, reduce ruido y acelera la respuesta sin deteriorar la calidad.",
+      "feedback_ko": "Las otras m&eacute;tricas est&aacute;n m&aacute;s cerca del valor real porque conectan con calidad y tiempos operativos. Contar volumen procesado parece vistoso, pero puede subir incluso cuando la IA clasifica mal o satura al equipo."
+    },
+    {
+      "id": "p_q04",
+      "situation": "En administraci&oacute;n se usa IA para resumir expedientes de compra antes de que los revise el &aacute;rea jur&iacute;dica. Si quieres medir impacto en calidad y no solo velocidad, &iquest;qu&eacute; KPI elegir&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Porcentaje de res&uacute;menes que requieren correcciones sustanciales por parte del &aacute;rea jur&iacute;dica"
+        },
+        {
+          "key": "b",
+          "text": "N&uacute;mero total de expedientes resumidos al mes"
+        },
+        {
+          "key": "c",
+          "text": "Cantidad de veces que el equipo abre la herramienta de IA"
+        },
+        {
+          "key": "d",
+          "text": "Longitud media de los res&uacute;menes generados"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Esa m&eacute;trica conecta directamente con la calidad del resultado que recibe la siguiente funci&oacute;n del proceso. Si bajan las correcciones sustanciales, la IA est&aacute; ayudando de verdad y no solo produciendo texto m&aacute;s r&aacute;pido.",
+      "feedback_ko": "Volumen, uso o longitud son se&ntilde;ales indirectas que no dicen si el resumen sirve para trabajar mejor. Un resumen puede salir en segundos y seguir siendo malo si obliga a rehacerlo casi por completo."
+    },
+    {
+      "id": "p_q05",
+      "situation": "La oficina de proyectos usa un asistente de IA para preparar borradores de informes trimestrales. La coordinaci&oacute;n duda de su utilidad y plantea hacer el test &laquo;&iquest;y si lo quitamos?&raquo;. &iquest;Qu&eacute; respuesta indicar&iacute;a valor real?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que nadie lo note porque el equipo seguir&iacute;a enviando los informes igual y a tiempo"
+        },
+        {
+          "key": "b",
+          "text": "Que el equipo eche en falta menos clics, pero no cambien plazos ni calidad"
+        },
+        {
+          "key": "c",
+          "text": "Que aumente el tiempo de preparaci&oacute;n y reaparezcan errores recurrentes que antes se detectaban en borrador"
+        },
+        {
+          "key": "d",
+          "text": "Que solo lo note la persona m&aacute;s entusiasta de la herramienta"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Si al retirar la IA empeoran tiempos y calidad, hay una se&ntilde;al clara de impacto operativo. El test no busca apego emocional a la herramienta, sino consecuencias observables en el trabajo real.",
+      "feedback_ko": "Si quitarla apenas cambia el flujo, probablemente estabas ante comodidad o efecto novedad, no ante valor sostenido. La prueba honesta es si reaparecen costes, errores o retrasos que la IA estaba evitando."
+    },
+    {
+      "id": "p_q06",
+      "situation": "Un equipo propone como objetivo de &eacute;xito: &laquo;usar IA en el 90% de las tareas documentales&raquo;. Seg&uacute;n la p&iacute;ldora, &iquest;cu&aacute;l es el principal problema de ese objetivo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que es demasiado ambicioso para un primer piloto"
+        },
+        {
+          "key": "b",
+          "text": "Que mide adopci&oacute;n, no impacto ni mejora concreta sobre el trabajo"
+        },
+        {
+          "key": "c",
+          "text": "Que no se puede calcular t&eacute;cnicamente"
+        },
+        {
+          "key": "d",
+          "text": "Que obliga a usar siempre la misma herramienta"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Un porcentaje alto de uso puede convivir con cero mejora real en tiempo, calidad o riesgo. La adopci&oacute;n puede ser una se&ntilde;al secundaria, pero nunca el KPI principal si quieres saber si la IA aporta valor.",
+      "feedback_ko": "El problema no es solo la ambici&oacute;n ni la t&eacute;cnica de c&aacute;lculo. El fallo es conceptual: estar muy extendido no significa estar resolviendo mejor el trabajo ni justificando el esfuerzo."
+    },
+    {
+      "id": "p_q07",
+      "situation": "PLOCAN quiere medir el impacto de IA en la preparaci&oacute;n de propuestas. Tienes cuatro posibles KPIs y solo uno cumple bien el criterio de generar acci&oacute;n cuando cambia. &iquest;Cu&aacute;l escoges?",
+      "options": [
+        {
+          "key": "a",
+          "text": "N&uacute;mero de veces que el equipo consulta al asistente durante una convocatoria"
+        },
+        {
+          "key": "b",
+          "text": "Tiempo medio para producir un primer borrador validable y umbral de &eacute;xito de 48 horas"
+        },
+        {
+          "key": "c",
+          "text": "Cantidad de p&aacute;ginas generadas por la IA por propuesta"
+        },
+        {
+          "key": "d",
+          "text": "N&uacute;mero de archivos subidos a la carpeta compartida"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Ese KPI no solo se mide; tambi&eacute;n permite actuar si no se cumple el umbral, por ejemplo revisando el prompt, el reparto de tareas o la documentaci&oacute;n de base. Un buen KPI ayuda a gobernar el proceso, no solo a describirlo.",
+      "feedback_ko": "Las otras opciones cuentan actividad o volumen documental, pero no dejan claro qu&eacute; decisi&oacute;n tomar si suben o bajan. Si una m&eacute;trica no cambia el comportamiento del equipo, aporta poco valor como indicador principal."
+    },
+    {
+      "id": "p_q08",
+      "situation": "En un piloto para preparar respuestas a auditor&iacute;as, el tiempo baja un 30%, pero el n&uacute;mero de correcciones posteriores se duplica. &iquest;Qu&eacute; conclusi&oacute;n aplicar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "El piloto es un &eacute;xito porque el ahorro de tiempo compensa cualquier otro efecto"
+        },
+        {
+          "key": "b",
+          "text": "La IA aporta valor porque genera m&aacute;s texto en menos tiempo"
+        },
+        {
+          "key": "c",
+          "text": "El impacto es dudoso y hay que medir conjuntamente tiempo y calidad antes de escalar"
+        },
+        {
+          "key": "d",
+          "text": "Conviene dejar de medir correcciones para no penalizar la innovaci&oacute;n"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. Reducir tiempo sin controlar la calidad puede trasladar el trabajo aguas abajo y empeorar el resultado total. La aplicaci&oacute;n correcta es revisar el balance entre velocidad, calidad y coste de retrabajo antes de expandir el uso.",
+      "feedback_ko": "Quedarte solo con el ahorro de tiempo distorsiona la evaluaci&oacute;n. Si las correcciones se disparan, parte de la supuesta ganancia puede ser teatro estad&iacute;stico y no mejora real del proceso."
+    },
+    {
+      "id": "p_q09",
+      "situation": "El &aacute;rea de operaciones usa IA para redactar respuestas iniciales a incidencias de embarque. Quieres comparar antes y despu&eacute;s sin sesgo. &iquest;Qu&eacute; dise&ntilde;o de medici&oacute;n aplicar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Comparar una semana con IA en temporada baja contra otra sin IA en plena campa&ntilde;a"
+        },
+        {
+          "key": "b",
+          "text": "Comparar periodos equivalentes o casos similares, usando el mismo tipo de incidencias y el mismo criterio de validaci&oacute;n"
+        },
+        {
+          "key": "c",
+          "text": "Preguntar al equipo qu&eacute; periodo le parecí&oacute; m&aacute;s c&oacute;modo"
+        },
+        {
+          "key": "d",
+          "text": "Medir solo el periodo con IA porque el objetivo es justificar su uso"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Si cambias el contexto, los datos dejan de ser comparables y no puedes atribuir la diferencia a la IA. Medir casos similares con el mismo criterio reduce ruido y hace la evaluaci&oacute;n mucho m&aacute;s honesta.",
+      "feedback_ko": "Las comparaciones sesgadas favorecen conclusiones r&aacute;pidas pero poco fiables. Si el volumen, la dificultad o la temporada cambian, puedes estar midiendo el contexto y no el efecto real de la herramienta."
+    },
+    {
+      "id": "p_q10",
+      "situation": "En el laboratorio h&uacute;medo, un asistente IA ayuda a generar borradores de protocolos internos. La jefatura quiere un KPI de riesgo evitado. &iquest;Cu&aacute;l propondr&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "N&uacute;mero de veces que el equipo abre el chat de IA"
+        },
+        {
+          "key": "b",
+          "text": "Porcentaje de protocolos en los que la revisi&oacute;n detecta omisiones cr&iacute;ticas antes de su uso operativo"
+        },
+        {
+          "key": "c",
+          "text": "N&uacute;mero de palabras generadas por sesi&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Tiempo total que la pantalla de la herramienta permanece abierta"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Ese indicador se conecta con un riesgo operativo concreto: que un protocolo salga incompleto y provoque fallos posteriores. Medir omisiones cr&iacute;ticas detectadas antes de usarlo permite valorar si la IA est&aacute; ayudando a evitar errores relevantes.",
+      "feedback_ko": "Uso, palabras o tiempo de pantalla son trazas de actividad, no de riesgo. Si quieres saber si la IA protege al proceso, debes mirar errores evitados o controles de calidad reforzados, no solo interacci&oacute;n."
+    },
+    {
+      "id": "p_q11",
+      "situation": "El equipo que prepara memorias institucionales recibe un dashboard muy vistoso con 12 gr&aacute;ficas sobre uso de IA. Nadie sabe qu&eacute; hacer con esos datos. &iquest;Qu&eacute; aplicaci&oacute;n har&iacute;as seg&uacute;n la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mantener el dashboard porque una visualizaci&oacute;n completa siempre es mejor"
+        },
+        {
+          "key": "b",
+          "text": "Reducirlo a pocos KPIs ligados a decisiones concretas, como tiempo de entrega, correcciones y errores evitados"
+        },
+        {
+          "key": "c",
+          "text": "A&ntilde;adir m&aacute;s gr&aacute;ficas para cubrir todas las dudas posibles"
+        },
+        {
+          "key": "d",
+          "text": "Sustituirlo por una nube de palabras con comentarios del equipo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Un dashboard bonito no equivale a una medici&oacute;n &uacute;til si no orienta decisiones. La aplicaci&oacute;n pr&aacute;ctica es quedarse con pocos indicadores que cambien el comportamiento del equipo cuando se mueven.",
+      "feedback_ko": "M&aacute;s visualizaci&oacute;n no arregla la falta de criterio. Si nadie sabe qu&eacute; hacer con un n&uacute;mero, probablemente no es un buen KPI o no est&aacute; vinculado a una acci&oacute;n concreta."
+    },
+    {
+      "id": "p_q12",
+      "situation": "La unidad de formaci&oacute;n usa IA para adaptar materiales internos. La persona responsable propone medir &laquo;n&uacute;mero de documentos adaptados&raquo;. &iquest;Qu&eacute; KPI alternativo aplicar&iacute;as para centrarse en valor real?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Porcentaje de materiales adaptados que quedan listos para publicar sin rehacer estructura ni contenido clave"
+        },
+        {
+          "key": "b",
+          "text": "Cantidad de carpetas creadas para guardar las versiones"
+        },
+        {
+          "key": "c",
+          "text": "N&uacute;mero de veces que se copia texto al portapapeles desde la IA"
+        },
+        {
+          "key": "d",
+          "text": "Total de sesiones abiertas por el equipo al mes"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Ese KPI mide si el material generado llega realmente a un estado utilizable y reduce retrabajo. La cantidad de documentos producidos por s&iacute; sola puede inflarse sin mejorar ni calidad ni velocidad de publicaci&oacute;n.",
+      "feedback_ko": "Contar outputs o sesiones puede premiar volumen sin utilidad. Si quieres aplicar bien la p&iacute;ldora, mide hasta qu&eacute; punto el trabajo sale listo para usarse y no cu&aacute;nto movimiento genera la herramienta."
+    },
+    {
+      "id": "p_q13",
+      "situation": "PLOCAN lanza un piloto de seis semanas para usar IA en respuestas a consultas recurrentes de partners. A mitad del piloto, las respuestas salen antes, pero siguen escal&aacute;ndose casi todas a revisi&oacute;n humana. &iquest;Qu&eacute; interpretar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que el piloto ya demuestra impacto suficiente porque la IA trabaja r&aacute;pido"
+        },
+        {
+          "key": "b",
+          "text": "Que conviene revisar si la IA reduce realmente carga neta, porque la escalada masiva puede anular el beneficio"
+        },
+        {
+          "key": "c",
+          "text": "Que hay que subir el volumen de consultas para mejorar las estad&iacute;sticas"
+        },
+        {
+          "key": "d",
+          "text": "Que lo mejor es dejar de medir revisiones humanas y centrarse en velocidad"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Si casi todo acaba en revisi&oacute;n humana, el ahorro aparente puede ser parcial o incluso enga&ntilde;oso. Aplicar bien la medici&oacute;n implica mirar la carga total del sistema, no solo el tiempo de la primera respuesta.",
+      "feedback_ko": "La velocidad por s&iacute; sola no basta si el trabajo humano reaparece unos pasos despu&eacute;s. El valor real se demuestra cuando la IA reduce esfuerzo neto manteniendo la calidad, no cuando adelanta un paso y complica el siguiente."
+    },
+    {
+      "id": "p_q14",
+      "situation": "En seguimiento ambiental, el equipo compara dos indicadores tras implantar IA: horas ahorradas al mes y n&uacute;mero de informes entregados fuera de plazo. &iquest;Por qu&eacute; esta combinaci&oacute;n es m&aacute;s s&oacute;lida que medir solo uso?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Porque mezcla una m&eacute;trica de eficiencia con otra de resultado operativo"
+        },
+        {
+          "key": "b",
+          "text": "Porque siempre es obligatorio medir dos KPIs y no uno"
+        },
+        {
+          "key": "c",
+          "text": "Porque las horas ahorradas sustituyen cualquier m&eacute;trica de calidad"
+        },
+        {
+          "key": "d",
+          "text": "Porque el n&uacute;mero de informes fuera de plazo es m&aacute;s f&aacute;cil de presentar en un dashboard"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Esa combinaci&oacute;n evita una visi&oacute;n incompleta: no solo ves si el equipo tarda menos, sino si el servicio final mejora en algo que importa. Medir eficiencia y resultado juntos da una lectura m&aacute;s fiable del impacto.",
+      "feedback_ko": "No se trata de poner muchos KPIs por ponerlos ni de elegir los m&aacute;s vistosos. Lo importante es cubrir dimensiones distintas del valor para evitar que una mejora parcial oculte un empeoramiento en otra parte."
+    },
+    {
+      "id": "p_q15",
+      "situation": "Tras tres meses de uso de IA en preparaci&oacute;n de documentos t&eacute;cnicos, la direcci&oacute;n de PLOCAN pide una conclusi&oacute;n honesta. Los datos muestran ahorro de tiempo modesto, misma calidad y ninguna reducci&oacute;n clara de errores. &iquest;Qu&eacute; conclusi&oacute;n aplicar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Declarar &eacute;xito igualmente para no frenar la innovaci&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Concluir que el impacto actual es limitado y que hace falta redise&ntilde;ar el caso de uso o abandonar el piloto"
+        },
+        {
+          "key": "c",
+          "text": "Medir solo satisfacci&oacute;n para compensar los resultados fr&iacute;os"
+        },
+        {
+          "key": "d",
+          "text": "Aumentar el presupuesto del piloto antes de revisar el dise&ntilde;o"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La evaluaci&oacute;n honesta no consiste en defender la herramienta, sino en juzgar si est&aacute; produciendo valor suficiente. Si el impacto es limitado, toca redise&ntilde;ar el uso o cerrarlo sin autocomplacencia.",
+      "feedback_ko": "Forzar una narrativa de &eacute;xito cuando los datos no la sostienen es justo el &laquo;teatro&raquo; que la p&iacute;ldora quiere evitar. Medir bien tambi&eacute;n implica aceptar cuando una aplicaci&oacute;n no est&aacute; funcionando como se esperaba."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

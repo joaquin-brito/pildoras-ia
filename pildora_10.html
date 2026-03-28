@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>Tu asistente para reuniones</h1>
     <p class="subtitle">Prepara agendas, resume actas y genera follow-ups sin esfuerzo extra</p>
-    <span class="time-badge">5 min de lectura</span>
+    <span class="time-badge">5 mín de lectura</span>
 </header>
 
 
@@ -1077,6 +1077,526 @@ Tono: profesional y breve. En inglés (los socios son europeos).
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 10,
+  "pill_slug": "10",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "Ma&ntilde;Ana, el director de l&iacute;nea tiene una reuní&oacute;n con el programa EMSO y apenas dispone de diez minutos para prepararse. Necesita llegar con contexto y poder hacer preguntas &uacute;tiles sin releer todos los correos. &iquest;Qu&eacute; uso de Antigravity le aporta m&aacute;s valor inmediato?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir un email de follow-up antes de que ocurra la reuní&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Pedir un briefing de 5 puntos sobre el estado actual del proyecto para llegar con visi&oacute;n clara"
+        },
+        {
+          "key": "c",
+          "text": "Esperar a la reuní&oacute;n y confiar en que el contexto saldr&aacute; solo"
+        },
+        {
+          "key": "d",
+          "text": "Solicitar directamente un acta formal sin aportar notas ni transcripci&oacute;n"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. El briefing previo condensa el contexto y permite entrar a la reuní&oacute;n con foco, sin invertir tiempo en reconstruir el estado del proyecto. En esta situaci&oacute;n, preparar mejor la conversaci&oacute;n aporta m&aacute;s que generar documentos que todav&iacute;a no tienen base.",
+      "feedback_ko": "Aqu&iacute; el problema no es redactar un acta ni enviar un follow-up, porque la reuní&oacute;n a&uacute;n no ha ocurrido. Si llega sin contexto, perder&aacute; tiempo preguntando lo b&aacute;sico y puede dejar fuera temas cr&iacute;ticos. Un briefing previo es la respuesta m&aacute;s ajustada al objetivo."
+    },
+    {
+      "id": "p_q02",
+      "situation": "La responsable de proyectos va a reunirse con 8 socios europeos durante una hora para revisar deliverables atrasados, presupuesto del segundo periodo y el pr&oacute;ximo milestone. Quiere que la reuní&oacute;n no se desordene ni se coma el tiempo de decisiones. &iquest;Qu&eacute; prompt le conviene pedir?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una agenda con tiempos, 3 preguntas clave y puntos cr&iacute;ticos que no puede olvidar mencionar"
+        },
+        {
+          "key": "b",
+          "text": "Una traducci&oacute;n literal del &uacute;ltimo correo del consorcio"
+        },
+        {
+          "key": "c",
+          "text": "Un acta completa de la reuní&oacute;n antes de celebrarla"
+        },
+        {
+          "key": "d",
+          "text": "Un email breve para agradecer la asistencia futura de los socios"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. La agenda con tiempos y preguntas clave estructura la conversaci&oacute;n alrededor de decisiones y riesgos, que es justo donde puede perderse una reuní&oacute;n con muchos socios. Adem&aacute;s, los puntos cr&iacute;ticos sirven como red de seguridad para no dejar fuera asuntos sensibles.",
+      "feedback_ko": "Las otras opciones son plausibles pero no atacan el problema central: gobernar bien una reuní&oacute;n compleja. Traducir un correo o agradecer asistencia no ordena la sesi&oacute;n, y un acta previa no tiene base real. Lo &uacute;til aqu&iacute; es preparar la reuní&oacute;n con estructura y foco."
+    },
+    {
+      "id": "p_q03",
+      "situation": "Durante una reuní&oacute;n interna, una t&eacute;cnica toma notas r&aacute;pidas y desordenadas: ideas sueltas, decisiones a medias y varias tareas mezcladas. Al salir, necesita un documento claro para compartir con el equipo ese mismo d&iacute;a. &iquest;Cu&aacute;l es el mejor siguiente paso?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pegar las notas tal cual y pedir un acta formal con fecha, asistentes, temas, decisiones, acciones y pr&oacute;xima reuní&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Reescribir primero todas las notas a mano y luego pedir solo una correcci&oacute;n de estilo"
+        },
+        {
+          "key": "c",
+          "text": "Pedir un resumen de tres l&iacute;neas y omitir el detalle de acciones"
+        },
+        {
+          "key": "d",
+          "text": "Enviar las notas crudas al equipo para ganar tiempo y aclarar despu&eacute;s"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Antigravity aporta valor precisamente al convertir material imperfecto en una estructura profesional y accionable. Si incluye decisiones y tareas con formato claro, el equipo puede actuar sin esperar a una segunda ronda de aclaraciones.",
+      "feedback_ko": "Reescribir todo manualmente anula buena parte del ahorro, y un resumen corto o unas notas crudas dejan ambig&uuml;edades sobre qui&eacute;n hace qu&eacute;. El problema no es solo de estilo, sino de convertir informaci&oacute;n ca&oacute;tica en un acta operativa."
+    },
+    {
+      "id": "p_q04",
+      "situation": "Tras una reuní&oacute;n por Teams, el coordinador dispone de una transcripci&oacute;n autom&aacute;tica bastante completa y tambi&eacute;n de algunas notas manuales. Quiere un acta precisa y no quiere depender solo de lo que alcanz&oacute; a escribir durante la sesi&oacute;n. &iquest;Qu&eacute; enfoque es m&aacute;s s&oacute;lido?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ignorar la transcripci&oacute;n y usar solo las notas porque son m&aacute;s cortas"
+        },
+        {
+          "key": "b",
+          "text": "Pedir primero un dise&ntilde;o visual del acta y luego a&ntilde;adir el contenido"
+        },
+        {
+          "key": "c",
+          "text": "Pasar la transcripci&oacute;n completa a Antigravity para generar el acta y complementar, si hace falta, con las notas"
+        },
+        {
+          "key": "d",
+          "text": "Esperar varios d&iacute;as para reconstruir la reuní&oacute;n desde memoria"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. La transcripci&oacute;n ofrece una base m&aacute;s rica y suele capturar mejor matices, acuerdos y tareas que unas notas tomadas con prisa. Usarla como fuente principal reduce omisiones y mejora la calidad del acta final.",
+      "feedback_ko": "Las notas manuales pueden ser &uacute;tiles, pero si existe una transcripci&oacute;n completa, ignorarla aumenta el riesgo de perder decisiones o matices. Esperar o centrarse en el formato no mejora la fidelidad del contenido. La mejor decisi&oacute;n es aprovechar la fuente m&aacute;s completa."
+    },
+    {
+      "id": "p_q05",
+      "situation": "La directora de una unidad detecta que, despu&eacute;s de varias reuniones, cada participante sale con una interpretaci&oacute;n distinta de las tareas pendientes. El verdadero problema no es preparar la reuní&oacute;n, sino asegurar alineaci&oacute;n operativa al terminar. &iquest;Qu&eacute; salida de Antigravity deber&iacute;a priorizar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un email de follow-up con resumen, acciones, responsables y fechas"
+        },
+        {
+          "key": "b",
+          "text": "Una agenda m&aacute;s detallada para la siguiente reuní&oacute;n"
+        },
+        {
+          "key": "c",
+          "text": "Una portada corporativa para el acta"
+        },
+        {
+          "key": "d",
+          "text": "Una lista de citas textuales de cada participante"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Si el problema es la ejecuci&oacute;n posterior, el follow-up convierte el acuerdo en responsabilidades visibles y fechadas. Eso reduce interpretaciones distintas y facilita que cada rol sepa exactamente qu&eacute; debe hacer.",
+      "feedback_ko": "Una agenda mejor ayuda antes, pero no resuelve el fallo detectado despu&eacute;s de la reuní&oacute;n. Una portada o una lista de citas pueden quedar bien, pero no convierten decisiones en acci&oacute;n coordinada. Lo que faltaba era un cierre operativo claro."
+    },
+    {
+      "id": "p_q06",
+      "situation": "La responsable de proyectos prueba Antigravity para preparar una reuní&oacute;n, pero recibe una agenda muy gen&eacute;rica, sin foco en presupuesto ni riesgos. Al revisar c&oacute;mo hizo la petici&oacute;n, ve que apenas escribí&oacute;: \"prep&aacute;rame algo para ma&ntilde;Ana\". &iquest;Qu&eacute; deber&iacute;a corregir primero?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir el mismo resultado con un tono m&aacute;s formal"
+        },
+        {
+          "key": "b",
+          "text": "Aportar contexto: asistentes, duraci&oacute;n, temas y lo que necesita sacar de la reuní&oacute;n"
+        },
+        {
+          "key": "c",
+          "text": "Cambiar la fuente tipogr&aacute;fica de la agenda"
+        },
+        {
+          "key": "d",
+          "text": "Usar menos informaci&oacute;n para que la IA no se distraiga"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Cuando el contexto es pobre, la salida tambi&eacute;n lo es. Dar asistentes, duraci&oacute;n, temas y objetivos permite que la agenda sea espec&iacute;fica y priorice justo los riesgos que importan en esa reuní&oacute;n.",
+      "feedback_ko": "El problema no est&aacute; en el tono ni en la presentaci&oacute;n, sino en la calidad de la entrada. Con una instrucci&oacute;n vaga, el sistema solo puede responder de forma vaga. Para obtener utilidad real, hay que definir mejor el contexto de trabajo."
+    },
+    {
+      "id": "p_q07",
+      "situation": "Un t&eacute;cnico convierte sus notas en acta y detecta que varias acciones aparecen sin responsable claro y con plazos ambiguos como \"cuanto antes\". Sabe que, si env&iacute;a eso tal cual, habr&aacute; interpretaciones distintas. &iquest;Qu&eacute; deber&iacute;a hacer antes de compartir el documento?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Eliminar la secci&oacute;n de acciones para evitar conflictos"
+        },
+        {
+          "key": "b",
+          "text": "Sustituir los nombres por \"equipo\" y dejar las fechas abiertas"
+        },
+        {
+          "key": "c",
+          "text": "Pedir a Antigravity que separe decisiones de acciones y marque qu&eacute; responsables o fechas faltan por concretar"
+        },
+        {
+          "key": "d",
+          "text": "Enviar el acta sin cambios y aclararlo si alguien pregunta"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La utilidad del acta depende de que las acciones sean ejecutables, no solo legibles. Identificar huecos antes de enviarla permite cerrar ambig&uuml;edades y evitar retrabajo o malentendidos posteriores.",
+      "feedback_ko": "Ocultar las acciones o dejarlas gen&eacute;ricas solo desplaza el problema hacia despu&eacute;s. Enviar algo ambiguo puede parecer m&aacute;s r&aacute;pido, pero complica la ejecuci&oacute;n. Lo adecuado es usar la herramienta para detectar y ordenar lo que falta concretar."
+    },
+    {
+      "id": "p_q08",
+      "situation": "Tras una reuní&oacute;n con socios europeos, una coordinadora ya tiene el acta cerrada en espa&ntilde;ol. Ahora necesita comunicar r&aacute;pidamente qu&eacute; se acord&oacute; y qu&eacute; tiene que hacer cada entidad, pero la comunicaci&oacute;n externa debe salir en ingl&eacute;s y con tono profesional. &iquest;Qu&eacute; pedido encaja mejor?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Traducir literalmente el acta completa, aunque quede larga y poco accionable"
+        },
+        {
+          "key": "b",
+          "text": "Crear un email de follow-up en ingl&eacute;s, breve y profesional, con resumen, acciones, fechas y pr&oacute;xima reuní&oacute;n"
+        },
+        {
+          "key": "c",
+          "text": "Pedir una nueva agenda para la reuní&oacute;n que ya termin&oacute;"
+        },
+        {
+          "key": "d",
+          "text": "Enviar el acta en espa&ntilde;ol y confiar en que cada socio extraiga sus tareas"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El follow-up adapta el contenido del acta al objetivo real de la comunicaci&oacute;n: alinear a los socios sobre decisiones y pr&oacute;ximos pasos. Adem&aacute;s, hacerlo en ingl&eacute;s y en tono breve reduce fricci&oacute;n y mejora la comprensi&oacute;n operativa.",
+      "feedback_ko": "Traducir el acta entera puede ser correcto ling&uuml;&iacute;sticamente, pero no necesariamente &uacute;til para la acci&oacute;n. Enviar el documento en espa&ntilde;ol o pedir una agenda nueva no resuelve la necesidad inmediata. Lo importante es convertir el acta en un mensaje ejecutable para ese contexto."
+    },
+    {
+      "id": "p_q09",
+      "situation": "La directora de proyectos tiene solo cinco minutos entre dos reuniones. Una ya ha terminado y la siguiente empieza enseguida. Sabe que, si no cierra la primera ahora, las tareas quedar&aacute;n difusas; pero tambi&eacute;n necesita entrar preparada en la siguiente. &iquest;Qu&eacute; secuencia de uso le da m&aacute;s control con el menor esfuerzo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Primero generar un acta a partir de notas o transcripci&oacute;n y, desde esa acta, sacar el follow-up para enviarlo r&aacute;pido"
+        },
+        {
+          "key": "b",
+          "text": "Empezar preparando la agenda de la siguiente reuní&oacute;n y dejar la anterior sin cerrar"
+        },
+        {
+          "key": "c",
+          "text": "Enviar un correo improvisado sin revisar qu&eacute; se decidí&oacute; realmente"
+        },
+        {
+          "key": "d",
+          "text": "Guardar las notas para el final de la semana, cuando haya m&aacute;s tiempo"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Esa secuencia usa el contenido disponible una sola vez y transforma una reuní&oacute;n cerrada en decisiones comunicadas y tareas asignadas. Adem&aacute;s, deja la informaci&oacute;n estructurada para retomar luego la preparaci&oacute;n de la siguiente reuní&oacute;n con menos carga mental.",
+      "feedback_ko": "Si deja la reuní&oacute;n sin cerrar, el coste reaparece despu&eacute;s en forma de dudas, correos y retrabajo. Un correo improvisado o posponerlo no resuelve el fondo. Lo m&aacute;s robusto es consolidar primero lo ocurrido y convertirlo en seguimiento claro."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Una t&eacute;cnica de proyectos debe moderar una reuní&oacute;n delicada sobre retrasos de entregables y desviaciones de presupuesto. Su miedo no es hablar poco, sino olvidar la pregunta inc&oacute;moda que realmente desbloquea la situaci&oacute;n. &iquest;Qu&eacute; salida deber&iacute;a pedir para cubrir ese riesgo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un resumen hist&oacute;rico largo del proyecto, sin estructura de reuní&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Tres preguntas clave y los puntos cr&iacute;ticos que no puede olvidar mencionar"
+        },
+        {
+          "key": "c",
+          "text": "Una lista de saludos formales para abrir la sesi&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Un dise&ntilde;o visual para enviar la presentaci&oacute;n despu&eacute;s"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Cuando la reuní&oacute;n es sensible, el valor no est&aacute; solo en saber el contexto, sino en orientar la conversaci&oacute;n hacia las decisiones que importan. Las preguntas clave y los puntos cr&iacute;ticos funcionan como guion de control para no evitar lo esencial.",
+      "feedback_ko": "Tener mucho contexto sin convertirlo en preguntas concretas no garantiza una buena conducci&oacute;n. Los saludos o el dise&ntilde;o no atacan el riesgo real. Lo que necesita es una ayuda para intervenir con foco donde la reuní&oacute;n puede descarrilar."
+    },
+    {
+      "id": "p_q11",
+      "situation": "Un responsable de &aacute;rea recibe un acta muy pulida, pero no encuentra con rapidez qu&eacute; se decidí&oacute; ni qu&eacute; debe ejecutar cada rol. Tiene la impresi&oacute;n de que el documento suena profesional, pero no ayuda a trabajar. &iquest;Qu&eacute; conclusi&oacute;n es la m&aacute;s acertada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "El acta falla porque le faltan apartados de decisiones y acciones claramente separadas"
+        },
+        {
+          "key": "b",
+          "text": "El problema es que el documento no tiene suficientes p&aacute;ginas"
+        },
+        {
+          "key": "c",
+          "text": "La soluci&oacute;n es pedir un texto todav&iacute;a m&aacute;s formal"
+        },
+        {
+          "key": "d",
+          "text": "Lo importante es que el acta quede elegante, aunque luego haya que aclararla por correo"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Un acta &uacute;til no se mide por lo bien que suena, sino por la facilidad con la que permite identificar acuerdos y tareas. Si decisiones y acciones no est&aacute;n n&iacute;tidas, el documento pierde valor operativo aunque est&eacute; bien redactado.",
+      "feedback_ko": "M&aacute;s p&aacute;ginas o m&aacute;s formalidad no solucionan la falta de claridad funcional. Si luego hace falta otro correo para explicar qu&eacute; se acord&oacute;, el acta no ha cumplido bien su papel. El fallo est&aacute; en la estructura de informaci&oacute;n, no en el tono."
+    },
+    {
+      "id": "p_q12",
+      "situation": "La coordinadora de una reuní&oacute;n de seguimiento quiere reducir el tiempo administrativo total, no solo escribir mejor. Tiene notas, necesita acta y despu&eacute;s debe avisar a cada responsable de su tarea. &iquest;Qu&eacute; forma de trabajar aprovecha mejor Antigravity como sistema y no como ayuda aislada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usarlo solo para corregir ortograf&iacute;a al final del proceso"
+        },
+        {
+          "key": "b",
+          "text": "Usarlo en cadena: notas o transcripci&oacute;n para acta, y acta para generar el follow-up"
+        },
+        {
+          "key": "c",
+          "text": "Pedir directamente un email sin ordenar antes decisiones ni acciones"
+        },
+        {
+          "key": "d",
+          "text": "Dejar el acta para m&aacute;s tarde y avisar oralmente a cada rol"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El mayor ahorro aparece cuando cada salida alimenta la siguiente y evita rehacer trabajo. As&iacute;, una sola base de contenido sirve para documentar, alinear y repartir acciones con coherencia.",
+      "feedback_ko": "Si solo se usa para corregir estilo o para redactar un mensaje aislado, el ahorro es parcial. Avisar oralmente o saltarse la estructuraci&oacute;n genera inconsistencias. La clave est&aacute; en encadenar preparaci&oacute;n documental y seguimiento sobre la misma informaci&oacute;n."
+    },
+    {
+      "id": "p_q13",
+      "situation": "Un t&eacute;cnico prepara una reuní&oacute;n interna sobre compras, contratos y plazos. Pide una agenda, pero olvida indicar la duraci&oacute;n y luego descubre que el borrador dedica media hora al primer punto y deja sin tiempo el cierre. &iquest;Qu&eacute; ense&ntilde;anza operativa extrae de este fallo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que la IA no sirve para reuniones con varios temas"
+        },
+        {
+          "key": "b",
+          "text": "Que, si no se define la duraci&oacute;n, es dif&iacute;cil que la agenda reparta bien los tiempos"
+        },
+        {
+          "key": "c",
+          "text": "Que es mejor pedir solo un resumen del contexto y no una agenda"
+        },
+        {
+          "key": "d",
+          "text": "Que las reuniones deben evitar cualquier estructura previa"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La distribuci&oacute;n del tiempo depende de una restricci&oacute;n muy concreta: cu&aacute;nto dura la reuní&oacute;n. Si ese dato falta, la agenda puede sonar razonable pero no ser viable en la pr&aacute;ctica.",
+      "feedback_ko": "El fallo no demuestra que la herramienta no sirva, sino que faltaba una variable clave para generar una agenda &uacute;til. Renunciar a estructurar la reuní&oacute;n o pedir menos salida empeora el problema. La lecci&oacute;n es aportar mejores l&iacute;mites al pedir ayuda."
+    },
+    {
+      "id": "p_q14",
+      "situation": "La directora de un proyecto revisa un follow-up redactado desde el acta y ve que enumera acciones, pero no explica en tres l&iacute;neas por qu&eacute; la reuní&oacute;n fue importante ni c&oacute;mo encajan las tareas. Le preocupa que algunos asistentes reciban una lista de deberes sin contexto. &iquest;Qu&eacute; ajuste mejorar&iacute;a m&aacute;s el correo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir que el email incluya un breve resumen inicial de la reuní&oacute;n antes de las acciones"
+        },
+        {
+          "key": "b",
+          "text": "Eliminar todas las fechas para que el tono sea menos exigente"
+        },
+        {
+          "key": "c",
+          "text": "Sustituir las acciones por el acta completa pegada en el cuerpo del correo"
+        },
+        {
+          "key": "d",
+          "text": "A&ntilde;adir m&aacute;s tecnicismos para que el mensaje parezca m&aacute;s experto"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Un resumen breve al inicio ayuda a que cada asistente entienda el sentido de las acciones y no solo su carga de trabajo. Ese contexto mejora la alineaci&oacute;n sin hacer el correo largo ni pesado.",
+      "feedback_ko": "Quitar fechas o pegar el acta completa reduce claridad o hace el mensaje menos accionable. M&aacute;s tecnicismos tampoco mejoran la comprensi&oacute;n. El ajuste m&aacute;s eficaz es contextualizar primero y luego listar qu&eacute; debe hacer cada rol."
+    },
+    {
+      "id": "p_q15",
+      "situation": "Una responsable de proyectos quiere decidir si Antigravity le aporta valor real en una reuní&oacute;n recurrente con varios equipos. No busca un texto bonito, sino menos retrabajo, menos correos aclaratorios y m&aacute;s cumplimiento de tareas. &iquest;Qu&eacute; indicador observar&iacute;a mejor ese impacto?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Si el acta final ocupa m&aacute;s p&aacute;ginas que antes"
+        },
+        {
+          "key": "b",
+          "text": "Si baja el n&uacute;mero de correos posteriores para aclarar acuerdos y responsables"
+        },
+        {
+          "key": "c",
+          "text": "Si el texto generado usa un vocabulario m&aacute;s sofisticado"
+        },
+        {
+          "key": "d",
+          "text": "Si la agenda se puede imprimir en una sola hoja"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Si disminuyen las aclaraciones posteriores, significa que la reuní&oacute;n se est&aacute; cerrando mejor: contexto previo, acta clara y seguimiento bien comunicado. Ese es un efecto operativo observable y mucho m&aacute;s valioso que medir solo estilo o longitud.",
+      "feedback_ko": "M&aacute;s p&aacute;ginas, mejor vocabulario o un formato compacto no garantizan menos fricci&oacute;n en el trabajo real. Lo importante es si el equipo entiende qu&eacute; se acord&oacute; y act&uacute;a sin correos extra. Por eso conviene medir el retrabajo que desaparece despu&eacute;s de la reuní&oacute;n."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>La Paradoja de Jevons: M&aacute;s IA = M&aacute;s Trabajo, no Menos</h1>
     <p class="subtitle">Por qu&eacute; la eficiencia no reduce la demanda &mdash; y qu&eacute; significa para nuestra estrategia &middot; Grupo IA + Datos</p>
-    <span class="time-badge">12 min de lectura</span>
+    <span class="time-badge">12 mín de lectura</span>
 </header>
 
 
@@ -982,7 +982,7 @@ body.template-technical .action-card {
             <div class="section-head-main">
                 <span class="section-number">04</span>
                 <div>
-                    <h2>3 Patrones para Aplicar Ma&ntilde;ana</h2>
+                    <h2>3 Patrones para Aplicar Ma&ntilde;Ana</h2>
                     
                 </div>
             </div>
@@ -1039,8 +1039,8 @@ Coste estimado: [anual/mensual]
 Proceso que mejora: [cu&aacute;l]
 
 Estructura el caso con DOS escenarios:
-A) Escenario tradicional: ROI = ahorro de horas/costes
-B) Escenario Jevons: ROI = nuevas capacidades + volumen adicional generado
+A) Escenario tradicional: ROÍ = ahorro de horas/costes
+B) Escenario Jevons: ROÍ = nuevas capacidades + volumen adicional generado
 
 Para el escenario B, incluye:
 - Nuevas actividades que se har&aacute;n posibles
@@ -1077,6 +1077,526 @@ Prioridades institucionales: [objetivos del a&ntilde;o]
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 36,
+  "pill_slug": "jevons",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "El equipo de propuestas usa IA para revisar borradores de convocatorias europeas y ahora puede analizar cinco oportunidades por semana en vez de una. La direcci&oacute;n pregunta qu&eacute; debe hacer a continuaci&oacute;n. &iquest;Qu&eacute; decisi&oacute;n aplica mejor el efecto rebote?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Reducir horas del equipo porque la fase de lectura ya tarda menos"
+        },
+        {
+          "key": "b",
+          "text": "Mantener el mismo objetivo semanal para no generar m&aacute;s carga de coordinaci&oacute;n"
+        },
+        {
+          "key": "c",
+          "text": "Prever tiempo adicional para priorizar, coordinar consorcios y decidir cu&aacute;les convocatorias merecen esfuerzo completo"
+        },
+        {
+          "key": "d",
+          "text": "Usar la IA solo para resumir PDFs y evitar que influya en el volumen de trabajo"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La eficiencia al analizar convocatorias no elimina trabajo: desplaza el cuello de botella hacia la selecci&oacute;n y la coordinaci&oacute;n. Si se revisan m&aacute;s oportunidades, tambi&eacute;n aumenta la necesidad de decidir mejor y de movilizar a m&aacute;s &aacute;reas.",
+      "feedback_ko": "Las otras opciones tratan la mejora como si fuera solo ahorro lineal. En este caso, la capacidad nueva desbloquea m&aacute;s oportunidades y exige m&aacute;s criterio, no menos gobernanza. Ignorar esa carga adicional suele trasladar el problema a una fase posterior."
+    },
+    {
+      "id": "p_q02",
+      "situation": "Un flujo con IA genera res&uacute;menes diarios de datos oce&aacute;nicos que antes se hac&iacute;an una vez al mes. Tras dos semanas, varios equipos empiezan a pedir comparativas, alertas y visualizaciones nuevas. &iquest;Qu&eacute; est&aacute; ocurriendo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un fallo de adopci&oacute;n, porque los equipos deber&iacute;an pedir menos si el sistema funciona"
+        },
+        {
+          "key": "b",
+          "text": "Demanda latente: aparecen usos que antes no se solicitaban porque eran demasiado costosos"
+        },
+        {
+          "key": "c",
+          "text": "Un problema de permisos, porque demasiadas personas acceden al mismo dato"
+        },
+        {
+          "key": "d",
+          "text": "Una se&ntilde;al de que la automatizaci&oacute;n no aporta valor real"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Cuando el an&aacute;lisis se vuelve barato y frecuente, surgen peticiones que antes ni se planteaban. Eso es demanda latente: la IA no solo acelera el trabajo existente, tambi&eacute;n hace viables nuevas preguntas.",
+      "feedback_ko": "No es un s&iacute;ntoma de fracaso ni de sobreuso por s&iacute; mismo. Lo que cambia es la frontera de lo posible: al bajar el coste de producir informaci&oacute;n, sube el n&uacute;mero de usos y solicitudes alrededor de esa informaci&oacute;n."
+    },
+    {
+      "id": "p_q03",
+      "situation": "Un &aacute;rea automatiza con IA la redacci&oacute;n inicial de informes t&eacute;cnicos y ahorra 12 horas semanales. El responsable propone usar ese tiempo para asumir m&aacute;s revisiones de calidad de datos y lanzar un piloto nuevo. &iquest;C&oacute;mo valorar&iacute;as esa propuesta?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Es coherente, porque redistribuye el tiempo ahorrado hacia tareas de mayor valor y absorbe la demanda nueva"
+        },
+        {
+          "key": "b",
+          "text": "Es incorrecta, porque cualquier hora ahorrada con IA debe traducirse en menos actividad total"
+        },
+        {
+          "key": "c",
+          "text": "Solo tendr&iacute;a sentido si primero se congelan todas las peticiones adicionales"
+        },
+        {
+          "key": "d",
+          "text": "Es arriesgada, porque la IA deber&iacute;a dedicarse solo a tareas administrativas sin impacto cient&iacute;fico"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. El principio no es recortar actividad, sino desplazar esfuerzo desde producci&oacute;n rutinaria hacia validaci&oacute;n, decisi&oacute;n y nuevos proyectos. Esa redistribuci&oacute;n aprovecha el efecto amplificador en vez de sufrirlo de forma reactiva.",
+      "feedback_ko": "Las otras opciones suponen que el &eacute;xito de la IA se mide solo por dejar de trabajar. En esta p&iacute;ldora, el enfoque correcto es usar el tiempo liberado para absorber m&aacute;s impacto institucional y cient&iacute;fico, con criterio y capacidad de supervisi&oacute;n."
+    },
+    {
+      "id": "p_q04",
+      "situation": "Tras implantar IA para el triaje de correos, el &aacute;rea de soporte responde m&aacute;s r&aacute;pido y en pocos d&iacute;as aumenta el n&uacute;mero de hilos abiertos, aclaraciones y seguimientos. &iquest;Qu&eacute; lectura es la m&aacute;s adecuada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "La automatizaci&oacute;n ha fallado porque ahora hay m&aacute;s comunicaci&oacute;n que antes"
+        },
+        {
+          "key": "b",
+          "text": "Es un caso de overhead de coordinaci&oacute;n: m&aacute;s respuestas generan m&aacute;s interacciones que tambi&eacute;n hay que gestionar"
+        },
+        {
+          "key": "c",
+          "text": "El problema real es que los correos deber&iacute;an contestarse una vez por semana"
+        },
+        {
+          "key": "d",
+          "text": "La soluci&oacute;n correcta es volver a la respuesta manual para limitar el volumen"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Aumentar la velocidad de respuesta puede abrir m&aacute;s conversaciones y m&aacute;s necesidad de seguimiento. La coordinaci&oacute;n crece con el volumen de outputs, por lo que hay que dise&ntilde;ar tambi&eacute;n esa capa de gesti&oacute;n.",
+      "feedback_ko": "No toda carga nueva significa que la IA haya empeorado el proceso. Aqu&iacute; el patr&oacute;n es que la eficiencia inicial activa m&aacute;s intercambio y, por tanto, m&aacute;s coordinaci&oacute;n. La respuesta no es volver atr&aacute;s, sino presupuestar y organizar mejor ese nuevo trabajo."
+    },
+    {
+      "id": "p_q05",
+      "situation": "En una reuní&oacute;n de inversi&oacute;n, se presenta un caso para comprar una herramienta de IA diciendo solo: &laquo;ahorraremos 400 horas al a&ntilde;o&raquo;. &iquest;Qu&eacute; falta para que el business case sea consistente con la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "A&ntilde;adir el precio de licencias y dejar el resto igual"
+        },
+        {
+          "key": "b",
+          "text": "Incluir escenarios de capacidad nueva, volumen adicional, formaci&oacute;n y riesgo si no se absorbe la demanda generada"
+        },
+        {
+          "key": "c",
+          "text": "Cambiar el argumento a un lenguaje m&aacute;s t&eacute;cnico para convencer mejor"
+        },
+        {
+          "key": "d",
+          "text": "Eliminar toda referencia a personas para que el ROÍ sea puramente financiero"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Medir solo horas ahorradas deja fuera el valor principal: qu&eacute; nuevas actividades se podr&aacute;n hacer y qu&eacute; capacidad har&aacute; falta para gobernarlas. Un caso de inversi&oacute;n maduro contempla volumen, formaci&oacute;n y riesgos de absorci&oacute;n.",
+      "feedback_ko": "Las otras opciones refinan la presentaci&oacute;n, pero no corrigen el enfoque. El error de fondo es confundir ahorro con retorno total. Si la herramienta amplifica el trabajo posible, el business case debe modelar tambi&eacute;n ese efecto."
+    },
+    {
+      "id": "p_q06",
+      "situation": "El laboratorio usa IA para detectar patrones en series temporales y pasa de revisar 3 hip&oacute;tesis al mes a 25 por semana. El equipo siente que produce mucho m&aacute;s, pero que decidir qu&eacute; seguir se ha vuelto el problema principal. &iquest;Qu&eacute; inversi&oacute;n encaja mejor?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Comprar otra herramienta para generar todav&iacute;a m&aacute;s hip&oacute;tesis"
+        },
+        {
+          "key": "b",
+          "text": "Reducir el uso de IA hasta volver al volumen que se pod&iacute;a revisar manualmente"
+        },
+        {
+          "key": "c",
+          "text": "Invertir en criterios de priorizaci&oacute;n, revisi&oacute;n experta y protocolos de validaci&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Dedicar todo el esfuerzo a mejorar la visualizaci&oacute;n est&eacute;tica de los resultados"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. El cuello de botella se ha desplazado desde producir hallazgos hacia decidir cu&aacute;les merecen tiempo experto. La inversi&oacute;n sensata es reforzar juicio, validaci&oacute;n y gobernanza, no solo generar m&aacute;s volumen.",
+      "feedback_ko": "Las opciones descartadas ignoran el nuevo punto de escasez. Si ya hay m&aacute;s hip&oacute;tesis de las que se pueden evaluar, producir todav&iacute;a m&aacute;s o frenar sin criterio no resuelve el problema. Hace falta capacidad humana para seleccionar y validar mejor."
+    },
+    {
+      "id": "p_q07",
+      "situation": "Una unidad automatiza borradores de informes de seguimiento y pronto la direcci&oacute;n empieza a pedir versi&oacute;n semanal, comparativas trimestrales y anexos visuales. &iquest;Qu&eacute; ley del efecto amplificador describe mejor esta situaci&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ley del est&aacute;ndar creciente"
+        },
+        {
+          "key": "b",
+          "text": "Ley de la confidencialidad acumulativa"
+        },
+        {
+          "key": "c",
+          "text": "Ley de la centralizaci&oacute;n documental"
+        },
+        {
+          "key": "d",
+          "text": "Ley de la estabilidad de demanda"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Cuando algo se vuelve f&aacute;cil y r&aacute;pido, lo que antes era suficiente deja de serlo y suben las expectativas. El nuevo est&aacute;ndar pasa a incluir m&aacute;s frecuencia, m&aacute;s detalle y mejores formatos.",
+      "feedback_ko": "No se trata de un problema meramente documental ni de que la demanda permanezca estable. El patr&oacute;n relevante es que la mejora de capacidad eleva el list&oacute;n de lo que se considera aceptable, y eso genera trabajo adicional."
+    },
+    {
+      "id": "p_q08",
+      "situation": "PLOCAN quiere medir si una nueva capacidad de IA en propuestas europeas est&aacute; funcionando. El equipo tiene dos opciones de KPI principal. &iquest;Cu&aacute;l es la m&aacute;s alineada con la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Horas ahorradas por documento redactado"
+        },
+        {
+          "key": "b",
+          "text": "N&uacute;mero de propuestas evaluadas, propuestas presentadas y propuestas concedidas con la misma dotaci&oacute;n base"
+        },
+        {
+          "key": "c",
+          "text": "N&uacute;mero de prompts utilizados por semana"
+        },
+        {
+          "key": "d",
+          "text": "Reducci&oacute;n del consumo de papel en oficina"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. La p&iacute;ldora insiste en medir volumen e impacto, no solo coste o tiempo. Si la IA permite explorar m&aacute;s convocatorias y convertir m&aacute;s oportunidades, ese aumento de capacidad es el retorno clave.",
+      "feedback_ko": "Las otras m&eacute;tricas pueden servir como apoyo, pero se quedan en la superficie. El enfoque adecuado es observar qu&eacute; m&aacute;s se hace gracias a la nueva capacidad y c&oacute;mo eso se traduce en resultados institucionales."
+    },
+    {
+      "id": "p_q09",
+      "situation": "Una persona responsable propone reducir plazas porque la IA ya prepara borradores, clasifica correos y resume reuniones. Otra persona del equipo advierte que eso puede generar un problema a medio plazo. &iquest;Cu&aacute;l es la objeci&oacute;n m&aacute;s s&oacute;lida?",
+      "options": [
+        {
+          "key": "a",
+          "text": "La IA consume demasiada energ&iacute;a y por eso no conviene reducir personal"
+        },
+        {
+          "key": "b",
+          "text": "Si cae la producci&oacute;n rutinaria, tambi&eacute;n caer&aacute; autom&aacute;ticamente la necesidad de supervisi&oacute;n"
+        },
+        {
+          "key": "c",
+          "text": "Reducir capacidad humana justo cuando crece la revisi&oacute;n, la coordinaci&oacute;n y la decisi&oacute;n puede provocar colapso de gesti&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Lo prudente es prohibir cualquier uso de IA hasta tener una normativa perfecta"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La trampa no es producir menos, sino quedarse sin capacidad para gobernar lo que ahora se puede producir. Si la IA amplifica outputs y peticiones, recortar personas en supervisi&oacute;n y decisi&oacute;n suele crear el cuello de botella nuevo.",
+      "feedback_ko": "Las otras respuestas no atacan el problema central. La advertencia estrat&eacute;gica de la p&iacute;ldora es clara: si se interpreta la eficiencia como excusa para reducir capacidad humana, puede crecer la producci&oacute;n y caer la capacidad de gesti&oacute;n."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Un servicio usa IA para localizar bibliograf&iacute;a y ahora identifica 200 art&iacute;culos a la semana donde antes encontraba 10 al mes. &iquest;Cu&aacute;l ser&iacute;a la mejor respuesta operativa?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Medir el &eacute;xito solo por el n&uacute;mero de PDFs descargados"
+        },
+        {
+          "key": "b",
+          "text": "A&ntilde;adir un proceso de cribado, s&iacute;ntesis y priorizaci&oacute;n experta para convertir hallazgos en conocimiento &uacute;til"
+        },
+        {
+          "key": "c",
+          "text": "Desactivar la herramienta porque genera demasiada informaci&oacute;n"
+        },
+        {
+          "key": "d",
+          "text": "Pedir a cada equipo que lea todo lo que aparece, sin priorizaci&oacute;n"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Encontrar m&aacute;s fuentes no equivale a generar m&aacute;s valor si no existe una capa de evaluaci&oacute;n y s&iacute;ntesis. La capacidad nueva exige procesos de selecci&oacute;n para que el volumen adicional sea gobernable.",
+      "feedback_ko": "Las dem&aacute;s opciones confunden cantidad con impacto o reaccionan frenando la capacidad. El aprendizaje de la p&iacute;ldora es que la IA desplaza el esfuerzo hacia juicio experto y priorizaci&oacute;n, no hacia lectura indiscriminada."
+    },
+    {
+      "id": "p_q11",
+      "situation": "Una responsable de unidad pregunta si debe presentar a la direcci&oacute;n un escenario tradicional de ROÍ o uno ampliado por efecto rebote para justificar una nueva herramienta. &iquest;Qu&eacute; recomendaci&oacute;n es la m&aacute;s completa?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Presentar solo ahorro de costes, porque es lo m&aacute;s f&aacute;cil de defender"
+        },
+        {
+          "key": "b",
+          "text": "Presentar solo volumen adicional, porque el ahorro ya no importa"
+        },
+        {
+          "key": "c",
+          "text": "Presentar ambos escenarios y explicar qu&eacute; nuevas actividades, formaci&oacute;n y capacidad de absorci&oacute;n implica el escenario ampliado"
+        },
+        {
+          "key": "d",
+          "text": "Evitar cualquier c&aacute;lculo y centrar la propuesta en intuiciones de futuro"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Comparar ambos escenarios ayuda a no infravalorar la inversi&oacute;n ni ocultar sus exigencias organizativas. El caso robusto muestra ahorro, pero tambi&eacute;n volumen nuevo, necesidades de formaci&oacute;n y riesgo de no absorber la demanda.",
+      "feedback_ko": "Las opciones parciales dejan fuera una parte esencial de la decisi&oacute;n. El valor de la p&iacute;ldora es precisamente ampliar el marco: ni solo ahorro ni solo entusiasmo, sino una visi&oacute;n operativa completa del impacto."
+    },
+    {
+      "id": "p_q12",
+      "situation": "Un equipo automatiza la preparaci&oacute;n de borradores para memorias internas. En vez de cerrar antes el ciclo, varias &aacute;reas empiezan a pedir m&aacute;s iteraciones y comentarios porque ahora &laquo;ya no cuesta tanto&raquo;. &iquest;Qu&eacute; deber&iacute;a hacer la persona coordinadora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Asumir que toda iteraci&oacute;n adicional es buena y aceptar cualquier ampliaci&oacute;n sin l&iacute;mites"
+        },
+        {
+          "key": "b",
+          "text": "Ignorar las nuevas peticiones para proteger el calendario original"
+        },
+        {
+          "key": "c",
+          "text": "Definir criterios de revisi&oacute;n y niveles de servicio, porque la facilidad de producir borradores eleva el est&aacute;ndar y puede disparar la carga"
+        },
+        {
+          "key": "d",
+          "text": "Volver al proceso manual para que la gente valore m&aacute;s cada comentario"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Si producir borradores es m&aacute;s barato, la organizaci&oacute;n tiende a pedir m&aacute;s rondas y m&aacute;s detalle. Por eso hacen falta reglas de revisi&oacute;n, prioridades y l&iacute;mites operativos que contengan el nuevo est&aacute;ndar.",
+      "feedback_ko": "Aceptar todo sin gobernanza o bloquearlo todo son respuestas pobres. El patr&oacute;n aqu&iacute; es de est&aacute;ndar creciente, y la gesti&oacute;n correcta consiste en dise&ntilde;ar c&oacute;mo absorberlo sin perder foco ni calidad."
+    },
+    {
+      "id": "p_q13",
+      "situation": "La direcci&oacute;n pregunta qu&eacute; hacer con 20 horas semanales que un equipo ha liberado al automatizar tareas repetitivas con IA. &iquest;Qu&eacute; opci&oacute;n refleja mejor la l&oacute;gica de la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Reducir autom&aacute;ticamente la dedicaci&oacute;n del equipo en la misma proporci&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Reservar ese tiempo para validaci&oacute;n de outputs, exploraci&oacute;n de nuevas hip&oacute;tesis y actividades que antes no eran viables"
+        },
+        {
+          "key": "c",
+          "text": "Mantener a todo el equipo ocupado rehaciendo manualmente una muestra grande de todo lo automatizado"
+        },
+        {
+          "key": "d",
+          "text": "Evitar nuevos usos de la IA para que no aumente la demanda"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. El tiempo ahorrado no debe entenderse solo como recorte potencial, sino como capacidad para generar m&aacute;s impacto. Redistribuirlo hacia validaci&oacute;n, exploraci&oacute;n y tareas antes imposibles es aplicar el efecto amplificador con criterio.",
+      "feedback_ko": "Las otras alternativas o bien desaprovechan la capacidad nueva o reaccionan con miedo al crecimiento. La p&iacute;ldora propone anticipar que la eficiencia abre espacio para hacer m&aacute;s y decidir mejor, no simplemente para vaciar agenda."
+    },
+    {
+      "id": "p_q14",
+      "situation": "En un comit&eacute; se afirma: &laquo;Si la IA nos permite producir m&aacute;s informes, entonces el principal beneficio es que tendremos menos trabajo&raquo;. &iquest;Cu&aacute;l es la mejor respuesta aplicada al contexto PLOCAN?",
+      "options": [
+        {
+          "key": "a",
+          "text": "S&iacute;, porque producir m&aacute;s siempre implica gestionar menos"
+        },
+        {
+          "key": "b",
+          "text": "No necesariamente: producir m&aacute;s puede implicar tambi&eacute;n m&aacute;s revisi&oacute;n, m&aacute;s decisiones y m&aacute;s coordinaci&oacute;n entre &aacute;reas"
+        },
+        {
+          "key": "c",
+          "text": "S&iacute;, salvo en proyectos europeos, donde la IA no tiene efecto"
+        },
+        {
+          "key": "d",
+          "text": "No, porque la IA solo sirve para tareas peque&ntilde;as y no cambia la escala de trabajo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. El aumento de producci&oacute;n no elimina la necesidad de gobernanza; de hecho, suele reforzarla. En PLOCAN, m&aacute;s informes, m&aacute;s an&aacute;lisis o m&aacute;s propuestas tambi&eacute;n significan m&aacute;s integraci&oacute;n, validaci&oacute;n y seguimiento.",
+      "feedback_ko": "Las otras respuestas simplifican demasiado el efecto de la IA. La ense&ntilde;anza de la p&iacute;ldora es que la eficiencia genera capacidad nueva y con ella llegan nuevas exigencias de coordinaci&oacute;n y criterio humano."
+    },
+    {
+      "id": "p_q15",
+      "situation": "Un &aacute;rea quiere saber si ha planificado bien una adopci&oacute;n de IA para informes, datos y propuestas. &iquest;Qu&eacute; se&ntilde;al indicar&iacute;a una planificaci&oacute;n m&aacute;s madura seg&uacute;n la p&iacute;ldora?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo ha calculado cu&aacute;ntas horas desaparecen del proceso actual"
+        },
+        {
+          "key": "b",
+          "text": "Ha previsto m&aacute;s outputs, m&aacute;s demanda asociada y c&oacute;mo reforzar supervisi&oacute;n, validaci&oacute;n y decisi&oacute;n"
+        },
+        {
+          "key": "c",
+          "text": "Ha decidido no medir nada hasta que pase un a&ntilde;o completo"
+        },
+        {
+          "key": "d",
+          "text": "Ha supuesto que la IA absorber&aacute; cualquier tarea adicional sin necesidad de protocolos"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. Una planificaci&oacute;n madura no se limita a contar horas ahorradas, sino que anticipa qu&eacute; trabajo nuevo aparecer&aacute; y qui&eacute;n lo gobernar&aacute;. Eso incluye capacidad humana, protocolos y criterios para absorber el incremento de volumen.",
+      "feedback_ko": "Las otras opciones dejan fuera la parte m&aacute;s importante del problema. Si no se prev&eacute;n demanda nueva y mecanismos de supervisi&oacute;n, la organizaci&oacute;n gana capacidad de producir pero pierde capacidad de controlarla."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>IA Responsable: Nuestro Compromiso</h1>
     <p class="subtitle">&Eacute;tica, regulaci&oacute;n y transparencia para una instituci&oacute;n p&uacute;blica &middot; Grupo IA + Datos</p>
-    <span class="time-badge">15 min de lectura</span>
+    <span class="time-badge">15 mín de lectura</span>
 </header>
 
 
@@ -1070,6 +1070,526 @@ Contexto: instituci&oacute;n p&uacute;blica de investigaci&oacute;n marina (PLOC
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 34,
+  "pill_slug": "responsable",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p_q01",
+      "situation": "En PLOCAN se propone usar una IA para preclasificar candidaturas a una convocatoria interna de apoyo a proyectos, de modo que el comit&eacute; solo revise las 20 mejores. &iquest;Qu&eacute; deber&iacute;a hacer primero la persona responsable del piloto?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Lanzar un piloto r&aacute;pido y revisar los resultados solo si hay quejas"
+        },
+        {
+          "key": "b",
+          "text": "Clasificar el caso por nivel de riesgo, exigir evaluaci&oacute;n de sesgo, trazabilidad y supervisi&oacute;n humana antes de usarlo"
+        },
+        {
+          "key": "c",
+          "text": "Usar la IA solo para ahorrar tiempo y dejar la parte legal para la compra final"
+        },
+        {
+          "key": "d",
+          "text": "Pedir al proveedor una demo comercial y asumir que cumple por defecto"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Cuando una IA influye en el acceso a oportunidades, PLOCAN no puede empezar por la comodidad: debe empezar por riesgo, controles y evidencia. La supervisi&oacute;n humana y la trazabilidad no son extras, son parte del dise&ntilde;o responsable.",
+      "feedback_ko": "Las otras opciones aplazan justo lo m&aacute;s importante. En una instituci&oacute;n p&uacute;blica, primero se define el riesgo y las obligaciones; despu&eacute;s se pilota con controles, no al rev&eacute;s."
+    },
+    {
+      "id": "p_q02",
+      "situation": "Un equipo quiere copiar el borrador de un contrato de colaboraci&oacute;n en un chatbot p&uacute;blico para resumirlo antes de una reuní&oacute;n. &iquest;Cu&aacute;l es la respuesta m&aacute;s responsable?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Subir el contrato completo porque el resumen se borrar&aacute; despu&eacute;s"
+        },
+        {
+          "key": "b",
+          "text": "Cambiar solo el nombre de la entidad y mantener el resto del texto igual"
+        },
+        {
+          "key": "c",
+          "text": "Usar solo una herramienta autorizada, minimizar datos sensibles y evitar subir el documento si no hay aprobaci&oacute;n expresa"
+        },
+        {
+          "key": "d",
+          "text": "Dividir el contrato en varios fragmentos para que el riesgo sea menor"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. La confidencialidad y la minimizaci&oacute;n de datos van antes que la velocidad. Si no existe entorno aprobado, no se sube el contenido sensible; se busca una alternativa segura o se redacta un extracto no confidencial.",
+      "feedback_ko": "Anonimizar a medias o partir el texto no resuelve el problema de fondo. La decisi&oacute;n correcta es controlar d&oacute;nde entra la informaci&oacute;n y aplicar m&iacute;nimo dato necesario en una herramienta autorizada."
+    },
+    {
+      "id": "p_q03",
+      "situation": "PLOCAN prueba un modelo para detectar especies en im&aacute;genes submarinas, pero casi todo el entrenamiento procede de campa&ntilde;as fuera de Canarias. Antes de usarlo en operaci&oacute;n, &iquest;qu&eacute; conviene hacer?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Validarlo con datos locales, revisar sesgos por zona y ajustar el modelo antes de confiar en sus salidas"
+        },
+        {
+          "key": "b",
+          "text": "Compensar el sesgo pidiendo al equipo que revise solo los casos dudosos"
+        },
+        {
+          "key": "c",
+          "text": "Publicar primero resultados preliminares para obtener feedback externo"
+        },
+        {
+          "key": "d",
+          "text": "Usarlo igual si la precisi&oacute;n global supera el 90%"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Una m&eacute;trica global alta puede ocultar errores sistem&aacute;ticos en contextos locales. La pr&aacute;ctica responsable es comprobar representatividad, validar en el entorno real y corregir antes del despliegue.",
+      "feedback_ko": "Revisar algunos casos o confiar en la precisi&oacute;n media no basta si el dato de origen est&aacute; sesgado. Si el contexto canario est&aacute; infrarrepresentado, el riesgo es tomar buenas cifras como falsa garant&iacute;a."
+    },
+    {
+      "id": "p_q04",
+      "situation": "El &aacute;rea de comunicaci&oacute;n de PLOCAN usa IA para redactar una nota sobre un nuevo piloto marino y quiere publicarla en la web institucional el mismo d&iacute;a. &iquest;Cu&aacute;l es el mejor paso final antes de publicar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Publicarla tal como sale si el tono es correcto"
+        },
+        {
+          "key": "b",
+          "text": "Pedir a otro chatbot que confirme que no hay errores"
+        },
+        {
+          "key": "c",
+          "text": "Quitar cualquier frase dudosa y publicar sin dejar rastro del uso de IA"
+        },
+        {
+          "key": "d",
+          "text": "Verificar hechos y cifras, documentar el uso de IA y a&ntilde;adir transparencia si aplica al contexto del documento"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Exacto. La calidad institucional exige verificaci&oacute;n humana de hechos y una trazabilidad suficiente del apoyo recibido. Transparencia no significa sobredocumentar todo, sino poder explicar qu&eacute; hizo la IA y qu&eacute; valid&oacute; el equipo.",
+      "feedback_ko": "La salida de un segundo modelo no sustituye la revisi&oacute;n responsable. En documentos institucionales, el criterio correcto es verificar, documentar y decidir si corresponde explicitar el uso de IA."
+    },
+    {
+      "id": "p_q05",
+      "situation": "En una reuní&oacute;n operativa se usa una IA para generar acta y asignar tareas autom&aacute;ticamente a varias unidades. &iquest;C&oacute;mo deber&iacute;a implantarse este flujo para que sea responsable?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Haciendo que las tareas queden aprobadas en cuanto la IA cierre el acta"
+        },
+        {
+          "key": "b",
+          "text": "Exigiendo validaci&oacute;n humana antes de que las tareas sean oficiales y guardando el rastro de cambios"
+        },
+        {
+          "key": "c",
+          "text": "Pidiendo a cada unidad que corrija lo suyo si detecta errores despu&eacute;s"
+        },
+        {
+          "key": "d",
+          "text": "Limitando la IA solo a resumir, sin conservar evidencia de c&oacute;mo se edit&oacute; el texto"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Si la salida genera compromisos operativos, debe existir revisi&oacute;n humana antes de convertirla en acci&oacute;n oficial. Adem&aacute;s, la trazabilidad de cambios permite explicar qu&eacute; propuso la IA y qu&eacute; decidí&oacute; finalmente el equipo.",
+      "feedback_ko": "Delegar la correcci&oacute;n a posteriori convierte el error en problema operativo. En flujos con impacto real, primero se valida y se registra la decisi&oacute;n; despu&eacute;s se ejecuta."
+    },
+    {
+      "id": "p_q06",
+      "situation": "Un proveedor ofrece a PLOCAN una herramienta que punt&uacute;a autom&aacute;ticamente solicitudes de beca, pero no explica el criterio del modelo porque es &laquo;propietario&raquo;. &iquest;Qu&eacute; respuesta encaja mejor con una IA responsable?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Exigir explicabilidad, evidencia de sesgo y trazabilidad; si no se puede demostrar, no usarla para esa decisi&oacute;n"
+        },
+        {
+          "key": "b",
+          "text": "Aceptar la opacidad si mejora la velocidad del proceso"
+        },
+        {
+          "key": "c",
+          "text": "Usarla como filtro principal y revisar solo las reclamaciones"
+        },
+        {
+          "key": "d",
+          "text": "Cambiar el nombre del sistema en la documentaci&oacute;n para evitar preocupaci&oacute;n externa"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. Si la organizaci&oacute;n no puede explicar una decisi&oacute;n relevante, tampoco puede defenderla adecuadamente. En un entorno p&uacute;blico, la falta de trazabilidad y evidencia de equidad es una raz&oacute;n seria para no adoptar la herramienta en ese uso.",
+      "feedback_ko": "La velocidad no compensa la imposibilidad de justificar decisiones. Un sistema opaco puede ser atractivo en demo, pero no es aceptable cuando hay impacto sobre personas u oportunidades."
+    },
+    {
+      "id": "p_q07",
+      "situation": "Una persona del equipo ha usado IA para sintetizar bibliograf&iacute;a en una propuesta europea y otra unidad pide revisar c&oacute;mo se hizo. &iquest;Qu&eacute; documentaci&oacute;n deber&iacute;a poder entregar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo la versi&oacute;n final del texto, porque lo importante es el resultado"
+        },
+        {
+          "key": "b",
+          "text": "Una captura de pantalla del chat y nada m&aacute;s"
+        },
+        {
+          "key": "c",
+          "text": "Modelo y fecha, prompts relevantes, fuentes verificadas, intervenci&oacute;n humana y limitaciones detectadas"
+        },
+        {
+          "key": "d",
+          "text": "El nombre de la herramienta y una declaraci&oacute;n general de que se us&oacute; con prudencia"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La clave no es solo decir que se us&oacute; IA, sino poder reconstruir c&oacute;mo se us&oacute; y qu&eacute; parte valid&oacute; el equipo. Esa trazabilidad permite revisar calidad, sesgos y l&iacute;mites del resultado.",
+      "feedback_ko": "Un resultado final sin contexto no permite auditar nada. Para demostrar uso responsable hacen falta detalles operativos, verificaci&oacute;n de fuentes y evidencia de supervisi&oacute;n humana."
+    },
+    {
+      "id": "p_q08",
+      "situation": "PLOCAN quiere automatizar alertas de anomal&iacute;as en sensores oce&aacute;nicos. Tras varias tormentas, el sistema empieza a generar demasiados falsos positivos. &iquest;Qu&eacute; ajuste es m&aacute;s responsable?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Desactivar toda alerta autom&aacute;tica durante el invierno"
+        },
+        {
+          "key": "b",
+          "text": "Enviar todas las alertas igual y dejar que cada equipo filtre el ruido"
+        },
+        {
+          "key": "c",
+          "text": "Aumentar el umbral sin analizar por qu&eacute; fall&oacute; el modelo"
+        },
+        {
+          "key": "d",
+          "text": "Revisar deriva de datos, recalibrar con contexto meteorol&oacute;gico y mantener supervisi&oacute;n humana en las acciones relevantes"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Exacto. Un sistema responsable no oculta el fallo ni lo traslada al usuario final; lo analiza y corrige con evidencia. Cuando cambian las condiciones del entorno, hay que revisar datos, umbrales y contexto antes de automatizar decisiones.",
+      "feedback_ko": "Apagar, inundar de alertas o mover un umbral a ciegas son respuestas pobres. Lo correcto es diagnosticar la deriva y redise&ntilde;ar el control con supervisi&oacute;n humana donde el impacto lo exija."
+    },
+    {
+      "id": "p_q09",
+      "situation": "Se dise&ntilde;a un asistente web para responder dudas frecuentes sobre convocatorias y servicios de PLOCAN. &iquest;Qu&eacute; medida deber&iacute;a incluirse desde el inicio?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ocultar que es IA para que la experiencia resulte m&aacute;s natural"
+        },
+        {
+          "key": "b",
+          "text": "Identificar claramente que es un sistema de IA, explicar l&iacute;mites y ofrecer escalado a una persona"
+        },
+        {
+          "key": "c",
+          "text": "Permitir respuestas seguras incluso si no hay fuente verificable"
+        },
+        {
+          "key": "d",
+          "text": "Pedir siempre el m&aacute;ximo de datos personales para personalizar mejor"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Transparencia y control del usuario forman parte del dise&ntilde;o responsable, especialmente en un servicio p&uacute;blico. Decir que es IA, explicar sus l&iacute;mites y permitir derivaci&oacute;n humana reduce riesgo y mejora confianza.",
+      "feedback_ko": "Una experiencia fluida no justifica ocultar la naturaleza del sistema ni pedir datos de m&aacute;s. Si el usuario no entiende con qui&eacute;n interact&uacute;a o no puede escalar, el dise&ntilde;o falla en transparencia."
+    },
+    {
+      "id": "p_q10",
+      "situation": "Cada unidad de PLOCAN est&aacute; usando modelos y prompts distintos para tareas parecidas, sin registro com&uacute;n. Empiezan a aparecer respuestas inconsistentes en documentos oficiales. &iquest;Qu&eacute; conviene implantar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un registro de usos, prompts base, versiones y criterios m&iacute;nimos de validaci&oacute;n compartidos"
+        },
+        {
+          "key": "b",
+          "text": "Prohibir toda experimentaci&oacute;n con IA durante seis meses"
+        },
+        {
+          "key": "c",
+          "text": "Dejar que cada unidad optimice su forma de trabajar sin reglas comunes"
+        },
+        {
+          "key": "d",
+          "text": "Usar el modelo m&aacute;s barato para todas las tareas, sin m&aacute;s cambios"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. La gobernanza pr&aacute;ctica empieza por normalizar lo repetible: qu&eacute; se usa, con qu&eacute; versi&oacute;n y bajo qu&eacute; controles. Eso no elimina autonom&iacute;a, pero s&iacute; evita incoherencias y hace auditable el proceso.",
+      "feedback_ko": "Ni el bloqueo total ni la libertad sin registro resuelven la inconsistencia. Si el problema es gobernanza, la respuesta es estandarizar lo esencial y conservar evidencia de uso."
+    },
+    {
+      "id": "p_q11",
+      "situation": "Se prepara un piloto de 6 meses para usar IA en la revisi&oacute;n inicial de informes t&eacute;cnicos. La direcci&oacute;n pide KPIs. &iquest;Qu&eacute; conjunto de indicadores refleja mejor una implantaci&oacute;n responsable?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo horas ahorradas y n&uacute;mero de informes procesados"
+        },
+        {
+          "key": "b",
+          "text": "Solo satisfacci&oacute;n interna y coste mensual de la licencia"
+        },
+        {
+          "key": "c",
+          "text": "Tiempo ahorrado, tasa de errores, evidencia de trazabilidad, incidencias de sesgo y porcentaje de revisi&oacute;n humana"
+        },
+        {
+          "key": "d",
+          "text": "Solo rapidez de respuesta y porcentaje de automatizaci&oacute;n"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Un piloto responsable mide eficiencia, pero tambi&eacute;n calidad, control y riesgos. Si no mides sesgo, trazabilidad o supervisi&oacute;n humana, no sabr&aacute;s si el ahorro sale demasiado caro.",
+      "feedback_ko": "Quedarse solo con velocidad o coste da una foto incompleta. En IA responsable, los KPIs deben combinar rendimiento con evidencia de control, calidad y posibles impactos no deseados."
+    },
+    {
+      "id": "p_q12",
+      "situation": "Una IA resume un informe cient&iacute;fico interno y elimina una limitaci&oacute;n metodol&oacute;gica importante. La versi&oacute;n resumida est&aacute; a punto de enviarse a direcci&oacute;n. &iquest;Qu&eacute; deber&iacute;a hacer la persona responsable?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Detener el env&iacute;o, corregir el resumen, registrar el incidente y reforzar la revisi&oacute;n de ese tipo de salidas"
+        },
+        {
+          "key": "b",
+          "text": "Enviar el documento y aclararlo luego si alguien pregunta"
+        },
+        {
+          "key": "c",
+          "text": "Reducir el n&uacute;mero de limitaciones en el original para que la IA no se confunda"
+        },
+        {
+          "key": "d",
+          "text": "Pedir a otra IA que reescriba el resumen sin revisar el informe fuente"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Exacto. La respuesta responsable combina correcci&oacute;n inmediata y aprendizaje del fallo. No basta con arreglar el texto: hay que dejar rastro del incidente y ajustar el control para que no se repita.",
+      "feedback_ko": "Aplazar la correcci&oacute;n o confiar de nuevo a ciegas en otra IA mantiene el riesgo intacto. Cuando falta una limitaci&oacute;n cr&iacute;tica, primero se frena el da&ntilde;o y luego se mejora el proceso."
+    },
+    {
+      "id": "p_q13",
+      "situation": "El equipo quiere reutilizar un modelo antiguo para priorizar mantenimiento de equipos oceanogr&aacute;ficos, pero desde entonces se han incorporado nuevos sensores y patrones de uso. &iquest;Qu&eacute; enfoque aplicar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usarlo tal cual mientras se observa si el personal detecta errores"
+        },
+        {
+          "key": "b",
+          "text": "Actualizar y validar con datos representativos del parque actual antes de tomar decisiones operativas con &eacute;l"
+        },
+        {
+          "key": "c",
+          "text": "Reducir el alcance del mantenimiento para que el modelo acierte m&aacute;s"
+        },
+        {
+          "key": "d",
+          "text": "Confiar en la experiencia previa porque el dominio general sigue siendo el mismo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Cuando cambia el entorno, cambia tambi&eacute;n la validez del modelo. La pr&aacute;ctica responsable es reevaluar representatividad y rendimiento antes de reutilizar una herramienta en decisiones operativas.",
+      "feedback_ko": "La experiencia pasada no garantiza validez presente. Si han cambiado sensores y patrones de uso, reutilizar sin nueva validaci&oacute;n puede introducir errores sistem&aacute;ticos dif&iacute;ciles de ver al principio."
+    },
+    {
+      "id": "p_q14",
+      "situation": "En una auditor&iacute;a interna, direcci&oacute;n pregunta: &laquo;&iquest;C&oacute;mo demostramos que usamos bien la IA en PLOCAN?&raquo;. &iquest;Qu&eacute; evidencia es m&aacute;s convincente?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una presentaci&oacute;n con casos de &eacute;xito y testimonios positivos"
+        },
+        {
+          "key": "b",
+          "text": "Una lista de herramientas compradas y su coste anual"
+        },
+        {
+          "key": "c",
+          "text": "Un dossier con clasificaci&oacute;n de riesgos, logs de uso, validaciones, controles humanos y declaraciones de transparencia"
+        },
+        {
+          "key": "d",
+          "text": "Un compromiso general del equipo de usar la IA con criterio"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. Usar bien la IA no se acredita con intenciones, sino con pruebas verificables. Riesgo, trazabilidad, validaci&oacute;n y supervisi&oacute;n humana forman el paquete m&iacute;nimo para poder demostrar cumplimiento y buen gobierno.",
+      "feedback_ko": "Los ejemplos positivos ayudan a comunicar, pero no sustituyen evidencia auditable. Si PLOCAN quiere demostrar uso responsable, necesita registros y controles, no solo narrativa."
+    },
+    {
+      "id": "p_q15",
+      "situation": "Tras varios meses de uso, se detecta que una IA que ayuda a resumir propuestas penaliza de forma recurrente proyectos con enfoques menos convencionales porque sus datos hist&oacute;ricos favorec&iacute;an formatos muy homog&eacute;neos. &iquest;Qu&eacute; medida aplicar&iacute;as?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mantener el sistema y pedir al comit&eacute; que compense el sesgo intuitivamente"
+        },
+        {
+          "key": "b",
+          "text": "Parar el uso en ese punto del proceso, analizar la causa, corregir datos y controles, y revalidar antes de reintroducirlo"
+        },
+        {
+          "key": "c",
+          "text": "Usarlo solo en m&aacute;s propuestas para que aprenda por volumen"
+        },
+        {
+          "key": "d",
+          "text": "Ocultar la incidencia hasta tener una versi&oacute;n mejor del modelo"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Ante un sesgo confirmado, la respuesta responsable es contener el impacto y corregir el sistema, no convivir con el problema. Revalidar despu&eacute;s del ajuste es lo que convierte la mitigaci&oacute;n en una medida real y no cosm&eacute;tica.",
+      "feedback_ko": "Pedir compensaci&oacute;n manual o esperar que el volumen arregle el sesgo es insuficiente. Si el patr&oacute;n ya causa perjuicio, hay que detener, investigar y redise&ntilde;ar con evidencia."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 

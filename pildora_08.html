@@ -915,7 +915,7 @@ body.template-technical .action-card {
     <div class="header-badge">PLOCAN - Pildoras de Conocimiento | Nivel Avanzado</div>
     <h1>La regla de oro: verificar SIEMPRE</h1>
     <p class="subtitle">La IA no miente a propósito, pero inventa con total confianza. Aprende a detectarlo</p>
-    <span class="time-badge">5 min de lectura</span>
+    <span class="time-badge">5 mín de lectura</span>
 </header>
 
 
@@ -1051,6 +1051,526 @@ body.template-technical .action-card {
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+    
+    <!-- CUESTIONARIO DE AUTOEVALUACIÓN (Motor universal) -->
+    <div class="card" id="quiz-section" style="margin-top:2rem;"></div>
+    <script>
+    var QUIZ_BANK = {
+  "version": 1,
+  "pill_number": 8,
+  "pill_slug": "08",
+  "questions_per_round": 5,
+  "questions": [
+    {
+      "id": "p8_q01",
+      "situation": "La responsable de proyectos usa Antigravity para pedir 3 art&iacute;culos sobre cambio clim&aacute;tico en ecosistemas marinos de Canarias, con autores, revista y DOI, para una propuesta de PLOCAN. Las referencias llegan con formato impecable. &iquest;Qu&eacute; deber&iacute;a hacer antes de incorporarlas al documento?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usarlas directamente, porque si el formato parece acad&eacute;mico es muy probable que sean correctas"
+        },
+        {
+          "key": "b",
+          "text": "Verificar solo la referencia que parezca menos conocida y asumir que las otras dos est&aacute;n bien"
+        },
+        {
+          "key": "c",
+          "text": "Comprobar cada DOI y cada referencia en Google Scholar o en la fuente original antes de citarlas"
+        },
+        {
+          "key": "d",
+          "text": "Pedir a otro equipo que las revise despu&eacute;s de enviar la propuesta para no perder tiempo ahora"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La p&iacute;ldora insiste en que las alucinaciones tienen formato perfecto, as&iacute; que la apariencia no basta. Si hay DOIs, autores o revistas concretas, toca verificar cada dato contra una fuente real antes de usarlo.",
+      "feedback_ko": "Aqu&iacute; el error es confundir formato convincente con verdad. Revisar solo una muestra o dejar la comprobaci&oacute;n para despu&eacute;s mantiene el riesgo de meter referencias inventadas en un documento oficial de PLOCAN."
+    },
+    {
+      "id": "p8_q02",
+      "situation": "El director de l&iacute;nea quiere pegar en Antigravity un borrador interno con presupuesto no publicado, previsiones de contrataci&oacute;n y comentarios sobre socios para que la IA lo reescriba mejor. &iquest;Qu&eacute; acci&oacute;n encaja mejor con el sem&aacute;foro de datos de PLOCAN?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Subirlo completo porque sigue siendo un trabajo interno y no se va a publicar tal cual"
+        },
+        {
+          "key": "b",
+          "text": "Subirlo completo, pero a&ntilde;adiendo al prompt que es confidencial"
+        },
+        {
+          "key": "c",
+          "text": "Quitar solo los nombres propios y mantener cifras, comentarios y previsiones sin cambios"
+        },
+        {
+          "key": "d",
+          "text": "No compartir ese contenido sensible; si hace falta ayuda, usar una versi&oacute;n anonimizada y solo con informaci&oacute;n publicable"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Exacto. La regla operativa es clara: si no lo publicar&iacute;as en la web de PLOCAN, no deber&iacute;as d&aacute;rselo a la IA. Anonimizar y reducir el contenido al m&iacute;nimo necesario baja el riesgo y respeta la sensibilidad del documento.",
+      "feedback_ko": "Indicar que algo es confidencial no convierte en seguro compartirlo. Quitar solo nombres pero mantener cifras internas, previsiones o valoraciones sobre socios sigue exponiendo informaci&oacute;n que la p&iacute;ldora considera sensible."
+    },
+    {
+      "id": "p8_q03",
+      "situation": "Una t&eacute;cnica prepara una nota interna y pregunta a Antigravity por la fecha exacta de una convocatoria y la cl&aacute;usula concreta que permite imputar un gasto. La respuesta llega con total seguridad. &iquest;Cu&aacute;l es la mejor decisi&oacute;n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Copiar la respuesta porque la IA suele acertar en datos administrativos sencillos"
+        },
+        {
+          "key": "b",
+          "text": "Usar la fecha y la cl&aacute;usula, pero marcarlo como provisional sin comprobar nada"
+        },
+        {
+          "key": "c",
+          "text": "Comprobar la fecha y la cl&aacute;usula en la convocatoria o norma original antes de usarla"
+        },
+        {
+          "key": "d",
+          "text": "Pedir a la IA que lo redacte con un tono m&aacute;s jur&iacute;dico para que parezca m&aacute;s fiable"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. Fechas, cifras, nombres y cl&aacute;usulas son justo el tipo de dato concreto que la p&iacute;ldora manda verificar siempre. Si la fuente original existe, esa es la referencia que debe mandar sobre la respuesta de la IA.",
+      "feedback_ko": "El problema no es el tono del texto, sino la exactitud del contenido. Usar un dato legal o administrativo sin validarlo puede trasladar un error de la IA a una decisi&oacute;n interna con impacto real."
+    },
+    {
+      "id": "p8_q04",
+      "situation": "Un coordinador de proyecto quiere reducir el riesgo de que Antigravity invente datos mientras le ayuda a redactar un resumen t&eacute;cnico. Antes de empezar, va a ajustar el prompt. &iquest;Qu&eacute; instrucci&oacute;n es m&aacute;s adecuada?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Si te falta un dato, completa con la estimaci&oacute;n m&aacute;s probable para que el texto salga cerrado"
+        },
+        {
+          "key": "b",
+          "text": "Cuando no est&eacute;s seguro de una fecha, cifra, nombre o DOI, dilo expl&iacute;citamente y pide verificaci&oacute;n en vez de inventar"
+        },
+        {
+          "key": "c",
+          "text": "Prioriza siempre una respuesta completa, aunque haya partes poco seguras"
+        },
+        {
+          "key": "d",
+          "text": "Usa un tono muy firme para que el equipo tenga claro qu&eacute; debe hacer"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La p&iacute;ldora recomienda pedir a la IA que sea honesta sobre sus l&iacute;mites y que avise cuando no est&aacute; segura. No elimina el problema por completo, pero reduce bastante la probabilidad de que un dato falso se cuele como cierto.",
+      "feedback_ko": "Las otras opciones empujan a la IA justo en la direcci&oacute;n equivocada: rellenar huecos y sonar convincente. Si premias la completitud o la seguridad aparente, aumentas el riesgo de alucinaciones con aspecto profesional."
+    },
+    {
+      "id": "p8_q05",
+      "situation": "La responsable de comunicaci&oacute;n recibe de Antigravity una frase para una nota externa: &laquo;PLOCAN lidera 14 proyectos europeos activos en 2025&raquo;. La cifra encaja con lo que recuerda, pero no tiene la fuente delante. &iquest;Qu&eacute; deber&iacute;a hacer?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Parar y verificar la cifra en la fuente oficial antes de publicarla, o quitarla si no llega a tiempo"
+        },
+        {
+          "key": "b",
+          "text": "Mantenerla porque es una cifra razonable y seguramente correcta"
+        },
+        {
+          "key": "c",
+          "text": "Cambiar 14 por &laquo;varios&raquo; y publicar el resto sin revisar nada m&aacute;s"
+        },
+        {
+          "key": "d",
+          "text": "Publicarla y, si alguien pregunta, ya se comprobar&aacute; despu&eacute;s"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Una cifra concreta en un canal externo exige verificaci&oacute;n contra la fuente original. Si no puedes comprobarla a tiempo, es mejor reformular o eliminar el dato que difundir una afirmaci&oacute;n potencialmente falsa.",
+      "feedback_ko": "Que una cifra suene razonable no la convierte en verificable. En comunicaci&oacute;n externa, el coste reputacional de publicar un n&uacute;mero incorrecto es mayor que el de salir con una redacci&oacute;n algo menos precisa."
+    },
+    {
+      "id": "p8_q06",
+      "situation": "El t&eacute;cnico de datos pide a Antigravity un resumen de anomal&iacute;as de sensores con porcentajes de desviaci&oacute;n, fechas exactas y comparaciones con el a&ntilde;o anterior. La respuesta no cita fuentes ni archivos. &iquest;Qu&eacute; deber&iacute;a asumir?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que al ser un resumen t&eacute;cnico, la IA necesariamente ha calculado bien todas las cifras"
+        },
+        {
+          "key": "b",
+          "text": "Que solo las fechas necesitan revisi&oacute;n, pero los porcentajes se pueden aceptar"
+        },
+        {
+          "key": "c",
+          "text": "Que el problema principal es el estilo y no la veracidad del contenido"
+        },
+        {
+          "key": "d",
+          "text": "Que todos esos datos concretos deben contrastarse con los registros originales antes de utilizarlos"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Exacto. Cuantos m&aacute;s detalles concretos aparecen, mayor debe ser el reflejo de verificaci&oacute;n. Fechas, porcentajes y comparativas son precisamente el tipo de salida que puede sonar impecable y aun as&iacute; contener errores o invenciones.",
+      "feedback_ko": "No hay motivo para dar por buenas unas cifras solo porque est&eacute;n bien escritas. La p&iacute;ldora no distingue entre dato t&eacute;cnico y dato administrativo: si es concreto, se comprueba contra la fuente original."
+    },
+    {
+      "id": "p8_q07",
+      "situation": "Una directora de programa duda si puede usar la IA con el acta de una reuní&oacute;n donde aparecen posiciones de negociaci&oacute;n con socios, riesgos internos y decisiones todav&iacute;a no aprobadas. &iquest;C&oacute;mo deber&iacute;a clasificar ese material?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Como contenido seguro, porque no incluye datos personales"
+        },
+        {
+          "key": "b",
+          "text": "Como contenido sensible que no deber&iacute;a compartirse con la IA en su forma original"
+        },
+        {
+          "key": "c",
+          "text": "Como contenido apto si se eliminan solo los nombres de los asistentes"
+        },
+        {
+          "key": "d",
+          "text": "Como contenido publicable, porque tarde o temprano algunas decisiones se comunicar&aacute;n"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Aunque no haya nombres propios, sigue habiendo informaci&oacute;n estrat&eacute;gica y no publicada. El sem&aacute;foro de PLOCAN no se basa solo en datos personales, sino en si ese contenido ser&iacute;a publicable o no.",
+      "feedback_ko": "Quitar nombres no elimina la sensibilidad del contexto. Posiciones de negociaci&oacute;n, riesgos internos y decisiones pendientes siguen siendo material que no deber&iacute;a salir del circuito controlado solo para facilitar una redacci&oacute;n."
+    },
+    {
+      "id": "p8_q08",
+      "situation": "Un responsable de compras quiere pedir a Antigravity una comparativa de proveedores usando fichas p&uacute;blicas de producto y una matriz interna con puntuaciones, debilidades detectadas y comentarios de negociaci&oacute;n. &iquest;Cu&aacute;l es la opci&oacute;n m&aacute;s prudente?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Subir todo porque la IA solo va a ordenar mejor la informaci&oacute;n ya disponible"
+        },
+        {
+          "key": "b",
+          "text": "Subir la matriz interna si antes se cambian los nombres de los proveedores por c&oacute;digos"
+        },
+        {
+          "key": "c",
+          "text": "Trabajar solo con datos p&uacute;blicos o con una versi&oacute;n muy agregada, dejando fuera comentarios y valoraciones sensibles"
+        },
+        {
+          "key": "d",
+          "text": "Subir la matriz completa, pero pedir que el resultado no mencione ning&uacute;n dato delicado"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. El riesgo no est&aacute; solo en el resultado final, sino en lo que introduces en el prompt. Si la matriz contiene valoraciones internas o elementos de negociaci&oacute;n, la versi&oacute;n correcta es recortar o agregar esa informaci&oacute;n antes de usar la IA.",
+      "feedback_ko": "Codificar nombres o pedir discreci&oacute;n en la salida no neutraliza el problema de entrada. La decisi&oacute;n correcta parte del sem&aacute;foro: primero separas lo publicable de lo sensible y solo despu&eacute;s decides qu&eacute; puede ir al modelo."
+    },
+    {
+      "id": "p8_q09",
+      "situation": "La coordinadora de un WP revisa 5 referencias sugeridas por Antigravity para un entregable. Cuatro DOIs funcionan, pero uno no aparece en ning&uacute;n buscador acad&eacute;mico aunque el t&iacute;tulo suena totalmente cre&iacute;ble. &iquest;Qu&eacute; conclusi&oacute;n es la m&aacute;s correcta?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que probablemente el buscador acad&eacute;mico est&aacute; incompleto y conviene mantener la referencia"
+        },
+        {
+          "key": "b",
+          "text": "Que esa referencia es sospechosa de alucinaci&oacute;n y no deber&iacute;a usarse sin encontrar una fuente real"
+        },
+        {
+          "key": "c",
+          "text": "Que si las otras cuatro existen, la quinta tambi&eacute;n debe ser v&aacute;lida"
+        },
+        {
+          "key": "d",
+          "text": "Que basta con quitar el DOI y dejar el resto de la referencia para evitar el problema"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Correcto. Ese es precisamente el patr&oacute;n de alucinaci&oacute;n que describe la p&iacute;ldora: formato perfecto, contenido dudoso. Si no puedes localizar una fuente real, no deber&iacute;as incorporar la referencia al entregable.",
+      "feedback_ko": "La coherencia superficial de una referencia no es evidencia suficiente. Mantenerla por intuici&oacute;n o esconder el DOI solo camufla un dato no verificado dentro de un documento que luego otros pueden dar por bueno."
+    },
+    {
+      "id": "p8_q10",
+      "situation": "Un investigador usa Antigravity para localizar bibliograf&iacute;a y detecta que uno de los DOIs devuelve un art&iacute;culo distinto al t&iacute;tulo generado por la IA. El resto de la respuesta parece impecable. &iquest;Qu&eacute; aprendizaje deber&iacute;a sacar para su trabajo diario en PLOCAN?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Que solo hay que revisar los DOIs, porque los t&iacute;tulos y autores suelen ser fiables"
+        },
+        {
+          "key": "b",
+          "text": "Que este error es una excepci&oacute;n poco relevante si el texto general est&aacute; bien redactado"
+        },
+        {
+          "key": "c",
+          "text": "Que la mejor defensa es pedir respuestas m&aacute;s largas para que la IA detalle mejor sus fuentes"
+        },
+        {
+          "key": "d",
+          "text": "Que una salida convincente puede mezclar elementos reales y falsos, as&iacute; que hay que verificar cada dato cr&iacute;tico"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Exacto. La lecci&oacute;n no es que un campo concreto falle, sino que la IA puede combinar piezas plausibles con errores puntuales muy cre&iacute;bles. Por eso la supervisi&oacute;n humana se centra en los datos cr&iacute;ticos, no en la fluidez del texto.",
+      "feedback_ko": "Reducir el problema a un solo tipo de campo es quedarse corto. Si un DOI ya no encaja con el t&iacute;tulo, la respuesta entera pasa a requerir una revisi&oacute;n cuidadosa porque el modelo ha demostrado que puede inventar con confianza."
+    },
+    {
+      "id": "p8_q11",
+      "situation": "La responsable jur&iacute;dica detecta que varios equipos quieren usar la IA para resumir contratos con firmas, datos de contacto y cl&aacute;usulas todav&iacute;a en negociaci&oacute;n. Debe fijar una regla simple para toda la organizaci&oacute;n. &iquest;Cu&aacute;l es la mejor?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Si el contenido no se publicar&iacute;a en la web de PLOCAN, no debe darse a la IA salvo versi&oacute;n saneada y m&iacute;nima"
+        },
+        {
+          "key": "b",
+          "text": "Se pueden subir contratos siempre que la IA solo devuelva un resumen breve"
+        },
+        {
+          "key": "c",
+          "text": "Basta con borrar las firmas; el resto del contrato se puede compartir"
+        },
+        {
+          "key": "d",
+          "text": "Los contratos son seguros si se usan solo para mejorar redacci&oacute;n, no para tomar decisiones"
+        }
+      ],
+      "correct": "a",
+      "feedback_ok": "Correcto. Esa regla traduce el sem&aacute;foro de datos a una decisi&oacute;n operativa muy f&aacute;cil de aplicar. Adem&aacute;s, obliga a pensar primero en la sensibilidad del documento y no solo en la utilidad aparente del resumen.",
+      "feedback_ko": "Resumir no elimina la sensibilidad del material original. Borrar firmas o limitar la longitud de la salida no basta cuando siguen entrando cl&aacute;usulas, contactos o elementos de negociaci&oacute;n que no deber&iacute;an salir del entorno controlado."
+    },
+    {
+      "id": "p8_q12",
+      "situation": "El jefe de laboratorio quiere introducir una regla de uso diario para que el equipo trabaje mejor con Antigravity al preparar informes t&eacute;cnicos. &iquest;Qu&eacute; pauta combina mejor utilidad y control?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Usar la IA libremente y revisar solo los documentos que vayan a salir fuera de PLOCAN"
+        },
+        {
+          "key": "b",
+          "text": "Confiar en la IA para borradores y revisar despu&eacute;s solo si alguien detecta algo raro"
+        },
+        {
+          "key": "c",
+          "text": "Pedir a la IA que avise cuando no est&eacute; segura y verificar siempre cifras, fechas, nombres y referencias en la fuente original"
+        },
+        {
+          "key": "d",
+          "text": "Evitar por completo cualquier uso de IA en tareas t&eacute;cnicas para no asumir ning&uacute;n riesgo"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Exacto. Esa combinaci&oacute;n recoge los dos reflejos centrales de la p&iacute;ldora: honestidad sobre l&iacute;mites y verificaci&oacute;n de datos concretos. As&iacute; se conserva el valor de la IA para redactar y estructurar sin delegarle la validaci&oacute;n factual.",
+      "feedback_ko": "Revisar solo al final o solo si alguien nota algo es demasiado reactivo. Y prohibir toda la IA tampoco aplica lo aprendido: la clave no es dejar de usarla, sino usarla con barreras claras y verificaci&oacute;n donde toca."
+    },
+    {
+      "id": "p8_q13",
+      "situation": "Una t&eacute;cnica de soporte debe contestar hoy a un socio externo. Antigravity le propone un borrador muy bueno, pero incluye una fecha de entrega, una cuant&iacute;a y la referencia a un documento. &iquest;Qu&eacute; har&iacute;a una persona que ha incorporado bien la p&iacute;ldora 8?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Enviar el texto tal cual porque lo urgente es responder dentro del d&iacute;a"
+        },
+        {
+          "key": "b",
+          "text": "Mantener la cuant&iacute;a y la fecha, pero quitar la referencia documental para simplificar"
+        },
+        {
+          "key": "c",
+          "text": "Revisar esos datos concretos en la documentaci&oacute;n original antes de enviar el borrador"
+        },
+        {
+          "key": "d",
+          "text": "Pedir a la IA una segunda versi&oacute;n y, si coincide, darla por verificada"
+        }
+      ],
+      "correct": "c",
+      "feedback_ok": "Correcto. La urgencia no cambia la naturaleza del riesgo: fecha, cuant&iacute;a y referencia documental son datos verificables y sensibles para la relaci&oacute;n con un socio. La supervisi&oacute;n humana se aplica justo ah&iacute;, no en el estilo general del correo.",
+      "feedback_ko": "Dos respuestas similares de la IA no equivalen a una fuente original. Y quitar solo uno de los tres datos no resuelve el problema si el resto sigue pudiendo estar equivocado y salir en una comunicaci&oacute;n externa."
+    },
+    {
+      "id": "p8_q14",
+      "situation": "Un director de &aacute;rea afirma en una reuní&oacute;n: &laquo;Si Antigravity acierta el 80% de las veces, podemos dejar de revisar las diapositivas rutinarias&raquo;. &iquest;C&oacute;mo deber&iacute;as analizar esa idea?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Es razonable: en tareas rutinarias el coste de revisar supera el beneficio"
+        },
+        {
+          "key": "b",
+          "text": "Es un error, porque justo el 20% restante puede incluir datos inventados con formato perfecto y hay que revisar las afirmaciones concretas"
+        },
+        {
+          "key": "c",
+          "text": "Es correcta si las diapositivas son internas y no llegan a personas externas"
+        },
+        {
+          "key": "d",
+          "text": "Solo har&iacute;a falta revisar la ortograf&iacute;a, porque lo factual ya viene bastante afinado"
+        }
+      ],
+      "correct": "b",
+      "feedback_ok": "Exacto. La p&iacute;ldora no dice que la IA sea in&uacute;til, sino que ese 20% problem&aacute;tico puede concentrarse en los detalles que m&aacute;s da&ntilde;o hacen. Por eso la revisi&oacute;n no se elimina: se focaliza en cifras, fechas, nombres, referencias y otros datos concretos.",
+      "feedback_ko": "El riesgo no desaparece por ser una tarea rutinaria o un uso interno. Una diapositiva convincente con un dato falso puede contaminar decisiones, informes posteriores o mensajes externos si nadie aplica el reflejo de verificaci&oacute;n."
+    },
+    {
+      "id": "p8_q15",
+      "situation": "La responsable de calidad dise&ntilde;a un peque&ntilde;o protocolo para que los equipos usen Antigravity en PLOCAN con menos riesgo. &iquest;Qu&eacute; flujo est&aacute; mejor alineado con la p&iacute;ldora 8?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Pedir siempre respuestas completas y revisar solo si el resultado parece raro"
+        },
+        {
+          "key": "b",
+          "text": "Permitir cualquier entrada mientras el documento final lo apruebe una persona"
+        },
+        {
+          "key": "c",
+          "text": "Comprobar solo referencias bibliogr&aacute;ficas, porque son el punto donde m&aacute;s alucina la IA"
+        },
+        {
+          "key": "d",
+          "text": "Clasificar primero la sensibilidad del contenido, pedir a la IA que admita incertidumbre y verificar todos los datos concretos antes de usar la salida"
+        }
+      ],
+      "correct": "d",
+      "feedback_ok": "Correcto. Ese flujo junta las tres capas de control que ense&ntilde;a la p&iacute;ldora: decidir qu&eacute; puedes compartir, reducir invenciones pidiendo honestidad sobre l&iacute;mites y verificar cualquier dato concreto. Es un uso pr&aacute;ctico de la IA, no una confianza ciega.",
+      "feedback_ko": "Las otras opciones se quedan en controles parciales o demasiado tard&iacute;os. Si no miras primero la sensibilidad de la entrada y no verificas despu&eacute;s los datos concretos, sigues dejando huecos por donde se cuelan errores con aspecto profesional."
+    }
+  ]
+};
+    </script>
+    <script>
+    /**
+ * QUIZ ENGINE — Motor universal de cuestionarios para Píldoras PLOCAN
+ *
+ * Lee QUIZ_BANK (variable global inyectada por generate_pildora.py)
+ * Selecciona N preguntas aleatorias del banco, renderiza, corrige, da nota.
+ * Reintentar rota preguntas sin repetir juego anterior.
+ *
+ * QUIZ_BANK format: { version, pill_number, questions_per_round, questions: [...] }
+ * Cada question: { id, situation, options: [{key, text}], correct, feedback_ok, feedback_ko }
+ */
+(function() {
+    'use strict';
+
+    if (typeof QUIZ_BANK === 'undefined' || !QUIZ_BANK || !QUIZ_BANK.questions) return;
+
+    var bank = QUIZ_BANK;
+    var perRound = bank.questions_per_round || 5;
+    var allQuestions = bank.questions.slice();
+    var currentSet = [];
+    var previousIds = [];
+    var container = document.getElementById('quiz-section');
+    if (!container) return;
+
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function selectQuestions() {
+        // Prefer questions not used in previous round
+        var available = allQuestions.filter(function(q) {
+            return previousIds.indexOf(q.id) === -1;
+        });
+        // If not enough fresh questions, use all
+        if (available.length < perRound) available = allQuestions.slice();
+        var selected = shuffle(available).slice(0, perRound);
+        previousIds = selected.map(function(q) { return q.id; });
+        return selected;
+    }
+
+    function renderQuiz() {
+        currentSet = selectQuestions();
+        var html = '<h2 style="color:var(--plocan-blue);margin-bottom:0.5rem;">&#128221; Pon a prueba lo aprendido</h2>';
+        html += '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Situaciones reales. No busques en el texto &mdash; piensa c&oacute;mo aplicar&iacute;as los conceptos. <span style="opacity:0.6;">(' + perRound + ' de ' + allQuestions.length + ' preguntas)</span></p>';
+        html += '<div id="quiz-questions">';
+
+        currentSet.forEach(function(q, i) {
+            html += '<div class="quiz-q" data-qid="' + q.id + '" data-correct="' + q.correct + '" style="margin-bottom:1.5rem;padding:1rem;border-left:3px solid var(--plocan-teal);background:var(--bg-alt);border-radius:8px;">';
+            html += '<p style="font-weight:bold;margin-bottom:0.5rem;">Situaci&oacute;n ' + (i+1) + '</p>';
+            html += '<p style="margin-bottom:0.8rem;">' + q.situation + '</p>';
+            q.options.forEach(function(opt) {
+                html += '<label style="display:block;padding:0.3rem 0;cursor:pointer;"><input type="radio" name="qq' + i + '" value="' + opt.key + '"> ' + opt.key + ') ' + opt.text + '</label>';
+            });
+            html += '<p class="quiz-feedback" style="display:none;margin-top:0.5rem;font-style:italic;"></p>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+        html += '<div style="text-align:center;margin-top:1.5rem;">';
+        html += '<button id="quiz-submit" style="background:var(--plocan-blue);color:white;border:none;padding:0.8rem 2rem;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold;">&#9989; Corregir</button>';
+        html += '</div>';
+        html += '<div id="quiz-result" style="display:none;margin-top:1.5rem;padding:1.2rem;border-radius:8px;text-align:center;">';
+        html += '<p id="quiz-score" style="font-size:1.4rem;font-weight:bold;margin-bottom:0.5rem;"></p>';
+        html += '<p id="quiz-message" style="font-size:1rem;"></p>';
+        html += '</div>';
+
+        container.innerHTML = html;
+        document.getElementById('quiz-submit').addEventListener('click', gradeQuiz);
+    }
+
+    function gradeQuiz() {
+        var qs = container.querySelectorAll('.quiz-q');
+        var correct = 0;
+        var total = qs.length;
+
+        qs.forEach(function(qEl, i) {
+            var qData = currentSet[i];
+            var selected = container.querySelector('input[name="qq' + i + '"]:checked');
+            var fb = qEl.querySelector('.quiz-feedback');
+            var isCorrect = selected && selected.value === qData.correct;
+
+            if (isCorrect) {
+                correct++;
+                qEl.style.borderLeftColor = '#4CAF50';
+                fb.style.color = '#2e7d32';
+                fb.textContent = '\u2705 ' + qData.feedback_ok;
+            } else {
+                qEl.style.borderLeftColor = '#f44336';
+                fb.style.color = '#c62828';
+                fb.textContent = '\u274c ' + qData.feedback_ko;
+            }
+            fb.style.display = 'block';
+            // Disable inputs after grading
+            qEl.querySelectorAll('input').forEach(function(inp) { inp.disabled = true; });
+        });
+
+        var pct = Math.round((correct / total) * 100);
+        var resultDiv = document.getElementById('quiz-result');
+        var scoreEl = document.getElementById('quiz-score');
+        var msgEl = document.getElementById('quiz-message');
+
+        scoreEl.textContent = correct + '/' + total + ' (' + pct + '%)';
+
+        if (pct === 100) {
+            resultDiv.style.background = '#e8f5e9';
+            msgEl.textContent = '\uD83C\uDF1F Excelente. Sabes aplicar estos conceptos a situaciones reales.';
+        } else if (pct >= 60) {
+            resultDiv.style.background = '#fff3e0';
+            msgEl.textContent = '\uD83D\uDCA1 Bien, pero revisa los escenarios fallados. Lee el feedback de cada uno.';
+        } else {
+            resultDiv.style.background = '#ffebee';
+            msgEl.textContent = '\uD83D\uDCDA Recomendamos releer la p\u00edldora y volver a intentar con preguntas nuevas.';
+        }
+        resultDiv.style.display = 'block';
+
+        // Change button to retry
+        var btn = document.getElementById('quiz-submit');
+        btn.textContent = '\uD83D\uDD04 Reintentar con preguntas nuevas';
+        btn.removeEventListener('click', gradeQuiz);
+        btn.addEventListener('click', function() { renderQuiz(); });
+    }
+
+    // Initial render
+    renderQuiz();
+})();
+
+    </script>
     </main>
 
 
