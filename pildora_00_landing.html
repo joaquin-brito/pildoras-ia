@@ -950,6 +950,28 @@
         </div>
         <p class="vote-thanks" id="vote-thanks">Gracias por tu feedback</p>
     </div>
+
+    <!-- BUZÓN DE FEEDBACK -->
+    <div id="buzon" style="max-width:900px;margin:0 auto 2rem;background:#fff;border-radius:16px;box-shadow:0 2px 16px rgba(0,75,135,0.08);padding:2rem;border-top:4px solid #00B4D8;">
+      <h3 style="color:#004B87;margin:0 0 0.5rem;font-size:1.2rem;display:flex;align-items:center;gap:0.5rem;">
+        &#128234; Buz&oacute;n de Sugerencias
+      </h3>
+      <p style="color:#636e72;font-size:0.9rem;margin:0 0 1rem;">
+        &iquest;Qu&eacute; tema te gustar&iacute;a ver en una pr&oacute;xima p&iacute;ldora? &iquest;Algo que mejorar? Tu mensaje se resume autom&aacute;ticamente para proteger tu privacidad.
+      </p>
+      <textarea id="buzon-msg" rows="3" maxlength="2000" placeholder="Escribe tu sugerencia o comentario aqu&iacute;..." style="width:100%;border:1.5px solid #dfe6e9;border-radius:10px;padding:0.8rem;font-size:0.95rem;font-family:inherit;resize:vertical;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#00B4D8'" onblur="this.style.borderColor='#dfe6e9'"></textarea>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.75rem;">
+        <span id="buzon-count" style="color:#b2bec3;font-size:0.8rem;">0 / 2000</span>
+        <button id="buzon-send" onclick="sendBuzon()" style="background:#004B87;color:#fff;border:none;border-radius:10px;padding:0.6rem 1.8rem;font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#00B4D8'" onmouseout="this.style.background='#004B87'">
+          Enviar &#10148;
+        </button>
+      </div>
+      <p id="buzon-thanks" style="display:none;color:#2E8B57;font-weight:600;margin-top:0.75rem;text-align:center;">
+        &#10004; Recibido. Gracias por contribuir a mejorar estas p&iacute;ldoras.
+      </p>
+      <p id="buzon-error" style="display:none;color:#e74c3c;font-size:0.85rem;margin-top:0.5rem;text-align:center;"></p>
+    </div>
+
   </main>
 
   <footer class="footer" style="display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;">
@@ -1147,6 +1169,78 @@ function copyPrompt(id) {
     var el = document.getElementById('pill-count');
     if (el) el.textContent = count;
 })();
+
+// BUZÓN DE FEEDBACK
+var BUZON_ENDPOINT = ''; // Poner URL del Google Apps Script deployment
+
+(function() {
+    var ta = document.getElementById('buzon-msg');
+    var counter = document.getElementById('buzon-count');
+    if (ta && counter) {
+        ta.addEventListener('input', function() {
+            counter.textContent = ta.value.length + ' / 2000';
+        });
+    }
+})();
+
+function sendBuzon() {
+    var ta = document.getElementById('buzon-msg');
+    var msg = (ta.value || '').trim();
+    var btn = document.getElementById('buzon-send');
+    var thanks = document.getElementById('buzon-thanks');
+    var errEl = document.getElementById('buzon-error');
+
+    errEl.style.display = 'none';
+
+    if (msg.length < 10) {
+        errEl.textContent = 'Escribe al menos 10 caracteres.';
+        errEl.style.display = 'block';
+        return;
+    }
+
+    // Rate limit: 1 per session
+    if (localStorage.getItem('plocan_buzon_sent')) {
+        errEl.textContent = 'Ya enviaste un mensaje en esta sesi\u00f3n. \u00a1Gracias!';
+        errEl.style.display = 'block';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    if (!BUZON_ENDPOINT) {
+        // Fallback: store locally until endpoint is configured
+        var stored = JSON.parse(localStorage.getItem('plocan_buzon_queue') || '[]');
+        stored.push({ message: msg, timestamp: new Date().toISOString() });
+        localStorage.setItem('plocan_buzon_queue', JSON.stringify(stored));
+        localStorage.setItem('plocan_buzon_sent', 'true');
+        ta.value = '';
+        thanks.style.display = 'block';
+        btn.style.display = 'none';
+        return;
+    }
+
+    fetch(BUZON_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg, context: 'catalogo_landing' }),
+        mode: 'no-cors'
+    }).then(function() {
+        localStorage.setItem('plocan_buzon_sent', 'true');
+        ta.value = '';
+        thanks.style.display = 'block';
+        btn.style.display = 'none';
+    }).catch(function(err) {
+        // Fallback to localStorage
+        var stored = JSON.parse(localStorage.getItem('plocan_buzon_queue') || '[]');
+        stored.push({ message: msg, timestamp: new Date().toISOString() });
+        localStorage.setItem('plocan_buzon_queue', JSON.stringify(stored));
+        localStorage.setItem('plocan_buzon_sent', 'true');
+        ta.value = '';
+        thanks.style.display = 'block';
+        btn.style.display = 'none';
+    });
+}
 
 </script>
 </body>
